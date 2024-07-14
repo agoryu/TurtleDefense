@@ -18,8 +18,8 @@ func _physics_process(delta):
 		velocity += steering / drag
 		velocity = velocity.limit_length(speed)
 		move_and_slide()
-		position.x = clamp(position.x, 0, 1152)
-		position.y = clamp(position.y, 0, 648)
+		position.x = clamp(position.x, 0, Game.screen_size.x)
+		position.y = clamp(position.y, 0, Game.screen_size.y)
 
 func get_gamepad_direction():
 	return Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c12yxxocabpkj"]
+[gd_scene load_steps=9 format=3 uid="uid://c12yxxocabpkj"]
 
 [ext_resource type="Script" path="res://Characters/Hero/Hero.gd" id="1_53ldx"]
 [ext_resource type="Texture2D" uid="uid://c2sfs6wqlc0ag" path="res://Characters/Hero/Starfish.png" id="2_cor1o"]
@@ -46,6 +46,9 @@ _data = {
 "take_damage": SubResource("Animation_6iufd")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_p5557"]
+radius = 80.0
+
 [node name="Hero" type="CharacterBody2D"]
 collision_mask = 0
 script = ExtResource("1_53ldx")
@@ -71,5 +74,10 @@ shape = SubResource("RectangleShape2D_i77mt")
 libraries = {
 "": SubResource("AnimationLibrary_do3oh")
 }
+
+[node name="AttractArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttractArea"]
+shape = SubResource("CircleShape2D_p5557")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
