@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 @export var speed = 600.0
+@export var damage = 1
 
 @onready var timer: Timer = $Timer
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D

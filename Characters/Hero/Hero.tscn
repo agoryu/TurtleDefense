@@ -1,12 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://c12yxxocabpkj"]
+[gd_scene load_steps=10 format=3 uid="uid://c12yxxocabpkj"]
 
 [ext_resource type="Script" path="res://Characters/Hero/Hero.gd" id="1_53ldx"]
 [ext_resource type="Texture2D" uid="uid://c2sfs6wqlc0ag" path="res://Characters/Hero/Starfish.png" id="2_cor1o"]
+[ext_resource type="PackedScene" uid="uid://cpembt8wk8d3j" path="res://Game/Health/Health.tscn" id="3_ebth2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cwi8h"]
-size = Vector2(32, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i77mt"]
 size = Vector2(32, 32)
 
 [sub_resource type="Animation" id="Animation_5al00"]
@@ -46,6 +44,9 @@ _data = {
 "take_damage": SubResource("Animation_6iufd")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i77mt"]
+size = Vector2(32, 32)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_p5557"]
 radius = 80.0
 
@@ -64,20 +65,23 @@ shape = SubResource("RectangleShape2D_cwi8h")
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_i77mt")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_do3oh")
 }
+
+[node name="DamageArea" type="Area2D" parent="."]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
+shape = SubResource("RectangleShape2D_i77mt")
 
 [node name="AttractArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttractArea"]
 shape = SubResource("CircleShape2D_p5557")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="Health" parent="." instance=ExtResource("3_ebth2")]
+
+[connection signal="body_entered" from="DamageArea" to="." method="_on_area_2d_body_entered"]
+[connection signal="dead" from="Health" to="." method="_on_health_dead"]

@@ -6,9 +6,9 @@ extends CharacterBody2D
 @onready var wait_timer: Timer = $Timer
 @onready var shoot = preload("res://Weapons/FirstWeapon/FirstWeapon.tscn")
 @onready var animationPlayer = $AnimationPlayer
+@onready var health: Health = $Health
 
 var direction: Vector2
-var life = 5
 
 func _physics_process(delta):
 	if get_gamepad_direction() != Vector2.ZERO:
@@ -34,5 +34,8 @@ func _input(event):
 		wait_timer.start()
 
 func _on_area_2d_body_entered(body):
-	life -= 1
+	health.loose_health(body.damage)
 	animationPlayer.play("take_damage")
+
+func _on_health_dead():
+	print("game over")

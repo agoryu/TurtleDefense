@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cu16y5acswhml"]
+[gd_scene load_steps=10 format=3 uid="uid://cu16y5acswhml"]
 
 [ext_resource type="Script" path="res://Level/Map.gd" id="1_3afmr"]
 [ext_resource type="PackedScene" uid="uid://beerfxfv6tp16" path="res://Sounds/MainSound.tscn" id="1_hdchv"]
@@ -6,11 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://c12yxxocabpkj" path="res://Characters/Hero/Hero.tscn" id="1_uudqq"]
 [ext_resource type="PackedScene" uid="uid://13o6gi6ilbss" path="res://Characters/Turtle/Turtle.tscn" id="2_3s2sd"]
 [ext_resource type="PackedScene" uid="uid://ddkrkxdqpdqfw" path="res://Game/Spawner/ShellSpawner/ShellSpawner.tscn" id="2_ldmrk"]
+[ext_resource type="PackedScene" uid="uid://cys8wx57y0lb1" path="res://UI/UI.tscn" id="2_v1giw"]
 [ext_resource type="PackedScene" uid="uid://chf0i73jsh7of" path="res://Game/Spawner/CrabSpawner/CrabSpawner.tscn" id="3_rkprw"]
 [ext_resource type="PackedScene" uid="uid://cdb6ww74fgxll" path="res://Object/Shell/Shell.tscn" id="7_1wvti"]
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_3afmr")
+
+[node name="UI" parent="." instance=ExtResource("2_v1giw")]
 
 [node name="ShellSpawner" parent="." instance=ExtResource("2_ldmrk")]
 
