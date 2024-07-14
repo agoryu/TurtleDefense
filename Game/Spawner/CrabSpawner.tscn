@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://chf0i73jsh7of"]
+
+[ext_resource type="Script" path="res://Game/Spawner/CrabSpawner.gd" id="1_evuxo"]
+
+[sub_resource type="Curve2D" id="Curve2D_c4ywb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 1, 646)
+}
+point_count = 2
+
+[node name="CrabSpawner" type="Path2D"]
+curve = SubResource("Curve2D_c4ywb")
+script = ExtResource("1_evuxo")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(-1, 0)
+rotation = 1.5677
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

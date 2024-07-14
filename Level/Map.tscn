@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu16y5acswhml"]
+[gd_scene load_steps=4 format=3 uid="uid://cu16y5acswhml"]
 
 [ext_resource type="PackedScene" uid="uid://c12yxxocabpkj" path="res://Characters/Hero/Hero.tscn" id="1_uudqq"]
+[ext_resource type="PackedScene" uid="uid://13o6gi6ilbss" path="res://Characters/Turtle/Turtle.tscn" id="2_3s2sd"]
+[ext_resource type="PackedScene" uid="uid://chf0i73jsh7of" path="res://Game/Spawner/CrabSpawner.tscn" id="3_rkprw"]
 
 [node name="Map" type="Node2D"]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_uudqq")]
-position = Vector2(259, 185)
+position = Vector2(178, 93)
+
+[node name="Turtle" parent="." instance=ExtResource("2_3s2sd")]
+position = Vector2(126, 275)
+
+[node name="CrabSpawner" parent="." instance=ExtResource("3_rkprw")]
+position = Vector2(1150, -2)

@@ -18,3 +18,10 @@ config/icon="res://icon.svg"
 [dotnet]
 
 project/assembly_name="TurtleDefense"
+
+[layer_names]
+
+2d_physics/layer_1="hero"
+2d_physics/layer_2="bubble"
+2d_physics/layer_3="crab"
+2d_physics/layer_4="turtle"

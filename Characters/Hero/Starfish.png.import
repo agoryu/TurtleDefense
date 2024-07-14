@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6i02yi3hjy2b"
-path="res://.godot/imported/LaserShoot.png-07a998ba16aecf13243b1a98d9885462.ctex"
+uid="uid://c2sfs6wqlc0ag"
+path="res://.godot/imported/Starfish.png-c750e76d877d5e1351c491b563e2664f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Weapons/FirstWeapon/LaserShoot.png"
-dest_files=["res://.godot/imported/LaserShoot.png-07a998ba16aecf13243b1a98d9885462.ctex"]
+source_file="res://Characters/Hero/Starfish.png"
+dest_files=["res://.godot/imported/Starfish.png-c750e76d877d5e1351c491b563e2664f.ctex"]
 
 [params]
 

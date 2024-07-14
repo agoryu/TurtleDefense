@@ -9,12 +9,13 @@ extends CharacterBody2D
 var direction: Vector2
 
 func _physics_process(delta):
-	direction = get_gamepad_direction();
-	var desired_velocity = direction * speed
-	var steering = desired_velocity - velocity
-	velocity += steering / drag
-	velocity = velocity.limit_length(speed)
-	move_and_slide()
+	if get_gamepad_direction() != Vector2.ZERO:
+		direction = get_gamepad_direction();
+		var desired_velocity = direction * speed
+		var steering = desired_velocity - velocity
+		velocity += steering / drag
+		velocity = velocity.limit_length(speed)
+		move_and_slide()
 
 func get_gamepad_direction():
 	return Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized()
