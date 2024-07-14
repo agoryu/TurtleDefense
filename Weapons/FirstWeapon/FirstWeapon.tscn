@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://tp1kh4jcbw7c"]
+
+[ext_resource type="Script" path="res://Weapons/FirstWeapon/FirstWeapon.gd" id="1_ac4jn"]
+[ext_resource type="Texture2D" uid="uid://6i02yi3hjy2b" path="res://Weapons/FirstWeapon/LaserShoot.png" id="1_xlxho"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfxnl"]
+size = Vector2(6, 16)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_ac4jn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hfxnl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0733945, 0.02)
+texture = ExtResource("1_xlxho")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

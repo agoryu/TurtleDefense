@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://c12yxxocabpkj"]
+
+[ext_resource type="Script" path="res://Characters/Hero/Hero.gd" id="1_53ldx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwi8h"]
+size = Vector2(48, 48)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_mask = 0
+script = ExtResource("1_53ldx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+color = Color(0.0666667, 0.0823529, 1, 1)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cwi8h")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
