@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bku4qp5qtsqhc"
-path="res://.godot/imported/turtle1.png-68c7305949b6c07a97379d6ad71a26db.ctex"
+uid="uid://b70qdyvcfqs8b"
+path="res://.godot/imported/Crab.png-81f3efdac895f1fe8acca2bf1ff5c4bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Turtle/turtle1.png"
-dest_files=["res://.godot/imported/turtle1.png-68c7305949b6c07a97379d6ad71a26db.ctex"]
+source_file="res://Characters/Crab/Crab.png"
+dest_files=["res://.godot/imported/Crab.png-81f3efdac895f1fe8acca2bf1ff5c4bd.ctex"]
 
 [params]
 

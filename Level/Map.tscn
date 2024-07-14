@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://cu16y5acswhml"]
+[gd_scene load_steps=5 format=3 uid="uid://cu16y5acswhml"]
 
+[ext_resource type="Texture2D" uid="uid://drjqw8lxljc35" path="res://Level/Plage.png" id="1_j5xbb"]
 [ext_resource type="PackedScene" uid="uid://c12yxxocabpkj" path="res://Characters/Hero/Hero.tscn" id="1_uudqq"]
 [ext_resource type="PackedScene" uid="uid://13o6gi6ilbss" path="res://Characters/Turtle/Turtle.tscn" id="2_3s2sd"]
 [ext_resource type="PackedScene" uid="uid://chf0i73jsh7of" path="res://Game/Spawner/CrabSpawner.tscn" id="3_rkprw"]
 
 [node name="Map" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_offset = Vector2(128, 128)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("1_j5xbb")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_uudqq")]
 position = Vector2(178, 93)

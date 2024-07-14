@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bna2lavjv20k4"
-path="res://.godot/imported/tortue2.png-d2e0b19e0502928feb2904dce37e9ec3.ctex"
+uid="uid://drjqw8lxljc35"
+path="res://.godot/imported/Plage.png-f1cc85c591c86ba2b9ef119f1a4dd15f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Turtle/tortue2.png"
-dest_files=["res://.godot/imported/tortue2.png-d2e0b19e0502928feb2904dce37e9ec3.ctex"]
+source_file="res://Level/Plage.png"
+dest_files=["res://.godot/imported/Plage.png-f1cc85c591c86ba2b9ef119f1a4dd15f.ctex"]
 
 [params]
 

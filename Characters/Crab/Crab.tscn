@@ -1,12 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbxmis503t6av"]
+[gd_scene load_steps=5 format=3 uid="uid://dbxmis503t6av"]
 
 [ext_resource type="Script" path="res://Characters/Crab/Crab.gd" id="1_xxv67"]
+[ext_resource type="Texture2D" uid="uid://b70qdyvcfqs8b" path="res://Characters/Crab/Crab.png" id="2_8ym67"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l31b6"]
-size = Vector2(48, 48)
+size = Vector2(48, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qdgx6"]
-size = Vector2(48, 48)
+size = Vector2(48, 40)
 
 [node name="Crab" type="CharacterBody2D"]
 collision_layer = 4
@@ -14,14 +15,14 @@ collision_mask = 0
 script = ExtResource("1_xxv67")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_l31b6")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -24.0
-offset_top = -24.0
-offset_right = 24.0
-offset_bottom = 24.0
-color = Color(0.827451, 0.427451, 0.247059, 1)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1.43051e-06, -1.43051e-06)
+scale = Vector2(2, 2)
+texture = ExtResource("2_8ym67")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 15.0
@@ -33,6 +34,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_qdgx6")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
