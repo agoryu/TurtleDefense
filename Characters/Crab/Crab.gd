@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var damage := 1
 
 @onready var health: Health = $Health
+@onready var dead_crab_constructor = preload("res://Object/DeadCrab/DeadCrab.tscn")
 
 func _physics_process(delta):
 	var desired_velocity = Vector2.LEFT * speed
@@ -22,4 +23,8 @@ func _on_area_2d_body_entered(body):
 	health.loose_health(body.damage)
 
 func _on_health_dead():
+	if randi() % 10 < 3:
+		var crab_resource = dead_crab_constructor.instantiate()
+		crab_resource.position = position
+		get_parent().add_child(crab_resource)
 	queue_free()

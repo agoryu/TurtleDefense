@@ -20,18 +20,18 @@ script = ExtResource("1_3afmr")
 [node name="MainSound" parent="." instance=ExtResource("1_hdchv")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(576, 322)
-scale = Vector2(9, 5.03125)
+position = Vector2(964, 540)
+scale = Vector2(15.0625, 8.4375)
 texture = ExtResource("1_j5xbb")
 
 [node name="Hero" parent="." instance=ExtResource("1_uudqq")]
-position = Vector2(178, 93)
+position = Vector2(520, 584)
 
 [node name="Turtle" parent="." instance=ExtResource("2_3s2sd")]
-position = Vector2(8, 328)
+position = Vector2(8, 576)
 
 [node name="CrabSpawner" parent="." instance=ExtResource("3_rkprw")]
-position = Vector2(1150, -2)
+position = Vector2(1927.5, 2)
 
 [node name="Shell" parent="." instance=ExtResource("7_1wvti")]
 position = Vector2(512, 312)

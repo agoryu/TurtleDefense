@@ -1,11 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://cys8wx57y0lb1"]
+[gd_scene load_steps=10 format=3 uid="uid://cys8wx57y0lb1"]
 
+[ext_resource type="Script" path="res://UI/UI.gd" id="1_7vev8"]
 [ext_resource type="Script" path="res://UI/TurtleProgressBar.gd" id="1_bh3dn"]
 [ext_resource type="Script" path="res://UI/HeroProgressBar.gd" id="2_dar4e"]
-[ext_resource type="Script" path="res://UI/Label.gd" id="3_1do4p"]
+[ext_resource type="Script" path="res://UI/ShellLabel.gd" id="3_1do4p"]
 [ext_resource type="Texture2D" uid="uid://cl2yoh2t47fa6" path="res://Object/Shell/Shell.png" id="4_d2xjh"]
+[ext_resource type="Script" path="res://UI/LabelMenu.gd" id="5_4qobs"]
+[ext_resource type="PackedScene" uid="uid://dja8uf8ke2g6f" path="res://UI/PowerMenu/PowerMenu.tscn" id="6_jwk8f"]
+[ext_resource type="Script" path="res://UI/CrabLabel.gd" id="6_lufk3"]
+[ext_resource type="Texture2D" uid="uid://b70qdyvcfqs8b" path="res://Characters/Crab/Crab.png" id="7_6gwcj"]
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_7vev8")
 
 [node name="Life" type="HBoxContainer" parent="."]
 anchors_preset = 10
@@ -46,14 +52,45 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Label" type="Label" parent="Resources"]
+[node name="ShellLabel" type="Label" parent="Resources"]
 layout_mode = 2
 size_flags_horizontal = 3
 horizontal_alignment = 2
 script = ExtResource("3_1do4p")
 
-[node name="TextureRect" type="TextureRect" parent="Resources"]
+[node name="ShellSprite" type="TextureRect" parent="Resources"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("4_d2xjh")
 stretch_mode = 2
+
+[node name="CrabLabel" type="Label" parent="Resources"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 2
+script = ExtResource("6_lufk3")
+
+[node name="CrabSprite" type="TextureRect" parent="Resources"]
+modulate = Color(0.317647, 0.45098, 0.776471, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("7_6gwcj")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Press Enter"
+script = ExtResource("5_4qobs")
+
+[node name="PowerMenu" parent="." instance=ExtResource("6_jwk8f")]

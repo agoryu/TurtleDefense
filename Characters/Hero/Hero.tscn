@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://c12yxxocabpkj"]
+[gd_scene load_steps=11 format=3 uid="uid://c12yxxocabpkj"]
 
 [ext_resource type="Script" path="res://Characters/Hero/Hero.gd" id="1_53ldx"]
 [ext_resource type="Texture2D" uid="uid://c2sfs6wqlc0ag" path="res://Characters/Hero/Starfish.png" id="2_cor1o"]
 [ext_resource type="PackedScene" uid="uid://cpembt8wk8d3j" path="res://Game/Health/Health.tscn" id="3_ebth2"]
+[ext_resource type="PackedScene" uid="uid://bxqf7v4kw8qnq" path="res://Camera/Camera.tscn" id="4_7qy8v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cwi8h"]
 size = Vector2(32, 32)
@@ -82,6 +83,8 @@ shape = SubResource("RectangleShape2D_i77mt")
 shape = SubResource("CircleShape2D_p5557")
 
 [node name="Health" parent="." instance=ExtResource("3_ebth2")]
+
+[node name="Camera" parent="." instance=ExtResource("4_7qy8v")]
 
 [connection signal="body_entered" from="DamageArea" to="." method="_on_area_2d_body_entered"]
 [connection signal="dead" from="Health" to="." method="_on_health_dead"]

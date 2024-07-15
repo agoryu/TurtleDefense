@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh2os41h4m4mm"]
+
+[ext_resource type="Texture2D" uid="uid://b70qdyvcfqs8b" path="res://Characters/Crab/Crab.png" id="1_7lovx"]
+[ext_resource type="Script" path="res://Object/DeadCrab/DeadCrab.gd" id="1_m7nxi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_visy3"]
+size = Vector2(64, 48)
+
+[node name="DeadCrab" type="Area2D"]
+collision_layer = 16
+script = ExtResource("1_m7nxi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.317647, 0.45098, 0.776471, 1)
+scale = Vector2(2, 2)
+texture = ExtResource("1_7lovx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_visy3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

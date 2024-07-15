@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://13o6gi6ilbss"]
+[gd_scene load_steps=13 format=3 uid="uid://13o6gi6ilbss"]
 
 [ext_resource type="Script" path="res://Characters/Turtle/Turtle.gd" id="1_ow1ky"]
 [ext_resource type="Texture2D" uid="uid://dd4hiwn0lelqe" path="res://Characters/Turtle/turtle.png" id="2_ujgdt"]
@@ -57,6 +57,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_13txl"]
+radius = 192.167
+
 [node name="Turtle" type="CharacterBody2D"]
 collision_layer = 8
 collision_mask = 0
@@ -74,11 +77,11 @@ libraries = {
 "": SubResource("AnimationLibrary_u4swa")
 }
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="DamageArea" type="Area2D" parent="."]
 collision_layer = 8
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
 shape = SubResource("RectangleShape2D_sbru2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -90,6 +93,15 @@ sprite_frames = SubResource("SpriteFrames_25nsf")
 
 [node name="Health" parent="." instance=ExtResource("3_mkcoc")]
 
+[node name="MenuArea" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MenuArea"]
+shape = SubResource("CircleShape2D_13txl")
+debug_color = Color(0.739902, 0.10871, 0.264353, 0.42)
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="DamageArea" to="." method="_on_area_2d_body_entered"]
 [connection signal="dead" from="Health" to="." method="_on_health_dead"]
+[connection signal="body_entered" from="MenuArea" to="." method="_on_menu_area_body_entered"]
+[connection signal="body_exited" from="MenuArea" to="." method="_on_menu_area_body_exited"]

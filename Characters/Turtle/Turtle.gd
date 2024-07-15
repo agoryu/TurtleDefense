@@ -22,6 +22,11 @@ func _on_area_2d_body_entered(body):
 	body.queue_free()
 	animationPlayer.play("take_damage")
 
-
 func _on_health_dead():
 	print("game over")
+
+func _on_menu_area_body_entered(body):
+	Game.can_open_menu = true
+
+func _on_menu_area_body_exited(body):
+	Game.can_open_menu = false

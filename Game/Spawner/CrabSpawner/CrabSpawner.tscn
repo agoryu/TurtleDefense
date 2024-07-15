@@ -4,7 +4,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_c4ywb"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 1, 646)
+"points": PackedVector2Array(0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 1072)
 }
 point_count = 2
 
@@ -14,7 +14,7 @@ script = ExtResource("1_evuxo")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 position = Vector2(-1, 0)
-rotation = 1.5677
+rotation = 1.56986
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
