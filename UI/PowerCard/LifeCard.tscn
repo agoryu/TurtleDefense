@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhnm03a3mm6xe"]
+
+[ext_resource type="PackedScene" uid="uid://bkebik8w0lxto" path="res://UI/PowerCard/PowerCard.tscn" id="1_k0d0a"]
+[ext_resource type="Script" path="res://UI/PowerCard/LifeCard.gd" id="2_fg8i1"]
+
+[node name="LifeCard" instance=ExtResource("1_k0d0a")]
+text = "+5 vie"
+script = ExtResource("2_fg8i1")
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

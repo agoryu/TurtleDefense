@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://cys8wx57y0lb1"]
 
 [ext_resource type="Script" path="res://UI/UI.gd" id="1_7vev8"]
-[ext_resource type="Script" path="res://UI/TurtleProgressBar.gd" id="1_bh3dn"]
-[ext_resource type="Script" path="res://UI/HeroProgressBar.gd" id="2_dar4e"]
+[ext_resource type="Script" path="res://UI/ProgressBar/TurtleProgressBar.gd" id="1_bh3dn"]
+[ext_resource type="Script" path="res://UI/ProgressBar/HeroProgressBar.gd" id="2_dar4e"]
 [ext_resource type="Script" path="res://UI/ShellLabel.gd" id="3_1do4p"]
 [ext_resource type="Texture2D" uid="uid://cl2yoh2t47fa6" path="res://Object/Shell/Shell.png" id="4_d2xjh"]
 [ext_resource type="Script" path="res://UI/LabelMenu.gd" id="5_4qobs"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b70qdyvcfqs8b" path="res://Characters/Crab/Crab.png" id="7_6gwcj"]
 
 [node name="UI" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_7vev8")
 
 [node name="Life" type="HBoxContainer" parent="."]

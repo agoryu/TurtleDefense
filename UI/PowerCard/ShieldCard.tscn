@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxggxj1pj7svs"]
+
+[ext_resource type="PackedScene" uid="uid://bkebik8w0lxto" path="res://UI/PowerCard/PowerCard.tscn" id="1_e73he"]
+[ext_resource type="Texture2D" uid="uid://b70qdyvcfqs8b" path="res://Characters/Crab/Crab.png" id="2_ho5d5"]
+[ext_resource type="Script" path="res://UI/PowerCard/ShieldCard.gd" id="2_rwhid"]
+
+[node name="ShieldCard" instance=ExtResource("1_e73he")]
+text = "Bouclier durabilité 5"
+script = ExtResource("2_rwhid")
+
+[node name="Label2" type="Label" parent="HBoxContainer" index="2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "2"
+horizontal_alignment = 2
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer" index="3"]
+modulate = Color(0.317647, 0.45098, 0.776471, 1)
+layout_mode = 2
+size_flags_horizontal = 2
+texture = ExtResource("2_ho5d5")
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]
