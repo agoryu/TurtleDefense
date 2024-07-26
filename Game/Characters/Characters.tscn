@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://xvq0icsomos1"]
+
+[ext_resource type="PackedScene" uid="uid://c12yxxocabpkj" path="res://Characters/Hero/Hero.tscn" id="1_a70ub"]
+[ext_resource type="Script" path="res://Game/Characters/Characters.gd" id="1_t301e"]
+[ext_resource type="PackedScene" uid="uid://13o6gi6ilbss" path="res://Characters/Turtle/Turtle.tscn" id="2_sxwtj"]
+
+[sub_resource type="Animation" id="Animation_qsdo7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hero:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(520, 584)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Turtle:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8, 576)]
+}
+
+[sub_resource type="Animation" id="Animation_8igmv"]
+resource_name = "set_level"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hero:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1820, 584), Vector2(520, 584)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Turtle:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1788, 576), Vector2(8, 576)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5xvdj"]
+_data = {
+"RESET": SubResource("Animation_qsdo7"),
+"set_level": SubResource("Animation_8igmv")
+}
+
+[node name="Characters" type="Node2D"]
+script = ExtResource("1_t301e")
+
+[node name="Hero" parent="." instance=ExtResource("1_a70ub")]
+position = Vector2(520, 584)
+
+[node name="Turtle" parent="." instance=ExtResource("2_sxwtj")]
+position = Vector2(8, 576)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5xvdj")
+}

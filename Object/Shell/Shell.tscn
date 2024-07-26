@@ -42,7 +42,7 @@ _data = {
 "create": SubResource("Animation_avq5v")
 }
 
-[node name="Shell" type="Area2D"]
+[node name="Shell" type="Area2D" groups=["object"]]
 collision_layer = 16
 script = ExtResource("1_xjuj5")
 

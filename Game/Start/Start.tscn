@@ -1,0 +1,92 @@
+[gd_scene load_steps=10 format=3 uid="uid://clc1daanw1cli"]
+
+[ext_resource type="Script" path="res://Game/Start/Start.gd" id="1_6p4ja"]
+[ext_resource type="PackedScene" uid="uid://cys8wx57y0lb1" path="res://UI/UI.tscn" id="1_8ox6p"]
+[ext_resource type="PackedScene" uid="uid://xvq0icsomos1" path="res://Game/Characters/Characters.tscn" id="2_jphtw"]
+[ext_resource type="PackedScene" uid="uid://cu16y5acswhml" path="res://Level/Map.tscn" id="3_yebcb"]
+[ext_resource type="Texture2D" uid="uid://bg7yr01s1x4r4" path="res://Game/cloud.png" id="4_fjo7k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_er1kg"]
+size = Vector2(133, 1074)
+
+[sub_resource type="Animation" id="Animation_4uja2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cloud:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2512, 536)]
+}
+
+[sub_resource type="Animation" id="Animation_awnk4"]
+resource_name = "set_level"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cloud:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2512, 536), Vector2(-600, 536)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Characters")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"set_level_animation"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pb3sq"]
+_data = {
+"RESET": SubResource("Animation_4uja2"),
+"set_level": SubResource("Animation_awnk4")
+}
+
+[node name="Start" type="Node2D"]
+script = ExtResource("1_6p4ja")
+
+[node name="UI" parent="." instance=ExtResource("1_8ox6p")]
+
+[node name="Map" parent="." instance=ExtResource("3_yebcb")]
+
+[node name="Characters" parent="." instance=ExtResource("2_jphtw")]
+
+[node name="NextLevelZone" type="Area2D" parent="."]
+position = Vector2(1920, 2)
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NextLevelZone"]
+position = Vector2(-64, 534)
+shape = SubResource("RectangleShape2D_er1kg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pb3sq")
+}
+
+[node name="Cloud" type="Sprite2D" parent="."]
+position = Vector2(2512, 536)
+scale = Vector2(1.28095, 1.25437)
+texture = ExtResource("4_fjo7k")
+
+[connection signal="body_entered" from="NextLevelZone" to="." method="_on_next_level_zone_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

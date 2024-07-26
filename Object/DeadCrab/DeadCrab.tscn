@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_visy3"]
 size = Vector2(64, 48)
 
-[node name="DeadCrab" type="Area2D"]
+[node name="DeadCrab" type="Area2D" groups=["object"]]
 collision_layer = 16
 script = ExtResource("1_m7nxi")
 
