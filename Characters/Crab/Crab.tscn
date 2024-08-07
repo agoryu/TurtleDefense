@@ -1,14 +1,69 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbxmis503t6av"]
+[gd_scene load_steps=13 format=3 uid="uid://dbxmis503t6av"]
 
 [ext_resource type="Script" path="res://Characters/Crab/Crab.gd" id="1_xxv67"]
-[ext_resource type="Texture2D" uid="uid://b70qdyvcfqs8b" path="res://Characters/Crab/Crab.png" id="2_8ym67"]
 [ext_resource type="PackedScene" uid="uid://cpembt8wk8d3j" path="res://Game/Health/Health.tscn" id="3_djucn"]
+[ext_resource type="Texture2D" uid="uid://ct2mbej17nc11" path="res://Characters/Crab/Crab-Sheet.png" id="4_isci8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l31b6"]
-size = Vector2(48, 40)
+size = Vector2(64, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qdgx6"]
-size = Vector2(48, 40)
+size = Vector2(80, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dejt5"]
+atlas = ExtResource("4_isci8")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_114ns"]
+atlas = ExtResource("4_isci8")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alq80"]
+atlas = ExtResource("4_isci8")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwlka"]
+atlas = ExtResource("4_isci8")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8xnv"]
+atlas = ExtResource("4_isci8")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsumy"]
+atlas = ExtResource("4_isci8")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rxgu5"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dejt5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_114ns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alq80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwlka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8xnv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsumy")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [node name="Crab" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 4
@@ -19,12 +74,6 @@ script = ExtResource("1_xxv67")
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_l31b6")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(-1.43051e-06, -1.43051e-06)
-scale = Vector2(2, 2)
-texture = ExtResource("2_8ym67")
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 15.0
 one_shot = true
@@ -33,14 +82,21 @@ autostart = true
 [node name="Health" parent="." instance=ExtResource("3_djucn")]
 max_value = 1
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_qdgx6")
 
+[node name="SpriteSheet" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_rxgu5")
+animation = &"walk"
+speed_scale = 2.0
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="dead" from="Health" to="." method="_on_health_dead"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_area_2d_body_entered"]

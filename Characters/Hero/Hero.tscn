@@ -1,43 +1,19 @@
-[gd_scene load_steps=11 format=3 uid="uid://c12yxxocabpkj"]
+[gd_scene load_steps=19 format=3 uid="uid://c12yxxocabpkj"]
 
 [ext_resource type="Script" path="res://Characters/Hero/Hero.gd" id="1_53ldx"]
-[ext_resource type="Texture2D" uid="uid://c2sfs6wqlc0ag" path="res://Characters/Hero/Starfish.png" id="2_cor1o"]
 [ext_resource type="PackedScene" uid="uid://cpembt8wk8d3j" path="res://Game/Health/Health.tscn" id="3_ebth2"]
 [ext_resource type="PackedScene" uid="uid://bxqf7v4kw8qnq" path="res://Camera/Camera.tscn" id="4_7qy8v"]
+[ext_resource type="Texture2D" uid="uid://dnunkhaiukck4" path="res://Characters/Hero/Starfish-Sheet.png" id="4_mm6pl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cwi8h"]
-size = Vector2(32, 32)
+size = Vector2(48, 48)
 
 [sub_resource type="Animation" id="Animation_5al00"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_6iufd"]
 resource_name = "take_damage"
 length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(0.584314, 0.0901961, 0.223529, 0.607843), Color(1, 1, 1, 1), Color(0.584314, 0.0901961, 0.223529, 0.607843), Color(1, 1, 1, 1), Color(0.584314, 0.0901961, 0.223529, 0.607843), Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_do3oh"]
 _data = {
@@ -46,22 +22,80 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i77mt"]
-size = Vector2(32, 32)
+size = Vector2(64, 64)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p5557"]
 radius = 80.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08ydf"]
+atlas = ExtResource("4_mm6pl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijsyc"]
+atlas = ExtResource("4_mm6pl")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11gc5"]
+atlas = ExtResource("4_mm6pl")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhcl2"]
+atlas = ExtResource("4_mm6pl")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xx72w"]
+atlas = ExtResource("4_mm6pl")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f625n"]
+atlas = ExtResource("4_mm6pl")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojf4d"]
+atlas = ExtResource("4_mm6pl")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wj6qv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08ydf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijsyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11gc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhcl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xx72w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f625n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojf4d")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [node name="Hero" type="CharacterBody2D"]
 collision_mask = 0
 script = ExtResource("1_53ldx")
 
-[node name="Sprite" type="Sprite2D" parent="."]
-texture_filter = 1
-scale = Vector2(2, 2)
-texture = ExtResource("2_cor1o")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_cwi8h")
+debug_color = Color(0.966416, 0, 0.480668, 0.42)
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
@@ -85,6 +119,12 @@ shape = SubResource("CircleShape2D_p5557")
 [node name="Health" parent="." instance=ExtResource("3_ebth2")]
 
 [node name="Camera" parent="." instance=ExtResource("4_7qy8v")]
+
+[node name="SpriteSheet" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_wj6qv")
+speed_scale = 2.0
 
 [connection signal="body_entered" from="DamageArea" to="." method="_on_area_2d_body_entered"]
 [connection signal="dead" from="Health" to="." method="_on_health_dead"]

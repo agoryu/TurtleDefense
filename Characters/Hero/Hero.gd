@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var shoot = preload("res://Weapons/FirstWeapon/FirstWeapon.tscn")
 @onready var animationPlayer = $AnimationPlayer
 @onready var health: Health = $Health
+@onready var animation = $SpriteSheet
 
 var direction: Vector2
 
@@ -17,13 +18,20 @@ func _physics_process(delta):
 		var steering = desired_velocity - velocity
 		velocity += steering / drag
 		velocity = velocity.limit_length(speed)
+		animate(velocity)
 		move_and_slide()
 		position.x = clamp(position.x, 0, Game.screen_size.x)
 		position.y = clamp(position.y, 0, Game.screen_size.y)
+	else:
+		animation.play("default")
+
+func animate(velocity):
+	if velocity != Vector2.ZERO:
+		animation.play("walk")
 
 func get_gamepad_direction():
 	return Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized()
-	
+
 func _input(event):
 	if wait_timer.is_stopped() and event.is_action_pressed("ui_accept"):
 		var shoot_bullet = shoot.instantiate()

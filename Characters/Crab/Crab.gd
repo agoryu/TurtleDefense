@@ -6,14 +6,18 @@ extends CharacterBody2D
 
 @onready var health: Health = $Health
 @onready var dead_crab_constructor = preload("res://Object/DeadCrab/DeadCrab.tscn")
+@onready var animation = $SpriteSheet
 
 func _physics_process(delta):
 	var desired_velocity = Vector2.LEFT * speed
 	var steering = desired_velocity - velocity
 	velocity += steering / drag
 	velocity = velocity.limit_length(speed)
+	animate()
 	move_and_slide()
 
+func animate():
+	animation.play("walk")
 
 func _on_timer_timeout():
 	queue_free()

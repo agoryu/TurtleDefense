@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ch5yk84hhbq0w" path="res://Weapons/FirstWeapon/BubbleShoot.png" id="2_fy5ng"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hfxnl"]
-size = Vector2(16, 16)
+size = Vector2(32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ajq20"]
 atlas = ExtResource("2_fy5ng")
@@ -65,7 +65,7 @@ autostart = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(2.38419e-07, 2.38419e-07)
-scale = Vector2(2, 2)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_celgb")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
