@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drjqw8lxljc35"
-path="res://.godot/imported/Plage.png-f1cc85c591c86ba2b9ef119f1a4dd15f.ctex"
+uid="uid://d00a2txgaa5h7"
+path="res://.godot/imported/Beach-Sheet2.png-2e7d398cc5f3aedeacbb4cdc38a7560c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Level/Plage.png"
-dest_files=["res://.godot/imported/Plage.png-f1cc85c591c86ba2b9ef119f1a4dd15f.ctex"]
+source_file="res://Level/Beach-Sheet2.png"
+dest_files=["res://.godot/imported/Beach-Sheet2.png-2e7d398cc5f3aedeacbb4cdc38a7560c.ctex"]
 
 [params]
 
