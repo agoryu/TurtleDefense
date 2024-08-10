@@ -23,6 +23,7 @@ func _physics_process(delta):
 		position.x = clamp(position.x, 0, Game.screen_size.x)
 		position.y = clamp(position.y, 0, Game.screen_size.y)
 	else:
+		velocity = Vector2.ZERO
 		animation.play("default")
 
 func animate(velocity):
