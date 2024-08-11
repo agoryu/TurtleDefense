@@ -88,7 +88,7 @@ shape = SubResource("RectangleShape2D_sbru2")
 modulate = Color(1, 1, 1, 0.972549)
 texture_filter = 1
 rotation = 1.5708
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_25nsf")
 
 [node name="Health" parent="." instance=ExtResource("3_mkcoc")]
