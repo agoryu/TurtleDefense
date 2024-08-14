@@ -86,7 +86,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [node name="Hero" type="CharacterBody2D"]
@@ -124,6 +124,7 @@ shape = SubResource("CircleShape2D_p5557")
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_wj6qv")
+animation = &"walk"
 speed_scale = 2.0
 
 [connection signal="body_entered" from="DamageArea" to="." method="_on_area_2d_body_entered"]
