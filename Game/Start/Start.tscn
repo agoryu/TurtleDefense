@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://cys8wx57y0lb1" path="res://UI/UI.tscn" id="1_8ox6p"]
 [ext_resource type="PackedScene" uid="uid://xvq0icsomos1" path="res://Game/Characters/Characters.tscn" id="2_jphtw"]
 [ext_resource type="PackedScene" uid="uid://cu16y5acswhml" path="res://Level/Map.tscn" id="3_yebcb"]
-[ext_resource type="Texture2D" uid="uid://bg7yr01s1x4r4" path="res://Game/cloud.png" id="4_fjo7k"]
+[ext_resource type="Texture2D" uid="uid://c7uh863j55v4m" path="res://Game/Transition/transition-cloud.png" id="5_bitly"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_er1kg"]
-size = Vector2(133, 1074)
+size = Vector2(123.5, 1111)
 
 [sub_resource type="Animation" id="Animation_4uja2"]
 length = 0.001
@@ -75,7 +75,7 @@ collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextLevelZone"]
-position = Vector2(-64, 534)
+position = Vector2(-59.25, 549.5)
 shape = SubResource("RectangleShape2D_er1kg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -84,9 +84,10 @@ libraries = {
 }
 
 [node name="Cloud" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(2512, 536)
-scale = Vector2(1.28095, 1.25437)
-texture = ExtResource("4_fjo7k")
+scale = Vector2(3.09431, 3.0301)
+texture = ExtResource("5_bitly")
 
 [connection signal="body_entered" from="NextLevelZone" to="." method="_on_next_level_zone_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

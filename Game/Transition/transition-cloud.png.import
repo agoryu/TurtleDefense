@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bg7yr01s1x4r4"
-path="res://.godot/imported/cloud.png-8ee976cf3c3e4ba43cf5645ff26f144b.ctex"
+uid="uid://c7uh863j55v4m"
+path="res://.godot/imported/transition-cloud.png-36a4e21132b56fd2299a0d0546944a6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/cloud.png"
-dest_files=["res://.godot/imported/cloud.png-8ee976cf3c3e4ba43cf5645ff26f144b.ctex"]
+source_file="res://Game/Transition/transition-cloud.png"
+dest_files=["res://.godot/imported/transition-cloud.png-36a4e21132b56fd2299a0d0546944a6b.ctex"]
 
 [params]
 
