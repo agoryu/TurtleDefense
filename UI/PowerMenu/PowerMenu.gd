@@ -2,7 +2,7 @@ extends Control
 
 func _ready():
 	visible = false
-	
+
 func open():
 	visible = true
 	Game.can_open_menu = false
