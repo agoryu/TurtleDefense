@@ -92,6 +92,7 @@ animations = [{
 [node name="Hero" type="CharacterBody2D"]
 collision_mask = 0
 script = ExtResource("1_53ldx")
+speed = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_cwi8h")
