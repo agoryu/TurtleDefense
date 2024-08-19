@@ -20,4 +20,4 @@ func add_health():
 	life_bar.max_value = health.max_value
 
 func _on_timer_timeout():
-	value = health.value
+	create_tween().tween_property(self, "value", health.value, 1.0)

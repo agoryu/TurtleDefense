@@ -10,7 +10,7 @@ extends CharacterBody2D
 @onready var animation = $SpriteSheet
 
 var direction: Vector2
-var shoot_direction: Vector2
+var shoot_direction: Vector2 = Vector2.RIGHT
 
 func _physics_process(delta):
 	direction = get_gamepad_direction()
