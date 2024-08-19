@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c7uh863j55v4m" path="res://Game/Transition/transition-cloud.png" id="5_bitly"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_er1kg"]
-size = Vector2(123.5, 1111)
+size = Vector2(123.5, 960)
 
 [sub_resource type="Animation" id="Animation_4uja2"]
 length = 0.001
@@ -63,11 +63,11 @@ _data = {
 [node name="Start" type="Node2D"]
 script = ExtResource("1_6p4ja")
 
-[node name="UI" parent="." instance=ExtResource("1_8ox6p")]
-
 [node name="Map" parent="." instance=ExtResource("3_yebcb")]
 
 [node name="Characters" parent="." instance=ExtResource("2_jphtw")]
+
+[node name="UI" parent="." instance=ExtResource("1_8ox6p")]
 
 [node name="NextLevelZone" type="Area2D" parent="."]
 position = Vector2(1920, 2)
@@ -75,7 +75,7 @@ collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextLevelZone"]
-position = Vector2(-59.25, 549.5)
+position = Vector2(-59.25, 542)
 shape = SubResource("RectangleShape2D_er1kg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

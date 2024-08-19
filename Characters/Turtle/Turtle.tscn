@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://13o6gi6ilbss"]
+[gd_scene load_steps=14 format=3 uid="uid://13o6gi6ilbss"]
 
 [ext_resource type="Script" path="res://Characters/Turtle/Turtle.gd" id="1_ow1ky"]
 [ext_resource type="Texture2D" uid="uid://dd4hiwn0lelqe" path="res://Characters/Turtle/turtle.png" id="2_ujgdt"]
 [ext_resource type="PackedScene" uid="uid://cpembt8wk8d3j" path="res://Game/Health/Health.tscn" id="3_mkcoc"]
+[ext_resource type="PackedScene" uid="uid://bruykml7gpfws" path="res://UI/HealthBar/HealthBar.tscn" id="4_4bxws"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s0gp0"]
 size = Vector2(128, 128)
@@ -99,6 +100,13 @@ collision_layer = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MenuArea"]
 shape = SubResource("CircleShape2D_13txl")
 debug_color = Color(0.739902, 0.10871, 0.264353, 0.42)
+
+[node name="HealthBar" parent="." node_paths=PackedStringArray("health") instance=ExtResource("4_4bxws")]
+offset_left = -128.0
+offset_top = 160.0
+offset_right = 128.0
+offset_bottom = 170.0
+health = NodePath("../Health")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="DamageArea" to="." method="_on_area_2d_body_entered"]

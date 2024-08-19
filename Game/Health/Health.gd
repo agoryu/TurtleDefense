@@ -3,6 +3,8 @@ extends Node2D
 class_name Health
 
 signal dead
+signal loose
+signal add
 
 @onready var explosion_constructor = preload("res://Object/Explosion/Explosion.tscn")
 @export var max_value: int = 5
@@ -13,6 +15,7 @@ func _ready():
 
 func loose_health(x: int):
 	value -= x
+	emit_signal("loose")
 	if value <= 0:
 		var explosion = explosion_constructor.instantiate()
 		explosion.global_position = get_parent().global_position
@@ -23,3 +26,4 @@ func loose_health(x: int):
 func add_health(x: int):
 	value += x
 	value = max(x, max_value)
+	emit_signal("add")

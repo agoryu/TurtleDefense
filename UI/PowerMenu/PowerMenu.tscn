@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dja8uf8ke2g6f"]
 
 [ext_resource type="Script" path="res://UI/PowerMenu/PowerMenu.gd" id="1_m2tje"]
-[ext_resource type="Theme" uid="uid://d0d48410p70gp" path="res://UI/Main-Theme.tres" id="2_2wroe"]
+[ext_resource type="Theme" uid="uid://cqrga7376fd2g" path="res://UI/Main-Theme.tres" id="2_2wroe"]
 [ext_resource type="PackedScene" uid="uid://bhnm03a3mm6xe" path="res://UI/PowerCard/LifeCard.tscn" id="2_y0oi2"]
 
 [node name="PowerMenu" type="Control"]

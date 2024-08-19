@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://c12yxxocabpkj"]
+[gd_scene load_steps=20 format=3 uid="uid://c12yxxocabpkj"]
 
 [ext_resource type="Script" path="res://Characters/Hero/Hero.gd" id="1_53ldx"]
 [ext_resource type="PackedScene" uid="uid://cpembt8wk8d3j" path="res://Game/Health/Health.tscn" id="3_ebth2"]
 [ext_resource type="PackedScene" uid="uid://bxqf7v4kw8qnq" path="res://Camera/Camera.tscn" id="4_7qy8v"]
 [ext_resource type="Texture2D" uid="uid://dnunkhaiukck4" path="res://Characters/Hero/Starfish-Sheet.png" id="4_mm6pl"]
+[ext_resource type="PackedScene" uid="uid://bruykml7gpfws" path="res://UI/HealthBar/HealthBar.tscn" id="5_dwxqe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cwi8h"]
 size = Vector2(48, 48)
@@ -92,7 +93,7 @@ animations = [{
 [node name="Hero" type="CharacterBody2D"]
 collision_mask = 0
 script = ExtResource("1_53ldx")
-speed = 100.0
+speed = 200.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_cwi8h")
@@ -127,6 +128,13 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_wj6qv")
 animation = &"walk"
 speed_scale = 2.0
+
+[node name="HealthBar" parent="." node_paths=PackedStringArray("health") instance=ExtResource("5_dwxqe")]
+offset_left = -32.0
+offset_top = 48.0
+offset_right = 32.0
+offset_bottom = 58.0
+health = NodePath("../Health")
 
 [connection signal="body_entered" from="DamageArea" to="." method="_on_area_2d_body_entered"]
 [connection signal="dead" from="Health" to="." method="_on_health_dead"]

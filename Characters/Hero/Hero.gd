@@ -10,6 +10,7 @@ extends CharacterBody2D
 @onready var animation = $SpriteSheet
 
 var direction: Vector2
+var shoot_direction: Vector2
 
 func _physics_process(delta):
 	direction = get_gamepad_direction()
@@ -25,6 +26,7 @@ func _physics_process(delta):
 func animate(direction):
 	if direction != Vector2.ZERO:
 		animation.play("walk")
+		shoot_direction = direction
 	else:
 		animation.play("default")
 
@@ -35,8 +37,8 @@ func _input(event):
 	if wait_timer.is_stopped() and event.is_action_pressed("ui_accept"):
 		var shoot_bullet = shoot.instantiate()
 		shoot_bullet.global_position = global_position
-		shoot_bullet.transform.y = direction
-		shoot_bullet.transform.x = -direction.orthogonal()
+		shoot_bullet.transform.y = shoot_direction
+		shoot_bullet.transform.x = -shoot_direction.orthogonal()
 		get_parent().add_child(shoot_bullet)
 		wait_timer.start()
 
