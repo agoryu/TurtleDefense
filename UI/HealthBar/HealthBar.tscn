@@ -1,10 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bruykml7gpfws"]
+[gd_scene load_steps=7 format=3 uid="uid://bruykml7gpfws"]
 
 [ext_resource type="Script" path="res://UI/HealthBar/HealthBar.gd" id="1_cgjkx"]
 [ext_resource type="Theme" uid="uid://ci1oa2l1a4hac" path="res://UI/HealthBar/health_bar_theme.tres" id="1_hpalf"]
 
+[sub_resource type="FontFile" id="FontFile_pwi32"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hhlx4"]
-bg_color = Color(0.337255, 0.627451, 0.952941, 1)
+bg_color = Color(0.13, 0.4925, 1, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -13,12 +21,22 @@ corner_radius_bottom_left = 20
 [sub_resource type="Theme" id="Theme_i7eic"]
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_hhlx4")
 
+[sub_resource type="FontFile" id="FontFile_c058m"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
 [node name="HealthBar" type="ProgressBar"]
 offset_top = 12.0
 offset_right = 300.0
-offset_bottom = 52.0
+offset_bottom = 29.0
 size_flags_vertical = 4
 theme = ExtResource("1_hpalf")
+theme_override_fonts/font = SubResource("FontFile_pwi32")
+theme_override_font_sizes/font_size = 2
 value = 100.0
 show_percentage = false
 script = ExtResource("1_cgjkx")
@@ -31,6 +49,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_i7eic")
+theme_override_fonts/font = SubResource("FontFile_c058m")
+theme_override_font_sizes/font_size = 2
 value = 70.0
 show_percentage = false
 

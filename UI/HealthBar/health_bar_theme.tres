@@ -6,23 +6,23 @@
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qnl4"]
-bg_color = Color(0.054902, 0.290196, 0.521569, 0.415686)
+bg_color = Color(0, 0.294033, 0.521218, 0.415686)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
 border_color = Color(0.0564104, 0.290852, 0.522491, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-expand_margin_left = 5.0
-expand_margin_top = 5.0
-expand_margin_right = 5.0
-expand_margin_bottom = 5.0
+corner_radius_top_left = 17
+corner_radius_top_right = 17
+corner_radius_bottom_right = 17
+corner_radius_bottom_left = 17
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qlk4x"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(1, 0, 0, 1)
 border_color = Color(0.580392, 0.764706, 0.984314, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
@@ -31,7 +31,7 @@ corner_radius_bottom_left = 20
 
 [resource]
 Label/colors/font_color = Color(0, 0, 0, 1)
-Label/font_sizes/font_size = 20
+Label/font_sizes/font_size = 16
 Label/fonts/font = ExtResource("1_c6br1")
 Label/styles/normal = SubResource("StyleBoxFlat_rdes1")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_3qnl4")
