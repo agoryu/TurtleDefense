@@ -315,7 +315,6 @@ texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_rxgu5")
 animation = &"walk_red"
-frame_progress = 0.276338
 speed_scale = 2.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
