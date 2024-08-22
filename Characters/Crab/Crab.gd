@@ -17,7 +17,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func animate():
-	animation.play("walk_blue")
+	animation.play("walk_red")
 
 func _on_timer_timeout():
 	queue_free()

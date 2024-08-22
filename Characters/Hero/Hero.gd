@@ -8,6 +8,8 @@ extends CharacterBody2D
 @onready var animationPlayer = $AnimationPlayer
 @onready var health: Health = $Health
 @onready var animation = $SpriteSheet
+@onready var collision_damage = $DamageArea/CollisionShape2D
+@onready var shield = $Shield
 
 var direction: Vector2
 var shoot_direction: Vector2 = Vector2.RIGHT
@@ -34,7 +36,7 @@ func get_gamepad_direction():
 	return Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized()
 
 func _input(event):
-	if wait_timer.is_stopped() and event.is_action_pressed("ui_accept"):
+	if wait_timer.is_stopped() and event.is_action_pressed("shoot"):
 		var shoot_bullet = shoot.instantiate()
 		shoot_bullet.global_position = global_position
 		shoot_bullet.transform.y = shoot_direction

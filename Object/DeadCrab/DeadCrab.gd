@@ -4,5 +4,5 @@ func _physics_process(delta):
 	attract(delta)
 
 func _on_body_entered(_body):
-	Game.nb_dead_crab += 1
+	Game.nb_shell += 1
 	queue_free()

@@ -1,0 +1,92 @@
+[gd_scene load_steps=9 format=3 uid="uid://b263wklxujrt1"]
+
+[ext_resource type="Script" path="res://UI/HeroPowerMenu/ShellCounter.gd" id="1_erxoh"]
+[ext_resource type="Script" path="res://UI/HeroPowerMenu/HeroPowerMenu.gd" id="1_r3og2"]
+[ext_resource type="Script" path="res://UI/HeroPowerMenu/Speed.gd" id="2_bpppk"]
+[ext_resource type="Script" path="res://UI/HeroPowerMenu/Life.gd" id="3_24lpu"]
+[ext_resource type="Script" path="res://UI/HeroPowerMenu/Shield.gd" id="4_vjr7b"]
+[ext_resource type="Script" path="res://UI/HeroPowerMenu/SpeedFire.gd" id="5_dep0e"]
+[ext_resource type="Script" path="res://UI/HeroPowerMenu/AddBubble.gd" id="6_mgje3"]
+
+[sub_resource type="Theme" id="Theme_8gtvc"]
+Button/colors/font_focus_color = Color(0.687137, 0.058322, 0.101718, 1)
+
+[node name="PanelContainer" type="PanelContainer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -258.0
+offset_right = 258.0
+offset_bottom = 31.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ShellCounter" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_erxoh")
+
+[node name="HeroPowerMenu" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_8gtvc")
+script = ExtResource("1_r3og2")
+
+[node name="Speed" type="Button" parent="HBoxContainer/HeroPowerMenu"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+focus_mode = 1
+text = "Speed"
+script = ExtResource("2_bpppk")
+
+[node name="Life" type="Button" parent="HBoxContainer/HeroPowerMenu"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+focus_mode = 1
+text = "Life
+"
+script = ExtResource("3_24lpu")
+
+[node name="Shield" type="Button" parent="HBoxContainer/HeroPowerMenu"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+focus_mode = 1
+text = "Shield
+"
+script = ExtResource("4_vjr7b")
+
+[node name="SpeedFire" type="Button" parent="HBoxContainer/HeroPowerMenu"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+focus_mode = 1
+text = "Speed Fire
+"
+script = ExtResource("5_dep0e")
+
+[node name="AddBubble" type="Button" parent="HBoxContainer/HeroPowerMenu"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+focus_mode = 1
+text = "Add Bubble"
+script = ExtResource("6_mgje3")
+
+[node name="BlockClickOnMenu" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[connection signal="button_up" from="HBoxContainer/HeroPowerMenu/Speed" to="HBoxContainer/HeroPowerMenu/Speed" method="valid_power"]
+[connection signal="consume_power" from="HBoxContainer/HeroPowerMenu/Speed" to="HBoxContainer/HeroPowerMenu" method="_on_consume_power"]
+[connection signal="button_up" from="HBoxContainer/HeroPowerMenu/Life" to="HBoxContainer/HeroPowerMenu/Life" method="valid_power"]
+[connection signal="consume_power" from="HBoxContainer/HeroPowerMenu/Life" to="HBoxContainer/HeroPowerMenu" method="_on_consume_power"]
+[connection signal="button_up" from="HBoxContainer/HeroPowerMenu/Shield" to="HBoxContainer/HeroPowerMenu/Shield" method="valid_power"]
+[connection signal="consume_power" from="HBoxContainer/HeroPowerMenu/Shield" to="HBoxContainer/HeroPowerMenu" method="_on_consume_power"]
+[connection signal="button_up" from="HBoxContainer/HeroPowerMenu/SpeedFire" to="HBoxContainer/HeroPowerMenu/SpeedFire" method="valid_power"]
+[connection signal="consume_power" from="HBoxContainer/HeroPowerMenu/SpeedFire" to="HBoxContainer/HeroPowerMenu" method="_on_consume_power"]
+[connection signal="button_up" from="HBoxContainer/HeroPowerMenu/AddBubble" to="HBoxContainer/HeroPowerMenu/AddBubble" method="valid_power"]
+[connection signal="consume_power" from="HBoxContainer/HeroPowerMenu/AddBubble" to="HBoxContainer/HeroPowerMenu" method="_on_consume_power"]

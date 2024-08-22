@@ -314,7 +314,7 @@ shape = SubResource("RectangleShape2D_qdgx6")
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_rxgu5")
-animation = &"walk_red"
+animation = &"walk_blue"
 speed_scale = 2.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

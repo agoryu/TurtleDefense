@@ -1,32 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://c12yxxocabpkj"]
+[gd_scene load_steps=21 format=3 uid="uid://c12yxxocabpkj"]
 
 [ext_resource type="Script" path="res://Characters/Hero/Hero.gd" id="1_53ldx"]
 [ext_resource type="PackedScene" uid="uid://cpembt8wk8d3j" path="res://Game/Health/Health.tscn" id="3_ebth2"]
 [ext_resource type="PackedScene" uid="uid://bxqf7v4kw8qnq" path="res://Camera/Camera.tscn" id="4_7qy8v"]
 [ext_resource type="Texture2D" uid="uid://dnunkhaiukck4" path="res://Characters/Hero/Starfish-Sheet.png" id="4_mm6pl"]
 [ext_resource type="PackedScene" uid="uid://bruykml7gpfws" path="res://UI/HealthBar/HealthBar.tscn" id="5_dwxqe"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwi8h"]
-size = Vector2(48, 48)
-
-[sub_resource type="Animation" id="Animation_5al00"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_6iufd"]
-resource_name = "take_damage"
-length = 1.5
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_do3oh"]
-_data = {
-"RESET": SubResource("Animation_5al00"),
-"take_damage": SubResource("Animation_6iufd")
-}
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i77mt"]
-size = Vector2(64, 64)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_p5557"]
-radius = 80.0
+[ext_resource type="PackedScene" uid="uid://bgih4ld6to0gv" path="res://Weapons/Shield/Shield.tscn" id="6_h223i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_08ydf"]
 atlas = ExtResource("4_mm6pl")
@@ -90,22 +69,47 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwi8h"]
+size = Vector2(48, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i77mt"]
+size = Vector2(64, 64)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p5557"]
+radius = 80.0
+
+[sub_resource type="Animation" id="Animation_5al00"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_6iufd"]
+resource_name = "take_damage"
+length = 1.5
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_do3oh"]
+_data = {
+"RESET": SubResource("Animation_5al00"),
+"take_damage": SubResource("Animation_6iufd")
+}
+
 [node name="Hero" type="CharacterBody2D"]
 collision_mask = 0
 script = ExtResource("1_53ldx")
 speed = 100.0
 
+[node name="SpriteSheet" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_wj6qv")
+animation = &"walk"
+speed_scale = 2.0
+
+[node name="Shield" parent="." node_paths=PackedStringArray("character_collision_shape") instance=ExtResource("6_h223i")]
+scale = Vector2(1.2, 1.2)
+character_collision_shape = NodePath("../DamageArea/CollisionShape2D")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_cwi8h")
 debug_color = Color(0.966416, 0, 0.480668, 0.42)
-
-[node name="Timer" type="Timer" parent="."]
-one_shot = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_do3oh")
-}
 
 [node name="DamageArea" type="Area2D" parent="."]
 collision_mask = 4
@@ -122,19 +126,20 @@ shape = SubResource("CircleShape2D_p5557")
 
 [node name="Camera" parent="." instance=ExtResource("4_7qy8v")]
 
-[node name="SpriteSheet" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_wj6qv")
-animation = &"walk"
-speed_scale = 2.0
-
 [node name="HealthBar" parent="." node_paths=PackedStringArray("health") instance=ExtResource("5_dwxqe")]
 offset_left = -32.0
 offset_top = 48.0
 offset_right = 32.0
 offset_bottom = 58.0
 health = NodePath("../Health")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_do3oh")
+}
 
 [connection signal="body_entered" from="DamageArea" to="." method="_on_area_2d_body_entered"]
 [connection signal="dead" from="Health" to="." method="_on_health_dead"]
