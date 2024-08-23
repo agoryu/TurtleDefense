@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://b263wklxujrt1"]
+[gd_scene load_steps=10 format=3 uid="uid://b263wklxujrt1"]
 
+[ext_resource type="Theme" uid="uid://jt8c1jhs81r4" path="res://UI/HeroPowerMenu/hero_menu_theme.tres" id="1_e3k4c"]
 [ext_resource type="Script" path="res://UI/HeroPowerMenu/ShellCounter.gd" id="1_erxoh"]
 [ext_resource type="Script" path="res://UI/HeroPowerMenu/HeroPowerMenu.gd" id="1_r3og2"]
 [ext_resource type="Script" path="res://UI/HeroPowerMenu/Speed.gd" id="2_bpppk"]
@@ -19,14 +20,15 @@ offset_left = -258.0
 offset_right = 258.0
 offset_bottom = 31.0
 grow_horizontal = 2
+theme = ExtResource("1_e3k4c")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 
 [node name="ShellCounter" type="Label" parent="HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-text = "1"
+text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("1_erxoh")
