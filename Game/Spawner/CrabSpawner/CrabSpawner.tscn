@@ -16,9 +16,21 @@ script = ExtResource("1_evuxo")
 position = Vector2(-1, 0)
 rotation = 1.56986
 
-[node name="Timer" type="Timer" parent="."]
+[node name="TimerRed" type="Timer" parent="."]
 wait_time = 2.0
-one_shot = true
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="TimerGreen" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="TimerBlue" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="TimerNextLevel" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
+[connection signal="timeout" from="TimerRed" to="." method="_on_timer_red_timeout"]
+[connection signal="timeout" from="TimerGreen" to="." method="_on_timer_green_timeout"]
+[connection signal="timeout" from="TimerBlue" to="." method="_on_timer_blue_timeout"]
+[connection signal="timeout" from="TimerNextLevel" to="." method="_on_timer_next_level_timeout"]

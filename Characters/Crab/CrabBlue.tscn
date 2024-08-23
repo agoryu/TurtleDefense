@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dveluqoqg3a0d"]
+
+[ext_resource type="PackedScene" uid="uid://dbxmis503t6av" path="res://Characters/Crab/Crab.tscn" id="1_g2mwi"]
+
+[node name="CrabBlue" instance=ExtResource("1_g2mwi")]
+speed = 200.0
+damage = 3
+anim_name = "walk_blue"
+
+[node name="Health" parent="." index="2"]
+max_value = 5

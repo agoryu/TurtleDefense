@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpkvjqb7r4a2v"]
+
+[ext_resource type="PackedScene" uid="uid://dbxmis503t6av" path="res://Characters/Crab/Crab.tscn" id="1_754lj"]
+
+[node name="CrabGreen" instance=ExtResource("1_754lj")]
+speed = 150.0
+damage = 2
+anim_name = "walk_green"
+
+[node name="Health" parent="." index="2"]
+max_value = 2
