@@ -1,6 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://beerfxfv6tp16"]
 
-[ext_resource type="AudioStream" uid="uid://cx3rdtij4f7va" path="res://Sounds/Turtle Defense.wav" id="1_xne3f"]
+[ext_resource type="AudioStream" uid="uid://dy2c17uwdh4l5" path="res://Sounds/musicPrincipale.wav" id="1_qbr4w"]
 
 [node name="MainSound" type="AudioStreamPlayer"]
-stream = ExtResource("1_xne3f")
+stream = ExtResource("1_qbr4w")
+volume_db = -8.0
+autoplay = true

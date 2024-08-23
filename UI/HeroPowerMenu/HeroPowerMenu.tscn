@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b263wklxujrt1"]
+[gd_scene load_steps=11 format=3 uid="uid://b263wklxujrt1"]
 
 [ext_resource type="Theme" uid="uid://jt8c1jhs81r4" path="res://UI/HeroPowerMenu/hero_menu_theme.tres" id="1_e3k4c"]
 [ext_resource type="Script" path="res://UI/HeroPowerMenu/ShellCounter.gd" id="1_erxoh"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://UI/HeroPowerMenu/Shield.gd" id="4_vjr7b"]
 [ext_resource type="Script" path="res://UI/HeroPowerMenu/SpeedFire.gd" id="5_dep0e"]
 [ext_resource type="Script" path="res://UI/HeroPowerMenu/AddBubble.gd" id="6_mgje3"]
+[ext_resource type="AudioStream" uid="uid://bctoh8uicqtpc" path="res://UI/HeroPowerMenu/consumePowerup.wav" id="9_d82ua"]
 
 [sub_resource type="Theme" id="Theme_8gtvc"]
 Button/colors/font_focus_color = Color(0.687137, 0.058322, 0.101718, 1)
@@ -86,6 +87,10 @@ max_up = 2
 [node name="BlockClickOnMenu" type="ColorRect" parent="."]
 layout_mode = 2
 color = Color(1, 1, 1, 0)
+
+[node name="AudioConsumePowerup" type="AudioStreamPlayer2D" parent="." groups=["sound_effect"]]
+unique_name_in_owner = true
+stream = ExtResource("9_d82ua")
 
 [connection signal="button_up" from="HBoxContainer/HeroPowerMenu/Speed" to="HBoxContainer/HeroPowerMenu/Speed" method="valid_power"]
 [connection signal="consume_power" from="HBoxContainer/HeroPowerMenu/Speed" to="HBoxContainer/HeroPowerMenu" method="_on_consume_power"]

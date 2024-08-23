@@ -5,9 +5,11 @@ extends CharacterBody2D
 
 @onready var timer: Timer = $Timer
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var audio_shoot: AudioStreamPlayer2D = $AudioShoot
 
 func _ready():
 	sprite.frame = randi() % 4
+	audio_shoot.play()
 
 func _physics_process(delta):
 	var direction = Vector2(sin(rotation), -cos(rotation))

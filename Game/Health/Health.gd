@@ -20,7 +20,6 @@ func loose_health(x: int):
 		var explosion = explosion_constructor.instantiate()
 		explosion.global_position = get_parent().global_position
 		get_tree().root.add_child(explosion)
-		explosion.animate()
 		emit_signal("dead")
 		
 func add_health(x: int):

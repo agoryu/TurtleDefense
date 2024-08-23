@@ -11,4 +11,4 @@ func _physics_process(delta: float):
 
 func _on_body_entered(body):
 	Game.add_shell(value)
-	queue_free()
+	animationPlayer.play("consume")

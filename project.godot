@@ -29,6 +29,10 @@ window/stretch/mode="canvas_items"
 
 project/assembly_name="TurtleDefense"
 
+[global_group]
+
+sound_effect=""
+
 [input]
 
 ui_accept={

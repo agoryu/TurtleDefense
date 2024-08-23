@@ -1,10 +1,11 @@
 extends Node2D
 
 @onready var animation = $AnimatedSprite
+@onready var audio_explosion = $AudioExplosion
 
-func animate():
+func _ready():
 	animation.play("default")
+	audio_explosion.play()
 
-
-func _on_animated_sprite_2d_animation_finished():
+func _on_audio_explosion_finished() -> void:
 	queue_free()

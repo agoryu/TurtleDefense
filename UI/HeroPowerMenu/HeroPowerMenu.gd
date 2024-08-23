@@ -1,6 +1,7 @@
 extends HBoxContainer
 
 @onready var powers : Array
+@onready var audio_consume_powerup: AudioStreamPlayer2D = %AudioConsumePowerup
 
 var current_sum: int = 0
 var total_sum: int = 0
@@ -33,4 +34,5 @@ func move_pos_power():
 
 func _on_consume_power():
 	total_sum = 0
+	audio_consume_powerup.play()
 	Game.reduce_shell(current_sum)
