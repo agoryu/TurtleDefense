@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var damage := 1
 
 @onready var health: Health = $Health
-@onready var dead_crab_constructor = preload("res://Object/DeadCrab/DeadCrab.tscn")
+@onready var shell_constructor = preload("res://Object/Shell/Shell.tscn")
 @onready var animation = $SpriteSheet
 
 func _physics_process(delta):
@@ -28,7 +28,7 @@ func _on_area_2d_body_entered(body):
 
 func _on_health_dead():
 	if randi() % 10 < 3:
-		var crab_resource = dead_crab_constructor.instantiate()
-		crab_resource.position = position
-		get_parent().add_child(crab_resource)
+		var shell = shell_constructor.instantiate()
+		shell.position = position
+		get_parent().add_child(shell)
 	queue_free()

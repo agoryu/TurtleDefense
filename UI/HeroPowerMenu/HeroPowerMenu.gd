@@ -30,18 +30,6 @@ func move_pos_power():
 		last_power = power
 	total_sum = current_sum
 	move_pos_power()
-		#current_sum += power.power_cost
-		#if current_sum > Game.nb_shell:
-			#if last_power != powers[0]:
-				#last_power.grab_focus()
-			#return
-		#else:
-			#if power == powers[powers.size()-1]:
-				#pass
-			#last_power = power
-	#if Game.nb_shell > current_sum:
-		#total_sum = current_sum
-		#move_pos_power()
 
 func _on_consume_power():
 	total_sum = 0

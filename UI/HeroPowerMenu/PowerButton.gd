@@ -8,7 +8,7 @@ signal consume_power
 
 @export var max_up: int = 1
 
-var num_up: int = 0
+var num_up: int = 1
 var power_cost: int = 1
 
 func valid_power():

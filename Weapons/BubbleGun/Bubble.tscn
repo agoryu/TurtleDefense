@@ -1,29 +1,29 @@
 [gd_scene load_steps=10 format=3 uid="uid://tp1kh4jcbw7c"]
 
-[ext_resource type="Script" path="res://Weapons/FirstWeapon/FirstWeapon.gd" id="1_ac4jn"]
-[ext_resource type="Texture2D" uid="uid://ch5yk84hhbq0w" path="res://Weapons/FirstWeapon/BubbleShoot.png" id="2_fy5ng"]
+[ext_resource type="Script" path="res://Weapons/BubbleGun/Bubble.gd" id="1_4nofo"]
+[ext_resource type="Texture2D" uid="uid://ch5yk84hhbq0w" path="res://Weapons/BubbleGun/BubbleShoot.png" id="2_p3l8h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hfxnl"]
 size = Vector2(32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ajq20"]
-atlas = ExtResource("2_fy5ng")
+atlas = ExtResource("2_p3l8h")
 region = Rect2(0, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nv3em"]
-atlas = ExtResource("2_fy5ng")
+atlas = ExtResource("2_p3l8h")
 region = Rect2(8, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mg1xj"]
-atlas = ExtResource("2_fy5ng")
+atlas = ExtResource("2_p3l8h")
 region = Rect2(16, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ad45f"]
-atlas = ExtResource("2_fy5ng")
+atlas = ExtResource("2_p3l8h")
 region = Rect2(24, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1fvyv"]
-atlas = ExtResource("2_fy5ng")
+atlas = ExtResource("2_p3l8h")
 region = Rect2(32, 0, 8, 8)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_celgb"]
@@ -49,10 +49,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="FirstWeapon" type="CharacterBody2D"]
+[node name="Bubble" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 0
-script = ExtResource("1_ac4jn")
+script = ExtResource("1_4nofo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_hfxnl")

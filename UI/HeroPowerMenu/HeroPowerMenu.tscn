@@ -44,6 +44,7 @@ layout_mode = 2
 focus_mode = 1
 text = "Speed"
 script = ExtResource("2_bpppk")
+max_up = 10
 
 [node name="Life" type="Button" parent="HBoxContainer/HeroPowerMenu"]
 custom_minimum_size = Vector2(100, 0)
@@ -52,6 +53,7 @@ focus_mode = 1
 text = "Life
 "
 script = ExtResource("3_24lpu")
+max_up = 100
 
 [node name="Shield" type="Button" parent="HBoxContainer/HeroPowerMenu"]
 custom_minimum_size = Vector2(100, 0)
@@ -60,6 +62,7 @@ focus_mode = 1
 text = "Shield
 "
 script = ExtResource("4_vjr7b")
+max_up = 3
 
 [node name="SpeedFire" type="Button" parent="HBoxContainer/HeroPowerMenu"]
 custom_minimum_size = Vector2(100, 0)
@@ -68,6 +71,7 @@ focus_mode = 1
 text = "Speed Fire
 "
 script = ExtResource("5_dep0e")
+max_up = 5
 
 [node name="AddBubble" type="Button" parent="HBoxContainer/HeroPowerMenu"]
 custom_minimum_size = Vector2(100, 0)
@@ -75,6 +79,7 @@ layout_mode = 2
 focus_mode = 1
 text = "Add Bubble"
 script = ExtResource("6_mgje3")
+max_up = 2
 
 [node name="BlockClickOnMenu" type="ColorRect" parent="."]
 layout_mode = 2

@@ -1,4 +1,4 @@
 extends PowerButton
 
 func action():
-	print("add fire bubble")
+	Game.player.nb_shoot_up()
