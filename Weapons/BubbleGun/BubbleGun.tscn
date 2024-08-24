@@ -1,6 +1,57 @@
-[gd_scene load_steps=2 format=3 uid="uid://csrwngn1gxmm3"]
+[gd_scene load_steps=10 format=3 uid="uid://csrwngn1gxmm3"]
 
 [ext_resource type="Script" path="res://Weapons/BubbleGun/BubbleGun.gd" id="1_nyrti"]
+[ext_resource type="Texture2D" uid="uid://be3novh2g3363" path="res://Weapons/BubbleGun/CuttlefishGun-Sheet.png" id="2_00158"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abuf5"]
+atlas = ExtResource("2_00158")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfe5l"]
+atlas = ExtResource("2_00158")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0t8yd"]
+atlas = ExtResource("2_00158")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_paav5"]
+atlas = ExtResource("2_00158")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3foll"]
+atlas = ExtResource("2_00158")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsaed"]
+atlas = ExtResource("2_00158")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kpff2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abuf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfe5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0t8yd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_paav5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3foll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsaed")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="BubbleGun" type="Node2D"]
 script = ExtResource("1_nyrti")
@@ -24,12 +75,19 @@ position = Vector2(16, -8)
 [node name="Weapon5" type="Marker2D" parent="Weapons"]
 position = Vector2(16, 8)
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 96.0
-offset_top = -16.0
-offset_right = 112.0
-offset_bottom = 16.0
-color = Color(0.442911, 0.442911, 0.442911, 1)
-
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(112, 0)
+rotation = -1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_kpff2")
+
+[node name="SpriteTimer" type="Timer" parent="AnimatedSprite2D"]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="timeout" from="AnimatedSprite2D/SpriteTimer" to="." method="_on_sprite_timer_timeout"]
