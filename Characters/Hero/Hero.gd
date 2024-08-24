@@ -50,4 +50,4 @@ func _on_health_dead():
 	print("game over")
 
 func nb_shoot_up():
-	bubble_gun.nb_weapon_activated += 2
+	bubble_gun.nb_shoot_up()

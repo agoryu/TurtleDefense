@@ -51,3 +51,10 @@ func change_sprite():
 	
 func _on_sprite_timer_timeout():
 	sprite.frame -= 1
+	
+func nb_shoot_up():	
+	nb_weapon_activated += 2
+	if nb_weapon_activated == 3:
+		sprite.frame = 2
+	elif nb_weapon_activated == 5:
+		sprite.frame = 4
