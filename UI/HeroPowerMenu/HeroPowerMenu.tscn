@@ -1,19 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://b263wklxujrt1"]
+[gd_scene load_steps=4 format=3 uid="uid://b263wklxujrt1"]
 
 [ext_resource type="Theme" uid="uid://jt8c1jhs81r4" path="res://UI/HeroPowerMenu/hero_menu_theme.tres" id="1_e3k4c"]
-[ext_resource type="Script" path="res://UI/HeroPowerMenu/ShellCounter.gd" id="1_erxoh"]
-[ext_resource type="Script" path="res://UI/HeroPowerMenu/HeroPowerMenu.gd" id="1_r3og2"]
-[ext_resource type="Script" path="res://UI/HeroPowerMenu/Speed.gd" id="2_bpppk"]
-[ext_resource type="Script" path="res://UI/HeroPowerMenu/Life.gd" id="3_24lpu"]
-[ext_resource type="Script" path="res://UI/HeroPowerMenu/Shield.gd" id="4_vjr7b"]
-[ext_resource type="Script" path="res://UI/HeroPowerMenu/SpeedFire.gd" id="5_dep0e"]
-[ext_resource type="Script" path="res://UI/HeroPowerMenu/AddBubble.gd" id="6_mgje3"]
-[ext_resource type="AudioStream" uid="uid://bctoh8uicqtpc" path="res://UI/HeroPowerMenu/consumePowerup.wav" id="9_d82ua"]
+[ext_resource type="Script" path="res://UI/PowerProgress/ShellCounter.gd" id="1_erxoh"]
+[ext_resource type="PackedScene" uid="uid://6nh1o7mnqqwx" path="res://UI/PowerProgress/PowerProgress.tscn" id="3_hub8w"]
 
-[sub_resource type="Theme" id="Theme_8gtvc"]
-Button/colors/font_focus_color = Color(0.687137, 0.058322, 0.101718, 1)
-
-[node name="PanelContainer" type="PanelContainer"]
+[node name="HeroPowerMenu" type="PanelContainer"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -34,71 +25,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("1_erxoh")
 
-[node name="HeroPowerMenu" type="HBoxContainer" parent="HBoxContainer"]
+[node name="PowerProgress" parent="HBoxContainer" instance=ExtResource("3_hub8w")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = SubResource("Theme_8gtvc")
-script = ExtResource("1_r3og2")
-
-[node name="Speed" type="Button" parent="HBoxContainer/HeroPowerMenu"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-focus_mode = 1
-text = "Speed"
-script = ExtResource("2_bpppk")
-max_up = 10
-
-[node name="Life" type="Button" parent="HBoxContainer/HeroPowerMenu"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-focus_mode = 1
-text = "Life
-"
-script = ExtResource("3_24lpu")
-max_up = 100
-
-[node name="Shield" type="Button" parent="HBoxContainer/HeroPowerMenu"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-focus_mode = 1
-text = "Shield
-"
-script = ExtResource("4_vjr7b")
-max_up = 3
-
-[node name="SpeedFire" type="Button" parent="HBoxContainer/HeroPowerMenu"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-focus_mode = 1
-text = "Speed Fire
-"
-script = ExtResource("5_dep0e")
-max_up = 5
-
-[node name="AddBubble" type="Button" parent="HBoxContainer/HeroPowerMenu"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-focus_mode = 1
-text = "Add Bubble"
-script = ExtResource("6_mgje3")
-max_up = 2
 
 [node name="BlockClickOnMenu" type="ColorRect" parent="."]
 layout_mode = 2
 color = Color(1, 1, 1, 0)
-
-[node name="AudioConsumePowerup" type="AudioStreamPlayer2D" parent="." groups=["sound_effect"]]
-unique_name_in_owner = true
-stream = ExtResource("9_d82ua")
-
-[connection signal="button_up" from="HBoxContainer/HeroPowerMenu/Speed" to="HBoxContainer/HeroPowerMenu/Speed" method="valid_power"]
-[connection signal="consume_power" from="HBoxContainer/HeroPowerMenu/Speed" to="HBoxContainer/HeroPowerMenu" method="_on_consume_power"]
-[connection signal="button_up" from="HBoxContainer/HeroPowerMenu/Life" to="HBoxContainer/HeroPowerMenu/Life" method="valid_power"]
-[connection signal="consume_power" from="HBoxContainer/HeroPowerMenu/Life" to="HBoxContainer/HeroPowerMenu" method="_on_consume_power"]
-[connection signal="button_up" from="HBoxContainer/HeroPowerMenu/Shield" to="HBoxContainer/HeroPowerMenu/Shield" method="valid_power"]
-[connection signal="consume_power" from="HBoxContainer/HeroPowerMenu/Shield" to="HBoxContainer/HeroPowerMenu" method="_on_consume_power"]
-[connection signal="button_up" from="HBoxContainer/HeroPowerMenu/SpeedFire" to="HBoxContainer/HeroPowerMenu/SpeedFire" method="valid_power"]
-[connection signal="consume_power" from="HBoxContainer/HeroPowerMenu/SpeedFire" to="HBoxContainer/HeroPowerMenu" method="_on_consume_power"]
-[connection signal="button_up" from="HBoxContainer/HeroPowerMenu/AddBubble" to="HBoxContainer/HeroPowerMenu/AddBubble" method="valid_power"]
-[connection signal="consume_power" from="HBoxContainer/HeroPowerMenu/AddBubble" to="HBoxContainer/HeroPowerMenu" method="_on_consume_power"]

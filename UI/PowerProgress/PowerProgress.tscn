@@ -1,0 +1,91 @@
+[gd_scene load_steps=11 format=3 uid="uid://6nh1o7mnqqwx"]
+
+[ext_resource type="Script" path="res://UI/PowerProgress/PowerProgress.gd" id="1_1lh3s"]
+[ext_resource type="Theme" uid="uid://b83luj8rhxqjb" path="res://UI/PowerProgress/power_progress_theme.tres" id="1_5k3c4"]
+[ext_resource type="Script" path="res://UI/PowerProgress/Speed.gd" id="2_a5f8m"]
+[ext_resource type="Script" path="res://UI/PowerProgress/Life.gd" id="3_tkal4"]
+[ext_resource type="Script" path="res://UI/PowerProgress/Shield.gd" id="4_cb05y"]
+[ext_resource type="Script" path="res://UI/PowerProgress/SpeedFire.gd" id="5_p3xen"]
+[ext_resource type="Script" path="res://UI/PowerProgress/AddBubble.gd" id="6_ivvnt"]
+[ext_resource type="AudioStream" uid="uid://bctoh8uicqtpc" path="res://UI/PowerProgress/consumePowerup.wav" id="7_8hot5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wga3y"]
+
+[sub_resource type="Theme" id="Theme_8gtvc"]
+Button/colors/font_focus_color = Color(0.687137, 0.058322, 0.101718, 1)
+
+[node name="PowerProgress" type="PanelContainer"]
+theme = ExtResource("1_5k3c4")
+theme_override_styles/panel = SubResource("StyleBoxFlat_wga3y")
+script = ExtResource("1_1lh3s")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 6.0
+step = 1.0
+show_percentage = false
+
+[node name="PowerMenu" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_8gtvc")
+
+[node name="Speed" type="Button" parent="PowerMenu"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+focus_mode = 1
+text = "Speed"
+script = ExtResource("2_a5f8m")
+max_up = 10
+
+[node name="Life" type="Button" parent="PowerMenu"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+focus_mode = 1
+text = "Life
+"
+script = ExtResource("3_tkal4")
+max_up = 100
+
+[node name="Shield" type="Button" parent="PowerMenu"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+focus_mode = 1
+text = "Shield
+"
+script = ExtResource("4_cb05y")
+max_up = 3
+
+[node name="SpeedFire" type="Button" parent="PowerMenu"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+focus_mode = 1
+text = "Speed Fire
+"
+script = ExtResource("5_p3xen")
+max_up = 5
+
+[node name="AddBubble" type="Button" parent="PowerMenu"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+focus_mode = 1
+text = "Add Bubble"
+script = ExtResource("6_ivvnt")
+max_up = 2
+
+[node name="AudioConsumePowerup" type="AudioStreamPlayer2D" parent="." groups=["sound_effect"]]
+unique_name_in_owner = true
+stream = ExtResource("7_8hot5")
+
+[connection signal="button_up" from="PowerMenu/Speed" to="PowerMenu/Speed" method="valid_power"]
+[connection signal="consume_power" from="PowerMenu/Speed" to="." method="_on_consume_power"]
+[connection signal="button_up" from="PowerMenu/Life" to="PowerMenu/Life" method="valid_power"]
+[connection signal="consume_power" from="PowerMenu/Life" to="." method="_on_consume_power"]
+[connection signal="button_up" from="PowerMenu/Shield" to="PowerMenu/Shield" method="valid_power"]
+[connection signal="consume_power" from="PowerMenu/Shield" to="." method="_on_consume_power"]
+[connection signal="button_up" from="PowerMenu/SpeedFire" to="PowerMenu/SpeedFire" method="valid_power"]
+[connection signal="consume_power" from="PowerMenu/SpeedFire" to="." method="_on_consume_power"]
+[connection signal="button_up" from="PowerMenu/AddBubble" to="PowerMenu/AddBubble" method="valid_power"]
+[connection signal="consume_power" from="PowerMenu/AddBubble" to="." method="_on_consume_power"]
