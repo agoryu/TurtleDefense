@@ -85,6 +85,8 @@ radius = 192.167
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_ow1ky")
+speed = null
+drag = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_s0gp0")

@@ -9,13 +9,13 @@ var total_sum: int = 0
 func _ready():
 	powers = get_children()
 	Game.set_shell.connect(move_pos_power)
-	
+
 func move_pos_power():
 	current_sum = total_sum
 	var last_power = powers[0]
 	for power in powers:
 		power.release_focus()
-		
+
 	for power in powers:
 		if power.disabled:
 			continue

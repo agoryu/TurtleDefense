@@ -24,7 +24,7 @@ func _physics_process(delta):
 	position.x = clamp(position.x, 0, Game.screen_size.x)
 	position.y = clamp(position.y, 0, Game.screen_size.y)
 	update_shoot_direction()
-	
+
 func update_shoot_direction():
 	var shoot_direction = get_gamepad_right_direction()
 	if shoot_direction != Vector2.ZERO:
@@ -38,7 +38,7 @@ func animate(direction):
 
 func get_gamepad_direction():
 	return Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized()
-	
+
 func get_gamepad_right_direction():
 	return Input.get_vector("ui_r_left", "ui_r_right", "ui_r_up", "ui_r_down").normalized()
 
@@ -48,6 +48,6 @@ func _on_area_2d_body_entered(body):
 
 func _on_health_dead():
 	print("game over")
-	
+
 func nb_shoot_up():
 	bubble_gun.nb_weapon_activated += 2

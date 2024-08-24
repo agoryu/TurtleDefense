@@ -4,6 +4,9 @@
 [ext_resource type="Theme" uid="uid://ci1oa2l1a4hac" path="res://UI/HealthBar/health_bar_theme.tres" id="1_hpalf"]
 
 [sub_resource type="FontFile" id="FontFile_pwi32"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -22,6 +25,9 @@ corner_radius_bottom_left = 20
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_hhlx4")
 
 [sub_resource type="FontFile" id="FontFile_c058m"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0

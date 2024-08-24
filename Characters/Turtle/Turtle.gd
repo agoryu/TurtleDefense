@@ -5,17 +5,19 @@ extends CharacterBody2D
 @onready var animatedSprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var health: Health = $Health
 
-@export var speed = 1000.0
+@export var speed = 20.0
 @export var drag := 5.0
 
-func _on_timer_timeout():
-	var desired_velocity = Vector2.RIGHT * speed
+func _ready() -> void:
+	animatedSprite.play("default")
+
+func _physics_process(delta):
+	var desired_velocity = get_desired_velocity()
 	var steering = desired_velocity - velocity
 	velocity += steering / drag
 	velocity = velocity.limit_length(speed)
 	move_and_slide()
 	timer.start()
-	animatedSprite.frame = (animatedSprite.frame + 1) % 2
 
 func _on_area_2d_body_entered(body):
 	health.loose_health(1)
@@ -31,3 +33,9 @@ func _on_menu_area_body_entered(body):
 
 func _on_menu_area_body_exited(body):
 	Game.can_open_menu = false
+
+func get_desired_velocity():
+	if animatedSprite.frame >= 1 and animatedSprite.frame <= 2:
+		return Vector2.RIGHT * speed
+	else:
+		return Vector2.ZERO
