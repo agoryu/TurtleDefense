@@ -9,6 +9,7 @@ extends CharacterBody2D
 @onready var collision_damage = $DamageArea/CollisionShape2D
 @onready var shield = $Shield
 @onready var bubble_gun = $BubbleGun
+@onready var camera: Camera2D = $Camera
 
 var direction: Vector2
 

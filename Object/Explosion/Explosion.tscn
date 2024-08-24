@@ -71,7 +71,7 @@ sprite_frames = SubResource("SpriteFrames_7s6uf")
 frame = 6
 frame_progress = 1.0
 
-[node name="AudioExplosion" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioExplosion" type="AudioStreamPlayer2D" parent="." groups=["sound_effect"]]
 stream = ExtResource("3_kdu2l")
 
 [connection signal="finished" from="AudioExplosion" to="." method="_on_audio_explosion_finished"]

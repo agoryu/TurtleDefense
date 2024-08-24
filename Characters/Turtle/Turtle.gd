@@ -21,6 +21,7 @@ func _on_area_2d_body_entered(body):
 	health.loose_health(1)
 	body.queue_free()
 	animationPlayer.play("take_damage")
+	Game.player.camera.take_damage()
 
 func _on_health_dead():
 	print("game over")
