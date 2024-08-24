@@ -8,7 +8,6 @@ var player
 var turtle
 
 var nb_shell = 0
-var can_open_menu: bool = false
 
 func add_shell(value: int):
 	nb_shell += value

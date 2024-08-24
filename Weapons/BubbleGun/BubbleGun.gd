@@ -7,9 +7,13 @@ extends Node2D
 var nb_weapon_activated: int = 1
 var can_shoot: bool = false
 
-func _input(event):
-	if timer.is_stopped() and event.is_action_pressed("shoot"):
+func _physics_process(delta: float) -> void:
+	if can_shoot and timer.is_stopped():
 		shoot()
+		timer.start()
+
+func _input(event):
+	if event.is_action_pressed("shoot"):
 		can_shoot = true
 	elif event.is_action_released("shoot"):
 		can_shoot = false
@@ -34,7 +38,3 @@ func get_multiplicator_angle(pos: int):
 		return 0
 	else:
 		return 1
-
-func _on_timer_timeout() -> void:
-	if can_shoot:
-		shoot()

@@ -1,13 +1,8 @@
 extends CanvasLayer
 
-@onready var power_menu: Control = $PowerMenu
-@onready var label: Label = $Label
+@onready var pause_menu = $Pause
 
-func _unhandled_key_input(event):
-	if event is InputEventKey:
-		if (event.pressed
-			and event.keycode == KEY_ENTER
-			and label.visible
-		):
-			label.visible = false
-			power_menu.open()
+func _input(event):
+	if event.is_action_released("ui_pause"):
+		pause_menu.visible = !pause_menu.visible
+		get_tree().paused = !get_tree().paused
