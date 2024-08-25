@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var animatedSprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var health: Health = $Health
 
-@export var speed = 20.0
+@export var speed = 30.0
 @export var drag := 5.0
 
 func _ready() -> void:
