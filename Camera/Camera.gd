@@ -9,8 +9,8 @@ func _ready():
 	limit_right = Game.screen_size.x
 	limit_top = 0
 	limit_bottom = Game.screen_size.y
-	
-func _process(delta: float) -> void:
+
+func _process(delta) -> void:
 		if not timer.is_stopped():
 			offset = Vector2(
 				randf_range(-1.0, 1.0) * shake_amount,

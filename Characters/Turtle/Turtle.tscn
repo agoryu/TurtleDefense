@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://13o6gi6ilbss"]
+[gd_scene load_steps=50 format=3 uid="uid://13o6gi6ilbss"]
 
 [ext_resource type="Script" path="res://Characters/Turtle/Turtle.gd" id="1_ow1ky"]
 [ext_resource type="Texture2D" uid="uid://b2pcunr07xyv5" path="res://Characters/Turtle/turtle-Sheet.png" id="2_dypx1"]
@@ -7,6 +7,16 @@
 [ext_resource type="Script" path="res://Characters/Turtle/Weapons.gd" id="5_3v3jc"]
 [ext_resource type="Texture2D" uid="uid://dc7nduw3nxdjb" path="res://Weapons/Turtle/Beam/Beam.png" id="6_nj6b3"]
 [ext_resource type="Script" path="res://Weapons/Turtle/Beam/Beam.gd" id="7_j2ha1"]
+[ext_resource type="Texture2D" uid="uid://dlipfrkbaqbde" path="res://Weapons/Turtle/UrsinCanon/UrsinCanon.png" id="8_eia2m"]
+[ext_resource type="Script" path="res://Weapons/Turtle/UrsinCanon/UrsinCanon.gd" id="9_r1dgk"]
+[ext_resource type="Texture2D" uid="uid://csn41th6sd54q" path="res://Weapons/Turtle/Armor/Armor.png" id="10_6jcbv"]
+[ext_resource type="Script" path="res://Weapons/Turtle/Armor/Armor.gd" id="11_nemju"]
+[ext_resource type="Texture2D" uid="uid://wuj2f3n4g65e" path="res://Weapons/Turtle/Multishot/Multishot.png" id="12_hy1jl"]
+[ext_resource type="Script" path="res://Weapons/Turtle/Multishot/MultiShot.gd" id="13_itmmx"]
+[ext_resource type="Script" path="res://Weapons/Turtle/PiratCanon/PiratCanon.gd" id="14_s02v8"]
+[ext_resource type="Texture2D" uid="uid://uoowiph88ic4" path="res://Weapons/Turtle/PiratCanon/PiratCanon.png" id="15_itux0"]
+[ext_resource type="Script" path="res://Weapons/Turtle/Laser/Laser.gd" id="16_spw2r"]
+[ext_resource type="Texture2D" uid="uid://dpksljqtgdfe" path="res://Weapons/Turtle/Laser/Laser.png" id="17_2mv1o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s0gp0"]
 size = Vector2(128, 128)
@@ -96,6 +106,156 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bephr"]
+atlas = ExtResource("8_eia2m")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_va4qh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bephr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi4og"]
+atlas = ExtResource("8_eia2m")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3uk6l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gi4og")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5col0"]
+atlas = ExtResource("8_eia2m")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vgfqs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5col0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dc7j"]
+atlas = ExtResource("8_eia2m")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k17nh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dc7j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ik1c"]
+atlas = ExtResource("10_6jcbv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dbfqv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ik1c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0clw"]
+atlas = ExtResource("12_hy1jl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_onbgh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0clw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhlk0"]
+atlas = ExtResource("15_itux0")
+region = Rect2(0, 16, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nl6ex"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhlk0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lf5vu"]
+atlas = ExtResource("15_itux0")
+region = Rect2(0, 32, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b7uwv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lf5vu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6im04"]
+atlas = ExtResource("17_2mv1o")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lgjq0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6im04")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlca6"]
+atlas = ExtResource("17_2mv1o")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ffmi7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlca6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Turtle" type="CharacterBody2D"]
 collision_layer = 8
 collision_mask = 0
@@ -147,6 +307,102 @@ rotation = 1.5708
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_o25ei")
 script = ExtResource("7_j2ha1")
+
+[node name="UrsinCanon" type="Node2D" parent="Weapons"]
+script = ExtResource("9_r1dgk")
+
+[node name="NE" type="AnimatedSprite2D" parent="Weapons/UrsinCanon"]
+texture_filter = 1
+position = Vector2(42, 51)
+rotation = 1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_va4qh")
+
+[node name="NW" type="AnimatedSprite2D" parent="Weapons/UrsinCanon"]
+texture_filter = 1
+position = Vector2(42, -51)
+rotation = 1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_3uk6l")
+
+[node name="SE" type="AnimatedSprite2D" parent="Weapons/UrsinCanon"]
+texture_filter = 1
+position = Vector2(-99, 39)
+rotation = 1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_vgfqs")
+
+[node name="SW" type="AnimatedSprite2D" parent="Weapons/UrsinCanon"]
+texture_filter = 1
+position = Vector2(-99, -42)
+rotation = 1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_k17nh")
+
+[node name="Armor" type="AnimatedSprite2D" parent="Weapons"]
+texture_filter = 1
+position = Vector2(-30, 0)
+rotation = 1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_dbfqv")
+script = ExtResource("11_nemju")
+
+[node name="MultiShot" type="AnimatedSprite2D" parent="Weapons"]
+texture_filter = 1
+position = Vector2(-141, 0)
+rotation = 1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_onbgh")
+script = ExtResource("13_itmmx")
+
+[node name="PiratCanon" type="Node2D" parent="Weapons"]
+script = ExtResource("14_s02v8")
+
+[node name="NE" type="AnimatedSprite2D" parent="Weapons/PiratCanon"]
+texture_filter = 1
+position = Vector2(-6, -69)
+rotation = 1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_nl6ex")
+
+[node name="NW" type="AnimatedSprite2D" parent="Weapons/PiratCanon"]
+texture_filter = 1
+position = Vector2(-9, 78)
+rotation = 1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_b7uwv")
+
+[node name="SE" type="AnimatedSprite2D" parent="Weapons/PiratCanon"]
+texture_filter = 1
+position = Vector2(-57, -69)
+rotation = 1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_nl6ex")
+
+[node name="SW" type="AnimatedSprite2D" parent="Weapons/PiratCanon"]
+texture_filter = 1
+position = Vector2(-60, 78)
+rotation = 1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_b7uwv")
+
+[node name="Laser" type="Node2D" parent="Weapons"]
+script = ExtResource("16_spw2r")
+
+[node name="Base" type="AnimatedSprite2D" parent="Weapons/Laser"]
+texture_filter = 1
+position = Vector2(-78, 0)
+rotation = 1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_lgjq0")
+
+[node name="Gun" type="AnimatedSprite2D" parent="Weapons/Laser"]
+texture_filter = 1
+position = Vector2(-72, -9.53596e-08)
+rotation = 1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_ffmi7")
+offset = Vector2(0.5, -1.5)
 
 [connection signal="body_entered" from="DamageArea" to="." method="_on_area_2d_body_entered"]
 [connection signal="dead" from="Health" to="." method="_on_health_dead"]

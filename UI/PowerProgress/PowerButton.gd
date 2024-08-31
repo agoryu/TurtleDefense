@@ -18,6 +18,6 @@ func valid_power():
 		disabled = true
 	power_cost += 1
 	action()
-	
+
 func action():
 	pass
