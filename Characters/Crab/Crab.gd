@@ -6,6 +6,7 @@ class_name Crab
 @export var drag := 5.0
 @export var damage := 1
 @export var anim_name := "walk_red"
+@export var drop_chance := 3 ## Inverse of ( 1/X )
 
 @onready var health: Health = $Health
 @onready var shell_constructor = preload("res://Object/Shell/Shell.tscn")
@@ -32,7 +33,7 @@ func _on_area_2d_body_entered(body):
 	health.loose_health(body.damage)
 
 func _on_health_dead():
-	if randi() % 10 < 3:
+	if randi() % 10 < drop_chance:
 		var shell = shell_constructor.instantiate()
 		shell.position = position
 		get_parent().add_child(shell)

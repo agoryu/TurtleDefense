@@ -21,7 +21,7 @@ func loose_health(x: int):
 		explosion.global_position = get_parent().global_position
 		get_tree().root.add_child(explosion)
 		emit_signal("dead")
-		
+
 func add_health(x: int):
 	value += x
 	value = max(x, max_value)

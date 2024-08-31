@@ -19,11 +19,11 @@ func move_pos_power():
 
 	if nb_shell < 1:
 		return
-		
+
 	if nb_shell >= progress_bar.max_value:
 		powers[powers.size() - 1].grab_focus()
 		return
-		
+
 	for i in range(powers.size()):
 		if nb_shell * powers.size() / progress_bar.max_value >= i + 1:
 			powers[i].grab_focus()

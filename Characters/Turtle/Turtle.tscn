@@ -1,9 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://13o6gi6ilbss"]
+[gd_scene load_steps=20 format=3 uid="uid://13o6gi6ilbss"]
 
 [ext_resource type="Script" path="res://Characters/Turtle/Turtle.gd" id="1_ow1ky"]
 [ext_resource type="Texture2D" uid="uid://b2pcunr07xyv5" path="res://Characters/Turtle/turtle-Sheet.png" id="2_dypx1"]
 [ext_resource type="PackedScene" uid="uid://cpembt8wk8d3j" path="res://Game/Health/Health.tscn" id="3_mkcoc"]
 [ext_resource type="PackedScene" uid="uid://bruykml7gpfws" path="res://UI/HealthBar/HealthBar.tscn" id="4_4bxws"]
+[ext_resource type="Script" path="res://Characters/Turtle/Weapons.gd" id="5_3v3jc"]
+[ext_resource type="Texture2D" uid="uid://dc7nduw3nxdjb" path="res://Weapons/Turtle/Beam/Beam.png" id="6_nj6b3"]
+[ext_resource type="Script" path="res://Weapons/Turtle/Beam/Beam.gd" id="7_j2ha1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s0gp0"]
 size = Vector2(128, 128)
@@ -78,6 +81,21 @@ _data = {
 "take_damage": SubResource("Animation_m5gsy")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vb7wn"]
+atlas = ExtResource("6_nj6b3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o25ei"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vb7wn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Turtle" type="CharacterBody2D"]
 collision_layer = 8
 collision_mask = 0
@@ -118,6 +136,17 @@ autostart = true
 libraries = {
 "": SubResource("AnimationLibrary_u4swa")
 }
+
+[node name="Weapons" type="Node2D" parent="."]
+script = ExtResource("5_3v3jc")
+
+[node name="Beam" type="AnimatedSprite2D" parent="Weapons"]
+texture_filter = 1
+position = Vector2(36, 0)
+rotation = 1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_o25ei")
+script = ExtResource("7_j2ha1")
 
 [connection signal="body_entered" from="DamageArea" to="." method="_on_area_2d_body_entered"]
 [connection signal="dead" from="Health" to="." method="_on_health_dead"]

@@ -22,7 +22,7 @@ func _input(event):
 		can_shoot = true
 	elif event.is_action_released("shoot"):
 		can_shoot = false
-		
+
 func shoot():
 	change_sprite()
 	for i in range(nb_weapon_activated):
@@ -36,7 +36,7 @@ func shoot():
 			bubble.global_rotation = global_rotation + PI / 2 - ((PI / 6) * get_multiplicator_angle(i))
 		get_tree().root.add_child(bubble)
 	timer.start()
-		
+
 func get_multiplicator_angle(pos: int):
 	if pos > 2:
 		return 2
@@ -48,11 +48,11 @@ func get_multiplicator_angle(pos: int):
 func change_sprite():
 	sprite.frame += 1
 	sprite_timer.start()
-	
+
 func _on_sprite_timer_timeout():
 	sprite.frame -= 1
-	
-func nb_shoot_up():	
+
+func nb_shoot_up():
 	nb_weapon_activated += 2
 	if nb_weapon_activated == 3:
 		sprite.frame = 2
