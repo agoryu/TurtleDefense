@@ -1,11 +1,11 @@
-[gd_scene load_steps=50 format=3 uid="uid://13o6gi6ilbss"]
+[gd_scene load_steps=53 format=3 uid="uid://13o6gi6ilbss"]
 
 [ext_resource type="Script" path="res://Characters/Turtle/Turtle.gd" id="1_ow1ky"]
 [ext_resource type="Texture2D" uid="uid://b2pcunr07xyv5" path="res://Characters/Turtle/turtle-Sheet.png" id="2_dypx1"]
 [ext_resource type="PackedScene" uid="uid://cpembt8wk8d3j" path="res://Game/Health/Health.tscn" id="3_mkcoc"]
 [ext_resource type="PackedScene" uid="uid://bruykml7gpfws" path="res://UI/HealthBar/HealthBar.tscn" id="4_4bxws"]
 [ext_resource type="Script" path="res://Characters/Turtle/Weapons.gd" id="5_3v3jc"]
-[ext_resource type="Texture2D" uid="uid://dc7nduw3nxdjb" path="res://Weapons/Turtle/Beam/Beam.png" id="6_nj6b3"]
+[ext_resource type="Texture2D" uid="uid://dy4wjkjp1fjq8" path="res://Weapons/Turtle/Beam/Beam-Sheet.png" id="6_ist8u"]
 [ext_resource type="Script" path="res://Weapons/Turtle/Beam/Beam.gd" id="7_j2ha1"]
 [ext_resource type="Texture2D" uid="uid://dlipfrkbaqbde" path="res://Weapons/Turtle/UrsinCanon/UrsinCanon.png" id="8_eia2m"]
 [ext_resource type="Script" path="res://Weapons/Turtle/UrsinCanon/UrsinCanon.gd" id="9_r1dgk"]
@@ -91,15 +91,45 @@ _data = {
 "take_damage": SubResource("Animation_m5gsy")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vb7wn"]
-atlas = ExtResource("6_nj6b3")
+[sub_resource type="AtlasTexture" id="AtlasTexture_vn21p"]
+atlas = ExtResource("6_ist8u")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dvt3"]
+atlas = ExtResource("6_ist8u")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8njgf"]
+atlas = ExtResource("6_ist8u")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xgry"]
+atlas = ExtResource("6_ist8u")
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o25ei"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vb7wn")
+"texture": SubResource("AtlasTexture_vn21p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1dvt3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8njgf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xgry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8njgf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1dvt3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vn21p")
 }],
 "loop": true,
 "name": &"default",

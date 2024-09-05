@@ -10,6 +10,7 @@ func Upgrade():
 	if level < maxLevel:
 		level += 1
 		visible = true
+		play("default")
 
 func GetCurrentLevel() -> int:
 	return level
