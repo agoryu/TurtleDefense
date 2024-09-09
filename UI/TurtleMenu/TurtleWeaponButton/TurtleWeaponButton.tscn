@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=3 uid="uid://r3xbtyienuyb"]
+
+[ext_resource type="Script" path="res://UI/TurtleMenu/TurtleWeaponButton/TurtleWeaponButton.gd" id="1_ybbys"]
+[ext_resource type="PackedScene" uid="uid://bnlhrjhl8pgxm" path="res://UI/TurtleMenu/TurtleWeaponButton/Details.tscn" id="2_kgynp"]
+
+[node name="TurtleWeaponButton" type="HBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+offset_right = 320.0
+offset_bottom = 64.0
+script = ExtResource("1_ybbys")
+
+[node name="Weapon" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Details" parent="Weapon" instance=ExtResource("2_kgynp")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" parent="Weapon/Details" index="0"]
+text = "Weapon"
+
+[node name="Boost1" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+disabled = true
+
+[node name="Details" parent="Boost1" instance=ExtResource("2_kgynp")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" parent="Boost1/Details" index="0"]
+text = "Bonus 1
+"
+
+[node name="Boost2" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+disabled = true
+text = "
+"
+
+[node name="Details" parent="Boost2" instance=ExtResource("2_kgynp")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" parent="Boost2/Details" index="0"]
+text = "Bonus 2
+"
+
+[connection signal="button_up" from="Weapon" to="." method="_on_weapon_button_up"]
+[connection signal="button_up" from="Boost1" to="." method="_on_boost_1_button_up"]
+[connection signal="button_up" from="Boost2" to="." method="_on_boost_2_button_up"]
+
+[editable path="Weapon/Details"]
+[editable path="Boost1/Details"]
+[editable path="Boost2/Details"]
