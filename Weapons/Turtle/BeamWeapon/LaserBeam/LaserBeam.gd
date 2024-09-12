@@ -1,77 +1,75 @@
 extends RayCast2D
 
-class_name LaserBeam
+@export var damage: int = 2
 
-@onready var _fill := $FillLine2D
-@onready var _tween := create_tween()
-@onready var _casting_particles = $CastingParticles2D
-@onready var _beam_particles = $BeamParticles2D
-@onready var _collision_particles = $CollisionParticles2D
-@onready var _timer = $Timer
-@onready var _audio_stream_player = $AudioStreamPlayer
+@onready var tween: Tween
+@onready var fill_line: Line2D = $FillLine2D
+@onready var fill_line2: Line2D = $FillLine2D2
+@onready var casting_particles: GPUParticles2D = $CastingParticles2D
+@onready var beam_casting: GPUParticles2D = $BeamParticles2D
+@onready var collision_particules: GPUParticles2D = $CollisionParticles2D
+@onready var audio_streamer: AudioStreamPlayer2D = $AudioStreamPlayer
 
-@onready var line_width: float = _fill.width
+@onready var color_rect: ColorRect = $ColorRect
 
-@export var max_length := 3000
-@export var growth_time := 0.1
-@export var speed := 100
-@export var damage_caused := 2
+var size: int = 0
+var colliding_execute: bool = false
 
-var is_casting : bool = false: set = set_is_casting
+var is_casting := false:
+	set = set_is_casting
 
 func _ready():
 	set_physics_process(false)
-	_fill.points[1] = Vector2.ZERO
+	fill_line.points[1] = Vector2.ZERO
+	fill_line2.points[1] = Vector2.ZERO
+	size = fill_line.width
 
-func action() -> void:
-	target_position = (target_position + Vector2.RIGHT * speed).limit_length(max_length)
-	cast_beam()
-	
-func cast_beam():
-	var cast_point = target_position
+func _physics_process(_delta: float) -> void:
+	var cast_point := target_position
 	force_raycast_update()
-	
-	_collision_particles.emitting = is_colliding()
-	
+
 	if is_colliding():
 		cast_point = to_local(get_collision_point())
-		_collision_particles.global_rotation = get_collision_normal().angle()
-		_collision_particles.position = cast_point
-		var collider = get_collider()
-		collider.add_damage(damage_caused)
-		_audio_stream_player.play()
-		
-	_fill.points[1] = cast_point
-	_beam_particles.position = cast_point * 0.5
-	_beam_particles.process_material.emission_box_extents.x = cast_point.length() * 0.5
+		collision_particules.global_rotation = get_collision_normal().angle()
+		collision_particules.position = cast_point
+		collision_particules.emitting = true
+		if not colliding_execute:
+			get_collider().health.loose_health(damage)
+			colliding_execute = true
 
-func appear():
-	if _tween.is_running():
-		_tween.stop()
-	_tween.interpolate_property(_fill, "width", 0, line_width, growth_time * 2)
-	_tween.start()
-	_audio_stream_player.play()
-	_timer.start()
-	
-func disappear():
-	if _tween.is_running():
-		_tween.stop()
-	_tween.interpolate_property(_fill, "width", line_width, 0, growth_time)
-	_tween.start()
+	fill_line.points[1] = cast_point
+	fill_line2.points[1] = cast_point
+	beam_casting.position = cast_point * 0.5
+	beam_casting.process_material.emission_box_extents.x = cast_point.length() * 0.5
 
-func set_is_casting(cast: bool):
+func set_is_casting(cast: bool) -> void:
 	is_casting = cast
+	set_physics_process(is_casting)
+
+	beam_casting.emitting = is_casting
+	casting_particles.emitting = is_casting
 	if is_casting:
-		target_position = Vector2.ZERO
-		_fill.points[1] = target_position
 		appear()
 	else:
-		_collision_particles.emitting = false
-		disappear()
-	
-	set_physics_process(is_casting)
-	_casting_particles.emitting = is_casting
-	_beam_particles.emitting = is_casting
+		dissappear()
 
-func end_action():
-	set_is_casting(false)
+func appear() -> void:
+	if is_instance_valid(tween):
+		tween.kill()
+
+	tween = create_tween()
+	tween.tween_property(fill_line, "width", size, 0.2)
+	tween.set_parallel()
+	tween.tween_property(fill_line2, "width", size/4, 0.2)
+	audio_streamer.play()
+
+func dissappear() -> void:
+	if is_instance_valid(tween):
+		tween.kill()
+
+	collision_particules.emitting = false
+	colliding_execute = false
+	tween = create_tween()
+	tween.tween_property(fill_line, "width", 0, 0.2)
+	tween.set_parallel()
+	tween.tween_property(fill_line2, "width", 0, 0.2)

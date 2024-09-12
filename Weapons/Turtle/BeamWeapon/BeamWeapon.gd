@@ -4,11 +4,8 @@ extends Weapon
 @onready var _end_shoot_timer = $EndShootTimer
 @onready var _shoot_timer = $ShootTimer
 
-func _ready() -> void:
-	add_weapon()
-
 func action():
-	_laser_beam.action()
+	_laser_beam.set_is_casting(true)
 	_end_shoot_timer.start()
 
 func upgrade_primary_stat():
@@ -18,5 +15,5 @@ func upgrade_secondary_stat():
 	pass
 
 func _on_end_shoot_timer_timeout() -> void:
-	_laser_beam.end_action()
+	_laser_beam.set_is_casting(false)
 	_shoot_timer.start()

@@ -66,6 +66,7 @@ script = ExtResource("1_6p4ja")
 [node name="Map" parent="." instance=ExtResource("3_yebcb")]
 
 [node name="Characters" parent="." instance=ExtResource("2_jphtw")]
+position = Vector2(200, 0)
 
 [node name="UI" parent="." instance=ExtResource("1_8ox6p")]
 

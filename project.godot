@@ -112,3 +112,7 @@ add_turtle_weapon_6={
 2d_physics/layer_4="turtle"
 2d_physics/layer_5="resource"
 2d_physics/layer_6="shield"
+
+[rendering]
+
+viewport/hdr_2d=true

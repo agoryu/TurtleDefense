@@ -28,12 +28,6 @@ func _on_area_2d_body_entered(body):
 func _on_health_dead():
 	print("game over")
 
-func _on_menu_area_body_entered(body):
-	Game.can_open_menu = true
-
-func _on_menu_area_body_exited(body):
-	Game.can_open_menu = false
-
 func get_desired_velocity():
 	if animatedSprite.frame >= 1 and animatedSprite.frame <= 2:
 		return Vector2.RIGHT * speed

@@ -1,12 +1,10 @@
-[gd_scene load_steps=53 format=3 uid="uid://13o6gi6ilbss"]
+[gd_scene load_steps=47 format=3 uid="uid://13o6gi6ilbss"]
 
 [ext_resource type="Script" path="res://Characters/Turtle/Turtle.gd" id="1_ow1ky"]
 [ext_resource type="Texture2D" uid="uid://b2pcunr07xyv5" path="res://Characters/Turtle/turtle-Sheet.png" id="2_dypx1"]
 [ext_resource type="PackedScene" uid="uid://cpembt8wk8d3j" path="res://Game/Health/Health.tscn" id="3_mkcoc"]
 [ext_resource type="PackedScene" uid="uid://bruykml7gpfws" path="res://UI/HealthBar/HealthBar.tscn" id="4_4bxws"]
 [ext_resource type="Script" path="res://Characters/Turtle/Weapons.gd" id="5_3v3jc"]
-[ext_resource type="Texture2D" uid="uid://2qlruqkwn5ce" path="res://Weapons/Turtle/BeamWeapon/Beam-Sheet.png" id="6_ist8u"]
-[ext_resource type="Script" path="res://Weapons/Turtle/BeamWeapon/Beam.gd" id="7_j2ha1"]
 [ext_resource type="Texture2D" uid="uid://cdbbbjvw1ddcj" path="res://Weapons/Turtle/UrsinCanon/UrsinCanon.png" id="8_eia2m"]
 [ext_resource type="Script" path="res://Weapons/Turtle/UrsinCanon/UrsinCanon.gd" id="9_r1dgk"]
 [ext_resource type="Texture2D" uid="uid://dmhnis14v615b" path="res://Weapons/Turtle/Armor/Armor.png" id="10_6jcbv"]
@@ -15,6 +13,7 @@
 [ext_resource type="Script" path="res://Weapons/Turtle/Multishot/MultiShot.gd" id="13_itmmx"]
 [ext_resource type="Script" path="res://Weapons/Turtle/PiratCanon/PiratCanon.gd" id="14_s02v8"]
 [ext_resource type="Texture2D" uid="uid://dredp65uiqrss" path="res://Weapons/Turtle/PiratCanon/PiratCanon.png" id="15_itux0"]
+[ext_resource type="PackedScene" uid="uid://ckuhayprkbicm" path="res://Weapons/Turtle/BeamWeapon/BeamWeapon.tscn" id="16_jv588"]
 [ext_resource type="Script" path="res://Weapons/Turtle/Laser/Laser.gd" id="16_spw2r"]
 [ext_resource type="Texture2D" uid="uid://ckosxh8jk462r" path="res://Weapons/Turtle/Laser/Laser.png" id="17_2mv1o"]
 
@@ -90,51 +89,6 @@ _data = {
 "RESET": SubResource("Animation_0kav8"),
 "take_damage": SubResource("Animation_m5gsy")
 }
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vn21p"]
-atlas = ExtResource("6_ist8u")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1dvt3"]
-atlas = ExtResource("6_ist8u")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8njgf"]
-atlas = ExtResource("6_ist8u")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1xgry"]
-atlas = ExtResource("6_ist8u")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_o25ei"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vn21p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1dvt3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8njgf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1xgry")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8njgf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1dvt3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vn21p")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bephr"]
 atlas = ExtResource("8_eia2m")
@@ -330,14 +284,6 @@ libraries = {
 [node name="Weapons" type="Node2D" parent="."]
 script = ExtResource("5_3v3jc")
 
-[node name="Beam" type="AnimatedSprite2D" parent="Weapons"]
-texture_filter = 1
-position = Vector2(36, 0)
-rotation = 1.5708
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_o25ei")
-script = ExtResource("7_j2ha1")
-
 [node name="UrsinCanon" type="Node2D" parent="Weapons"]
 script = ExtResource("9_r1dgk")
 
@@ -433,6 +379,10 @@ rotation = 1.5708
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_ffmi7")
 offset = Vector2(0.5, -1.5)
+
+[node name="BeamWeapon" parent="Weapons" instance=ExtResource("16_jv588")]
+visible = false
+position = Vector2(24, 0)
 
 [connection signal="body_entered" from="DamageArea" to="." method="_on_area_2d_body_entered"]
 [connection signal="dead" from="Health" to="." method="_on_health_dead"]

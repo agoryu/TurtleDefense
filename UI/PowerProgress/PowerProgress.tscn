@@ -73,7 +73,7 @@ layout_mode = 2
 focus_mode = 1
 text = "Add Bubble"
 script = ExtResource("6_ivvnt")
-max_up = 2
+max_up = 4
 
 [node name="AudioConsumePowerup" type="AudioStreamPlayer2D" parent="." groups=["sound_effect"]]
 unique_name_in_owner = true

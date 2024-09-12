@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var beam : AnimatedSprite2D = $Beam
+@onready var beam : Weapon = $BeamWeapon
 @onready var ursinCanon : Node2D = $UrsinCanon
 @onready var armor : AnimatedSprite2D = $Armor
 @onready var multishot : AnimatedSprite2D = $MultiShot
@@ -9,7 +9,7 @@ extends Node2D
 
 func _input(event):
 	if event.is_action_pressed("add_turtle_weapon_1"):
-		beam.Upgrade()
+		beam.add_weapon()
 	if event.is_action_pressed("add_turtle_weapon_2"):
 		ursinCanon.Upgrade()
 	if event.is_action_pressed("add_turtle_weapon_3"):
