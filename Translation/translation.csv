@@ -1,0 +1,6 @@
+id,fr,en
+player.speed,Vitesse,speed
+player.life,Vie,life
+player.shield,Bouclier,shield
+player.speedFire,Vitesse de tire,speed fire
+player.addBubble,Ajout bulle,add bubble

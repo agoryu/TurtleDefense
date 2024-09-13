@@ -16,6 +16,8 @@ corner_radius_bottom_left = 20
 expand_margin_left = 10.0
 expand_margin_top = 10.0
 expand_margin_bottom = 10.0
+shadow_size = 5
+shadow_offset = Vector2(-5, -2)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mke71"]
 content_margin_top = 5.0
@@ -27,6 +29,9 @@ corner_radius_top_left = 5
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 5
+shadow_color = Color(0.0687983, 0.0687983, 0.0687983, 0.6)
+shadow_size = 10
+shadow_offset = Vector2(-5, -2)
 
 [resource]
 Label/colors/font_color = Color(0.340336, 0.787466, 0.907558, 1)

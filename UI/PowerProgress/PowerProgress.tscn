@@ -12,9 +12,10 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wga3y"]
 
 [sub_resource type="Theme" id="Theme_8gtvc"]
-Button/colors/font_focus_color = Color(0.687137, 0.058322, 0.101718, 1)
 
 [node name="PowerProgress" type="PanelContainer"]
+offset_right = 544.0
+offset_bottom = 22.0
 theme = ExtResource("1_5k3c4")
 theme_override_styles/panel = SubResource("StyleBoxFlat_wga3y")
 script = ExtResource("1_1lh3s")
@@ -36,7 +37,7 @@ theme = SubResource("Theme_8gtvc")
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 focus_mode = 1
-text = "Speed"
+text = "player.speed"
 script = ExtResource("2_a5f8m")
 max_up = 10
 
@@ -44,8 +45,7 @@ max_up = 10
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 focus_mode = 1
-text = "Life
-"
+text = "player.life"
 script = ExtResource("3_tkal4")
 max_up = 100
 
@@ -53,8 +53,7 @@ max_up = 100
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 focus_mode = 1
-text = "Shield
-"
+text = "player.shield"
 script = ExtResource("4_cb05y")
 max_up = 3
 
@@ -62,8 +61,7 @@ max_up = 3
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 focus_mode = 1
-text = "Speed Fire
-"
+text = "player.speedFire"
 script = ExtResource("5_p3xen")
 max_up = 5
 
@@ -71,7 +69,7 @@ max_up = 5
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 focus_mode = 1
-text = "Add Bubble"
+text = "player.addBubble"
 script = ExtResource("6_ivvnt")
 max_up = 4
 
