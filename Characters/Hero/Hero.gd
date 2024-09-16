@@ -7,9 +7,9 @@ extends CharacterBody2D
 @onready var health: Health = $Health
 @onready var animation = $SpriteSheet
 @onready var collision_damage = $DamageArea/CollisionShape2D
-@onready var shield = $Shield
 @onready var bubble_gun = $BubbleGun
 @onready var camera: Camera2D = $Camera
+@onready var health_particles: GPUParticles2D = $HealthParticles2D
 
 var direction: Vector2
 
@@ -51,3 +51,6 @@ func _on_health_dead():
 
 func nb_shoot_up():
 	bubble_gun.nb_shoot_up()
+
+func _on_health_add() -> void:
+	health_particles.emitting = true

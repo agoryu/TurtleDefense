@@ -29,3 +29,6 @@ func focus_button():
 	for weapon in weapons.get_children():
 		if weapon.focus_button():
 			return
+
+func _on_boost_selected() -> void:
+	focus_button()

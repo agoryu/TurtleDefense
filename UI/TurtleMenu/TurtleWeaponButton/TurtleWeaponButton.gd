@@ -26,10 +26,10 @@ func add_weapon():
 	weapon.cost_weapon = 0
 	
 func boost1():
-	pass
+	Game.nb_shell -= weapon.cost_boost1
 	
 func boost2():
-	pass
+	Game.nb_shell -= weapon.cost_boost2
 
 func _on_weapon_button_up() -> void:
 	weapon_button.disabled = true
