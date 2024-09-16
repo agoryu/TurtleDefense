@@ -1,12 +1,12 @@
-[gd_scene load_steps=22 format=3 uid="uid://c12yxxocabpkj"]
+[gd_scene load_steps=25 format=3 uid="uid://c12yxxocabpkj"]
 
 [ext_resource type="Script" path="res://Characters/Hero/Hero.gd" id="1_53ldx"]
 [ext_resource type="PackedScene" uid="uid://cpembt8wk8d3j" path="res://Game/Health/Health.tscn" id="3_ebth2"]
 [ext_resource type="PackedScene" uid="uid://csrwngn1gxmm3" path="res://Weapons/BubbleGun/BubbleGun.tscn" id="4_5xyd6"]
 [ext_resource type="PackedScene" uid="uid://bxqf7v4kw8qnq" path="res://Camera/Camera.tscn" id="4_7qy8v"]
 [ext_resource type="Texture2D" uid="uid://dnunkhaiukck4" path="res://Characters/Hero/Starfish-Sheet.png" id="4_mm6pl"]
+[ext_resource type="Texture2D" uid="uid://csfgfs0wgschp" path="res://Characters/Hero/health_upgrade.png" id="4_rd8ta"]
 [ext_resource type="PackedScene" uid="uid://bruykml7gpfws" path="res://UI/HealthBar/HealthBar.tscn" id="5_dwxqe"]
-[ext_resource type="PackedScene" uid="uid://bgih4ld6to0gv" path="res://Weapons/Shield/Shield.tscn" id="6_h223i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_08ydf"]
 atlas = ExtResource("4_mm6pl")
@@ -69,6 +69,22 @@ animations = [{
 "name": &"walk",
 "speed": 12.0
 }]
+
+[sub_resource type="Curve" id="Curve_vciik"]
+_data = [Vector2(0.00467289, 0.450549), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_xaimt"]
+curve = SubResource("Curve_vciik")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_csvct"]
+particle_flag_disable_z = true
+initial_velocity_min = -30.0
+initial_velocity_max = 30.0
+gravity = Vector3(0, -98, 0)
+scale_min = 0.5
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_xaimt")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cwi8h"]
 size = Vector2(48, 48)
@@ -141,11 +157,16 @@ sprite_frames = SubResource("SpriteFrames_wj6qv")
 animation = &"walk"
 speed_scale = 2.0
 
-[node name="Shield" parent="." node_paths=PackedStringArray("character_collision_shape") instance=ExtResource("6_h223i")]
-scale = Vector2(1.2, 1.2)
-character_collision_shape = NodePath("../DamageArea/CollisionShape2D")
-
 [node name="BubbleGun" parent="." instance=ExtResource("4_5xyd6")]
+
+[node name="HealthParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, 40)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_csvct")
+texture = ExtResource("4_rd8ta")
+lifetime = 1.2
+one_shot = true
+local_coords = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_cwi8h")
@@ -179,4 +200,5 @@ libraries = {
 }
 
 [connection signal="body_entered" from="DamageArea" to="." method="_on_area_2d_body_entered"]
+[connection signal="add" from="Health" to="." method="_on_health_add"]
 [connection signal="dead" from="Health" to="." method="_on_health_dead"]

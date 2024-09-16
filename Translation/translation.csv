@@ -1,8 +1,10 @@
 id,fr,en
-player.speed,Vitesse,speed
-player.life,Vie,life
-player.shield,Bouclier,shield
-player.speedFire,Vitesse de tire,speed fire
-player.addBubble,Ajout bulle,add bubble
+player.speed,Vitesse,Speed
+player.life,Vie,Life
+player.shield,Bouclier,Shield
+player.speedFire,Vitesse de tire,Speed fire
+player.addBubble,Ajout bulle,Add bubble
 turtle.menu.title,Tortue,Turtle
 turtle.menu.beam,Rayon Laser,Laser Beam
+turtle.menu.beam.boost1,Dommage,Damage
+turtle.menu.beam.boost2,Taille,Size

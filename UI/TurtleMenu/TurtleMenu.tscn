@@ -128,6 +128,12 @@ icon = ExtResource("6_gsvde")
 [node name="Title" parent="VBoxContainer/ScrollContainer/Weapons/LaserBeamButton/Weapon/Details" index="0"]
 text = "turtle.menu.beam"
 
+[node name="Title" parent="VBoxContainer/ScrollContainer/Weapons/LaserBeamButton/Boost1/Details" index="0"]
+text = "turtle.menu.beam.boost1"
+
+[node name="Title" parent="VBoxContainer/ScrollContainer/Weapons/LaserBeamButton/Boost2/Details" index="0"]
+text = "turtle.menu.beam.boost2"
+
 [node name="TurtleWeaponButton2" parent="VBoxContainer/ScrollContainer/Weapons" instance=ExtResource("1_g1rto")]
 visible = false
 layout_mode = 2
@@ -153,6 +159,7 @@ layout_mode = 2
 stream = ExtResource("4_3odd6")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="boost_selected" from="VBoxContainer/ScrollContainer/Weapons/LaserBeamButton" to="." method="_on_boost_selected"]
 
 [editable path="VBoxContainer/ScrollContainer/Weapons/LaserBeamButton"]
 [editable path="VBoxContainer/ScrollContainer/Weapons/LaserBeamButton/Weapon/Details"]
