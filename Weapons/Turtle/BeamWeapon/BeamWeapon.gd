@@ -15,7 +15,7 @@ func upgrade_primary_stat():
 	super()
 	damage += 1
 	_laser_beam.damage = damage
-	
+
 func upgrade_secondary_stat():
 	super()
 	_laser_beam.increase_width(10)

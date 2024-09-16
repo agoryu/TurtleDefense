@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://ckuhayprkbicm"]
 
 [ext_resource type="PackedScene" uid="uid://c0yihg7xfs2w" path="res://Weapons/Turtle/Weapon.tscn" id="1_kuhko"]
-[ext_resource type="Texture2D" uid="uid://2qlruqkwn5ce" path="res://Weapons/Turtle/BeamWeapon/Beam-Sheet.png" id="2_omij3"]
+[ext_resource type="Texture2D" uid="uid://btgsmm3hmu34o" path="res://Weapons/Turtle/BeamWeapon/Beam-Sheet.png" id="2_omij3"]
 [ext_resource type="Script" path="res://Weapons/Turtle/BeamWeapon/BeamWeapon.gd" id="3_dgbf7"]
 [ext_resource type="PackedScene" uid="uid://ck5703sajs54d" path="res://Weapons/Turtle/BeamWeapon/LaserBeam/LaserBeam.tscn" id="4_6hgs4"]
 
@@ -47,6 +47,7 @@ glow_enabled = true
 
 [node name="BeamWeapon" instance=ExtResource("1_kuhko")]
 position = Vector2(192, 64)
+rotation = 1.5708
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_metnh")
 script = ExtResource("3_dgbf7")
@@ -60,7 +61,8 @@ wait_time = 10.0
 one_shot = true
 
 [node name="LaserBeam2D" parent="." index="2" instance=ExtResource("4_6hgs4")]
-position = Vector2(28, 0)
+position = Vector2(-1.90735e-06, -24)
+rotation = -1.57079
 
 [node name="EndShootTimer" type="Timer" parent="." index="3"]
 one_shot = true

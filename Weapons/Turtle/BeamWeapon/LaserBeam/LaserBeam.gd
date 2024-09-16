@@ -74,7 +74,7 @@ func dissappear() -> void:
 	tween.tween_property(fill_line, "width", 0, 0.2)
 	tween.set_parallel()
 	tween.tween_property(fill_line2, "width", 0, 0.2)
-	
+
 func increase_width(value : int):
 	size += value
 	shape.size.y += value
