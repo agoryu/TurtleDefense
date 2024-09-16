@@ -4,3 +4,5 @@ player.life,Vie,life
 player.shield,Bouclier,shield
 player.speedFire,Vitesse de tire,speed fire
 player.addBubble,Ajout bulle,add bubble
+turtle.menu.title,Tortue,Turtle
+turtle.menu.beam,Rayon Laser,Laser Beam

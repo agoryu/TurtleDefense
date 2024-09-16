@@ -9,10 +9,10 @@ func action():
 	_end_shoot_timer.start()
 
 func upgrade_primary_stat():
-	pass
+	super()
 	
 func upgrade_secondary_stat():
-	pass
+	super()
 
 func _on_end_shoot_timer_timeout() -> void:
 	_laser_beam.set_is_casting(false)

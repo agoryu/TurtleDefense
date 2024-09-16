@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var animationPlayer: AnimationPlayer = $AnimationPlayer
 @onready var animatedSprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var health: Health = $Health
+@onready var beam_weapon : Weapon = $Weapons/BeamWeapon
 
 @export var speed = 30.0
 @export var drag := 5.0
