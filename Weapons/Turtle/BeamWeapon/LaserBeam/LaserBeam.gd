@@ -1,4 +1,4 @@
-extends RayCast2D
+extends ShapeCast2D
 
 @export var damage: int = 2
 
@@ -26,16 +26,17 @@ func _ready():
 
 func _physics_process(_delta: float) -> void:
 	var cast_point := target_position
-	force_raycast_update()
+	force_shapecast_update()
 
 	if is_colliding():
-		cast_point = to_local(get_collision_point())
-		collision_particules.global_rotation = get_collision_normal().angle()
+		cast_point = to_local(get_collision_point(0))
+		collision_particules.global_rotation = get_collision_normal(0).angle()
 		collision_particules.position = cast_point
 		collision_particules.emitting = true
 		if not colliding_execute:
-			get_collider().health.loose_health(damage)
-			colliding_execute = true
+			for i in range(get_collision_count()):
+				get_collider(i).health.loose_health(damage)
+				colliding_execute = true
 
 	fill_line.points[1] = cast_point
 	fill_line2.points[1] = cast_point
@@ -73,3 +74,7 @@ func dissappear() -> void:
 	tween.tween_property(fill_line, "width", 0, 0.2)
 	tween.set_parallel()
 	tween.tween_property(fill_line2, "width", 0, 0.2)
+	
+func increase_width(value : int):
+	size += value
+	shape.size.y += value

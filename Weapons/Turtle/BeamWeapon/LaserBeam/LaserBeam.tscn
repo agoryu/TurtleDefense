@@ -1,8 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://ck5703sajs54d"]
+[gd_scene load_steps=14 format=3 uid="uid://ck5703sajs54d"]
 
 [ext_resource type="Script" path="res://Weapons/Turtle/BeamWeapon/LaserBeam/LaserBeam.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://7y3hx8ekwwf5" path="res://Weapons/Turtle/BeamWeapon/LaserBeam/glowing_circle.png" id="2"]
 [ext_resource type="AudioStream" uid="uid://ggfei7x042ha" path="res://Weapons/Turtle/BeamWeapon/LaserBeam/laser_beam.wav" id="3_4cd8f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oyi6q"]
 
 [sub_resource type="Gradient" id="Gradient_1wf5k"]
 colors = PackedColorArray(0.99558, 0.99558, 0.99558, 1, 1, 1, 1, 0)
@@ -61,7 +63,8 @@ scale_min = 0.2
 scale_max = 0.3
 scale_curve = SubResource("CurveTexture_q61hq")
 
-[node name="LaserBeam2D" type="RayCast2D"]
+[node name="LaserBeam2D" type="ShapeCast2D"]
+shape = SubResource("RectangleShape2D_oyi6q")
 target_position = Vector2(800, 0)
 collision_mask = 4
 script = ExtResource("1")

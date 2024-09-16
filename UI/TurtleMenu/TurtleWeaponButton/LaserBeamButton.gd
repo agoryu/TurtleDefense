@@ -5,7 +5,7 @@ func _ready() -> void:
 	$Weapon/Details.cost_label.text = "%d" % weapon.cost_weapon
 
 func boost1():
-	pass
+	weapon.upgrade_primary_stat()
 	
 func boost2():
-	pass
+	weapon.upgrade_secondary_stat()

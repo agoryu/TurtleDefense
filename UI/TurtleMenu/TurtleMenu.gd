@@ -3,19 +3,16 @@ extends Panel
 @onready var weapons: VBoxContainer = $VBoxContainer/ScrollContainer/Weapons
 @onready var audio_stream: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var particules: GPUParticles2D = $GPUParticles2D
-#@onready var particules_2: GPUParticles2D = $GPUParticles2D2
 
 func _ready() -> void:
 	scale = Vector2.ZERO
 	pivot_offset = size / 2
-	visible = true
 
 func _on_visibility_changed() -> void:
 	if visible:
 		focus_button()
 	if is_instance_valid(particules):
 		particules.emitting = visible
-		#particules_2.emitting = visible
 	animate()
 		
 func animate():
