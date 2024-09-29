@@ -9,7 +9,7 @@ signal boost_selected
 @onready var boost2_button: Button = $Boost2
 
 @export var is_focus: bool = false
-		
+
 var weapon: Weapon
 
 func _process(delta: float) -> void:
@@ -24,10 +24,10 @@ func add_weapon():
 	print("add weapon")
 	weapon.add_weapon()
 	weapon.cost_weapon = 0
-	
+
 func boost1():
 	Game.nb_shell -= weapon.cost_boost1
-	
+
 func boost2():
 	Game.nb_shell -= weapon.cost_boost2
 

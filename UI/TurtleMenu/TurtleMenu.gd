@@ -14,7 +14,7 @@ func _on_visibility_changed() -> void:
 	if is_instance_valid(particules):
 		particules.emitting = visible
 	animate()
-		
+
 func animate():
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_OUT)
@@ -24,7 +24,7 @@ func animate():
 		tween.tween_property(self, "scale", Vector2.ONE, 0.5)
 	else:
 		tween.tween_property(self, "scale", Vector2.ZERO, 0.3)
-		
+
 func focus_button():
 	for weapon in weapons.get_children():
 		if weapon.focus_button():

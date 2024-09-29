@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://13o6gi6ilbss"]
+[gd_scene load_steps=42 format=3 uid="uid://13o6gi6ilbss"]
 
 [ext_resource type="Script" path="res://Characters/Turtle/Turtle.gd" id="1_ow1ky"]
 [ext_resource type="Texture2D" uid="uid://b2pcunr07xyv5" path="res://Characters/Turtle/turtle-Sheet.png" id="2_dypx1"]
@@ -9,10 +9,9 @@
 [ext_resource type="Script" path="res://Weapons/Turtle/UrsinCanon/UrsinCanon.gd" id="9_r1dgk"]
 [ext_resource type="Texture2D" uid="uid://csn41th6sd54q" path="res://Weapons/Turtle/Armor/Armor.png" id="10_6jcbv"]
 [ext_resource type="Script" path="res://Weapons/Turtle/Armor/Armor.gd" id="11_nemju"]
+[ext_resource type="PackedScene" uid="uid://sx1ymsingmvu" path="res://Weapons/Turtle/PiratCanon/PiratCanons.tscn" id="12_hbf2p"]
 [ext_resource type="Texture2D" uid="uid://wuj2f3n4g65e" path="res://Weapons/Turtle/Multishot/Multishot.png" id="12_hy1jl"]
 [ext_resource type="Script" path="res://Weapons/Turtle/Multishot/MultiShot.gd" id="13_itmmx"]
-[ext_resource type="Script" path="res://Weapons/Turtle/PiratCanon/PiratCanon.gd" id="14_s02v8"]
-[ext_resource type="Texture2D" uid="uid://uoowiph88ic4" path="res://Weapons/Turtle/PiratCanon/PiratCanon.png" id="15_itux0"]
 [ext_resource type="PackedScene" uid="uid://ckuhayprkbicm" path="res://Weapons/Turtle/BeamWeapon/BeamWeapon.tscn" id="16_jv588"]
 [ext_resource type="Script" path="res://Weapons/Turtle/Laser/Laser.gd" id="16_spw2r"]
 [ext_resource type="Texture2D" uid="uid://dpksljqtgdfe" path="res://Weapons/Turtle/Laser/Laser.png" id="17_2mv1o"]
@@ -180,36 +179,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vhlk0"]
-atlas = ExtResource("15_itux0")
-region = Rect2(0, 16, 32, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_nl6ex"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vhlk0")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lf5vu"]
-atlas = ExtResource("15_itux0")
-region = Rect2(0, 32, 32, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_b7uwv"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lf5vu")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_6im04"]
 atlas = ExtResource("17_2mv1o")
 region = Rect2(0, 0, 32, 32)
@@ -331,36 +300,7 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_onbgh")
 script = ExtResource("13_itmmx")
 
-[node name="PiratCanon" type="Node2D" parent="Weapons"]
-script = ExtResource("14_s02v8")
-
-[node name="NE" type="AnimatedSprite2D" parent="Weapons/PiratCanon"]
-texture_filter = 1
-position = Vector2(-6, -69)
-rotation = 1.5708
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_nl6ex")
-
-[node name="NW" type="AnimatedSprite2D" parent="Weapons/PiratCanon"]
-texture_filter = 1
-position = Vector2(-9, 78)
-rotation = 1.5708
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_b7uwv")
-
-[node name="SE" type="AnimatedSprite2D" parent="Weapons/PiratCanon"]
-texture_filter = 1
-position = Vector2(-57, -69)
-rotation = 1.5708
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_nl6ex")
-
-[node name="SW" type="AnimatedSprite2D" parent="Weapons/PiratCanon"]
-texture_filter = 1
-position = Vector2(-60, 78)
-rotation = 1.5708
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_b7uwv")
+[node name="PiratCanon" parent="Weapons" instance=ExtResource("12_hbf2p")]
 
 [node name="Laser" type="Node2D" parent="Weapons"]
 script = ExtResource("16_spw2r")

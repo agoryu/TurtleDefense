@@ -23,6 +23,6 @@ func action():
 
 func upgrade_primary_stat():
 	cost_boost1 += step
-	
+
 func upgrade_secondary_stat():
 	cost_boost2 += step
