@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://ckuhayprkbicm"]
 
 [ext_resource type="PackedScene" uid="uid://c0yihg7xfs2w" path="res://Weapons/Turtle/Weapon.tscn" id="1_kuhko"]
-[ext_resource type="Texture2D" uid="uid://btgsmm3hmu34o" path="res://Weapons/Turtle/BeamWeapon/Beam-Sheet.png" id="2_omij3"]
+[ext_resource type="Texture2D" uid="uid://2qlruqkwn5ce" path="res://Weapons/Turtle/BeamWeapon/Beam-Sheet.png" id="2_omij3"]
 [ext_resource type="Script" path="res://Weapons/Turtle/BeamWeapon/BeamWeapon.gd" id="3_dgbf7"]
 [ext_resource type="PackedScene" uid="uid://ck5703sajs54d" path="res://Weapons/Turtle/BeamWeapon/LaserBeam/LaserBeam.tscn" id="4_6hgs4"]
 

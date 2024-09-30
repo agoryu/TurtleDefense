@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://b83luj8rhxqjb" path="res://UI/PowerProgress/power_progress_theme.tres" id="1_5k3c4"]
 [ext_resource type="Script" path="res://UI/PowerProgress/Speed.gd" id="2_a5f8m"]
 [ext_resource type="Script" path="res://UI/PowerProgress/Life.gd" id="3_tkal4"]
-[ext_resource type="Script" path="res://UI/PowerProgress/Shield.gd" id="4_cb05y"]
+[ext_resource type="Script" path="res://UI/PowerProgress/Attraction.gd" id="4_cb05y"]
 [ext_resource type="Script" path="res://UI/PowerProgress/SpeedFire.gd" id="5_p3xen"]
 [ext_resource type="Script" path="res://UI/PowerProgress/AddBubble.gd" id="6_ivvnt"]
 [ext_resource type="AudioStream" uid="uid://bctoh8uicqtpc" path="res://UI/PowerProgress/consumePowerup.wav" id="7_8hot5"]
@@ -49,11 +49,11 @@ text = "player.life"
 script = ExtResource("3_tkal4")
 max_up = 100
 
-[node name="Shield" type="Button" parent="PowerMenu"]
+[node name="Attraction" type="Button" parent="PowerMenu"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 focus_mode = 1
-text = "player.shield"
+text = "player.attraction"
 script = ExtResource("4_cb05y")
 max_up = 3
 
@@ -81,8 +81,8 @@ stream = ExtResource("7_8hot5")
 [connection signal="consume_power" from="PowerMenu/Speed" to="." method="_on_consume_power"]
 [connection signal="button_up" from="PowerMenu/Life" to="PowerMenu/Life" method="valid_power"]
 [connection signal="consume_power" from="PowerMenu/Life" to="." method="_on_consume_power"]
-[connection signal="button_up" from="PowerMenu/Shield" to="PowerMenu/Shield" method="valid_power"]
-[connection signal="consume_power" from="PowerMenu/Shield" to="." method="_on_consume_power"]
+[connection signal="button_up" from="PowerMenu/Attraction" to="PowerMenu/Attraction" method="valid_power"]
+[connection signal="consume_power" from="PowerMenu/Attraction" to="." method="_on_consume_power"]
 [connection signal="button_up" from="PowerMenu/SpeedFire" to="PowerMenu/SpeedFire" method="valid_power"]
 [connection signal="consume_power" from="PowerMenu/SpeedFire" to="." method="_on_consume_power"]
 [connection signal="button_up" from="PowerMenu/AddBubble" to="PowerMenu/AddBubble" method="valid_power"]
