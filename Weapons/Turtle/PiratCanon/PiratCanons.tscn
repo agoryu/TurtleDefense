@@ -1,0 +1,91 @@
+[gd_scene load_steps=9 format=3 uid="uid://sx1ymsingmvu"]
+
+[ext_resource type="Script" path="res://Weapons/Turtle/PiratCanon/PiratCanons.gd" id="1_teahw"]
+[ext_resource type="Texture2D" uid="uid://uoowiph88ic4" path="res://Weapons/Turtle/PiratCanon/PiratCanons.png" id="2_3382q"]
+[ext_resource type="Script" path="res://Weapons/Turtle/PiratCanon/Canon.gd" id="3_ocbfn"]
+[ext_resource type="PackedScene" uid="uid://bmo1tdiyu7ie0" path="res://Weapons/Turtle/PiratCanon/CanonBall/CanonBall.tscn" id="4_fyymm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhlk0"]
+atlas = ExtResource("2_3382q")
+region = Rect2(0, 16, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nl6ex"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhlk0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lf5vu"]
+atlas = ExtResource("2_3382q")
+region = Rect2(0, 32, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b7uwv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lf5vu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PiratCanons" type="Node2D"]
+script = ExtResource("1_teahw")
+
+[node name="Canon_NE" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-6, -69)
+rotation = 1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_nl6ex")
+script = ExtResource("3_ocbfn")
+
+[node name="Fire_Origin" type="Marker2D" parent="Canon_NE"]
+position = Vector2(-9, 3.25441e-05)
+
+[node name="Canon_NW" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-9, 78)
+rotation = 1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_b7uwv")
+script = ExtResource("3_ocbfn")
+
+[node name="Fire_Origin" type="Marker2D" parent="Canon_NW"]
+position = Vector2(5, -1.00002)
+
+[node name="Canon_SE" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-57, -69)
+rotation = 1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_nl6ex")
+script = ExtResource("3_ocbfn")
+
+[node name="Fire_Origin" type="Marker2D" parent="Canon_SE"]
+position = Vector2(-9, 0.333366)
+
+[node name="Canon_SW" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-60, 78)
+rotation = 1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_b7uwv")
+script = ExtResource("3_ocbfn")
+
+[node name="Fire_Origin" type="Marker2D" parent="Canon_SW"]
+position = Vector2(5, -0.666685)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="CanonBall" parent="." instance=ExtResource("4_fyymm")]
+visible = false
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

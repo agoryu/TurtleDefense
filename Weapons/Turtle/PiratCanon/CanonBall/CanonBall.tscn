@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmo1tdiyu7ie0"]
+
+[ext_resource type="Texture2D" uid="uid://q4y2g4803w8o" path="res://Weapons/Turtle/PiratCanon/CanonBall/CanonBall.png" id="1_pu55y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nnh3"]
+atlas = ExtResource("1_pu55y")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0msyt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nnh3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kscat"]
+radius = 13.3333
+
+[node name="CanonBall" type="CharacterBody2D"]
+texture_filter = 1
+scale = Vector2(3, 3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_0msyt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.33333, 1.33333)
+shape = SubResource("CircleShape2D_kscat")

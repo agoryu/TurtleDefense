@@ -112,7 +112,7 @@ ui_turtle_menu={
 [internationalization]
 
 locale/translation_remaps={}
-locale/translations=PackedStringArray("res://Translation/translation.en.translation", "res://Translation/translation.fr.translation", "res://Translation/translation.csv")
+locale/translations=PackedStringArray("res://Translation/translation.en.translation", "res://Translation/translation.fr.translation")
 
 [layer_names]
 

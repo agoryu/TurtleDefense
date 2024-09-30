@@ -17,6 +17,6 @@ func _input(event):
 	if event.is_action_pressed("add_turtle_weapon_4"):
 		multishot.Upgrade()
 	if event.is_action_pressed("add_turtle_weapon_5"):
-		piratCanon.Upgrade()
+		piratCanon.add_weapon()
 	if event.is_action_pressed("add_turtle_weapon_6"):
 		laser.Upgrade()
