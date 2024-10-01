@@ -2,6 +2,7 @@ extends Node2D
 
 var _level : int = 0
 var _canons = []
+var _group = false
 
 @export var maxLevel : int = 4
 @onready var _canon_NE : AnimatedSprite2D = $Canon_NE
@@ -31,6 +32,7 @@ func _upgrade_level():
 	_level += 1
 
 func _on_timer_timeout() -> void:
+	_group = !_group
 	for canon in _canons:
-		canon.fire()
+		canon.fire(_group)
 	_timer.start()

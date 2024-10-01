@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://ck5703sajs54d"]
 
 [ext_resource type="Script" path="res://Weapons/Turtle/BeamWeapon/LaserBeam/LaserBeam.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://7y3hx8ekwwf5" path="res://Weapons/Turtle/BeamWeapon/LaserBeam/glowing_circle.png" id="2"]
-[ext_resource type="AudioStream" uid="uid://ggfei7x042ha" path="res://Weapons/Turtle/BeamWeapon/LaserBeam/laser_beam.wav" id="3_4cd8f"]
+[ext_resource type="Texture2D" uid="uid://che5iyjjapic3" path="res://Weapons/Turtle/BeamWeapon/LaserBeam/glowing_circle.png" id="2"]
+[ext_resource type="AudioStream" uid="uid://bh58q6f0s6ka6" path="res://Weapons/Turtle/BeamWeapon/LaserBeam/laser_beam.wav" id="3_4cd8f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oyi6q"]
 

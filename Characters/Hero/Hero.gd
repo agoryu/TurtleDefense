@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
-@export var speed = 300.0 : 
+@export var speed = 300.0 :
 	set(value):
 		speed = value
 		if is_instance_valid(speed_particles):
 			speed_particles.emitting = true
-	
+
 @export var drag := 5.0
 
 @onready var animationPlayer = $AnimationPlayer
