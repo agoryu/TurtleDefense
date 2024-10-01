@@ -1,6 +1,11 @@
 extends CharacterBody2D
 
-@export var speed = 300.0
+@export var speed = 300.0 : 
+	set(value):
+		speed = value
+		if is_instance_valid(speed_particles):
+			speed_particles.emitting = true
+	
 @export var drag := 5.0
 
 @onready var animationPlayer = $AnimationPlayer
@@ -10,6 +15,8 @@ extends CharacterBody2D
 @onready var bubble_gun = $BubbleGun
 @onready var camera: Camera2D = $Camera
 @onready var health_particles: GPUParticles2D = $HealthParticles2D
+@onready var speed_particles: GPUParticles2D = $SpeedParticles2D
+@onready var attract_collision_shape: CollisionShape2D = $AttractArea/CollisionShape2D
 
 var direction: Vector2
 
