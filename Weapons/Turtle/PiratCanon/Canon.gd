@@ -15,4 +15,6 @@ func fire():
 func _fire():
 	var canonBall = _canonBall.instantiate()
 	canonBall.global_position = _fire_origin.global_position
+	canonBall.set_direction(_fire_origin.direction)
+	canonBall.set_speed(300)
 	get_tree().root.add_child(canonBall)
