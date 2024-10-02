@@ -25,7 +25,7 @@ func upgrade_primary_stat():
 		_upgrade_level()
 
 func upgrade_secondary_stat():
-	pass
+	_timer.wait_time -= .5
 
 func _upgrade_level():
 	_canons[_level].start()
