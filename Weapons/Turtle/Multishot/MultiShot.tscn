@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://clwagy3q4nst4"]
+
+[ext_resource type="Texture2D" uid="uid://wuj2f3n4g65e" path="res://Weapons/Turtle/Multishot/Multishot.png" id="1_rm5e4"]
+[ext_resource type="Script" path="res://Weapons/Turtle/Multishot/MultiShot.gd" id="2_en5c6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0clw"]
+atlas = ExtResource("1_rm5e4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_onbgh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0clw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MultiShot" type="AnimatedSprite2D"]
+texture_filter = 1
+position = Vector2(-141, 0)
+rotation = 1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_onbgh")
+script = ExtResource("2_en5c6")
+
+[node name="Shot1" type="Marker2D" parent="."]
+position = Vector2(-6.33333, 2.28882e-05)
+rotation = -1.5708
+
+[node name="Shot2" type="Marker2D" parent="."]
+position = Vector2(-5.33335, -5.33331)
+rotation = -0.785398
+
+[node name="Shot3" type="Marker2D" parent="."]
+position = Vector2(-2.29266e-05, -6.33333)
+
+[node name="Shot4" type="Marker2D" parent="."]
+position = Vector2(5.33331, -5.33335)
+rotation = 0.785398
+scale = Vector2(1, 1)
+
+[node name="Shot5" type="Marker2D" parent="."]
+position = Vector2(6.33333, -2.28882e-05)
+rotation = 1.5708
+
+[node name="Shot6" type="Marker2D" parent="."]
+position = Vector2(5.33335, 5.33332)
+rotation = -3.92699
+scale = Vector2(1, 1)
+
+[node name="Shot7" type="Marker2D" parent="."]
+position = Vector2(2.29266e-05, 6.33334)
+rotation = 3.14159
+
+[node name="Shot8" type="Marker2D" parent="."]
+position = Vector2(-5.33331, 5.33335)
+rotation = -2.35619
+scale = Vector2(1, 1)
+
+[node name="ShotShift" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="ShotDelay" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="ShotShift" to="." method="_on_shot_shift_timeout"]
+[connection signal="timeout" from="ShotDelay" to="." method="_on_shot_delay_timeout"]

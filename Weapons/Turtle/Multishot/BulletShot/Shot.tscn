@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://ct1l35wunuavc"]
+
+[ext_resource type="Script" path="res://Weapons/Turtle/Multishot/BulletShot/Shot.gd" id="1_f4u5s"]
+[ext_resource type="Texture2D" uid="uid://cfenh3kg5xbkr" path="res://Weapons/Turtle/Multishot/BulletShot/BulletShot.png" id="2_jrygk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_duu41"]
+atlas = ExtResource("2_jrygk")
+region = Rect2(0, 0, 9, 5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lou3a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_duu41")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwmh2"]
+size = Vector2(28, 16)
+
+[node name="Shot" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_f4u5s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+rotation = -1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_lou3a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.38419e-07, 0)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_nwmh2")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
