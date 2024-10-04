@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+@export var damage = 1
+
+@onready var _timer : Timer = $Timer
 var _speed
 var _direction
 var _group
@@ -10,7 +13,11 @@ func initialize(origin, speed):
 	_group = origin.group
 	_speed = speed
 
+func _ready():
+	_timer.start()
+
 func _physics_process(delta):
-	position += _direction * _speed * delta
-	if position.y < 0 or position.y > Game.screen_size.y:
-		queue_free()
+	move_and_collide(_direction * _speed * delta)
+
+func _on_timer_timeout() -> void:
+	queue_free()

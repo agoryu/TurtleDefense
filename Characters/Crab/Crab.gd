@@ -29,8 +29,8 @@ func _on_timer_timeout():
 	queue_free()
 
 func _on_area_2d_body_entered(body):
-	body.queue_free()
 	health.loose_health(body.damage)
+	body.queue_free()
 
 func _on_health_dead():
 	if randi() % 10 < drop_chance:
