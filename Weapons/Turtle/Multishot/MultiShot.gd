@@ -1,4 +1,4 @@
-extends AnimatedSprite2D
+extends Weapon
 
 var _primary_stat : int = 0;
 var _secondary_stat : int = 0;

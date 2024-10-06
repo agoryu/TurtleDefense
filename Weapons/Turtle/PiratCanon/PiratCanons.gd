@@ -1,4 +1,4 @@
-extends Node2D
+extends Weapon
 
 var _level : int = 0
 var _canons = []

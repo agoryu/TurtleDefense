@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://13o6gi6ilbss"]
+[gd_scene load_steps=34 format=3 uid="uid://13o6gi6ilbss"]
 
 [ext_resource type="Script" path="res://Characters/Turtle/Turtle.gd" id="1_ow1ky"]
 [ext_resource type="Texture2D" uid="uid://b2pcunr07xyv5" path="res://Characters/Turtle/turtle-Sheet.png" id="2_dypx1"]
@@ -10,10 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://csn41th6sd54q" path="res://Weapons/Turtle/Armor/Armor.png" id="10_6jcbv"]
 [ext_resource type="PackedScene" uid="uid://clwagy3q4nst4" path="res://Weapons/Turtle/Multishot/MultiShot.tscn" id="10_tf861"]
 [ext_resource type="Script" path="res://Weapons/Turtle/Armor/Armor.gd" id="11_nemju"]
+[ext_resource type="PackedScene" uid="uid://rym6k4owtt8r" path="res://Weapons/Turtle/Laser/Laser.tscn" id="12_142aw"]
 [ext_resource type="PackedScene" uid="uid://sx1ymsingmvu" path="res://Weapons/Turtle/PiratCanon/PiratCanons.tscn" id="12_hbf2p"]
 [ext_resource type="PackedScene" uid="uid://ckuhayprkbicm" path="res://Weapons/Turtle/BeamWeapon/BeamWeapon.tscn" id="16_jv588"]
-[ext_resource type="Script" path="res://Weapons/Turtle/Laser/Laser.gd" id="16_spw2r"]
-[ext_resource type="Texture2D" uid="uid://dpksljqtgdfe" path="res://Weapons/Turtle/Laser/Laser.png" id="17_2mv1o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s0gp0"]
 size = Vector2(128, 128)
@@ -163,36 +162,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6im04"]
-atlas = ExtResource("17_2mv1o")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_lgjq0"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6im04")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vlca6"]
-atlas = ExtResource("17_2mv1o")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ffmi7"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vlca6")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [node name="Turtle" type="CharacterBody2D"]
 collision_layer = 8
 collision_mask = 0
@@ -280,23 +249,7 @@ script = ExtResource("11_nemju")
 
 [node name="PiratCanon" parent="Weapons" instance=ExtResource("12_hbf2p")]
 
-[node name="Laser" type="Node2D" parent="Weapons"]
-script = ExtResource("16_spw2r")
-
-[node name="Base" type="AnimatedSprite2D" parent="Weapons/Laser"]
-texture_filter = 1
-position = Vector2(-78, 0)
-rotation = 1.5708
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_lgjq0")
-
-[node name="Gun" type="AnimatedSprite2D" parent="Weapons/Laser"]
-texture_filter = 1
-position = Vector2(-72, -9.53596e-08)
-rotation = 1.5708
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_ffmi7")
-offset = Vector2(0.5, -1.5)
+[node name="Laser" parent="Weapons" instance=ExtResource("12_142aw")]
 
 [node name="BeamWeapon" parent="Weapons" instance=ExtResource("16_jv588")]
 visible = false
