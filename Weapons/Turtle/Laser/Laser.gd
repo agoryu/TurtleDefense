@@ -23,6 +23,7 @@ func _on_timer_timeout() -> void:
 	if nearestEnemy == null:
 		return
 	var lightning = lightningScene.instantiate()
-	lightning.initialize(laserSpawn.position, nearestEnemy.global_position)
+	lightning.initialize(laserSpawn.global_position - global_position, nearestEnemy.global_position - global_position)
 	add_child(lightning)
 	lightning.animation_player.play("Fade")
+	nearestEnemy.take_damage(damage)

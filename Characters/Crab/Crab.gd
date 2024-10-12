@@ -32,6 +32,9 @@ func _on_area_2d_body_entered(body):
 	health.loose_health(body.damage)
 	body.queue_free()
 
+func take_damage(damage):
+	health.loose_health(damage)
+
 func _on_health_dead():
 	if randi() % 10 < drop_chance:
 		var shell = shell_constructor.instantiate()
