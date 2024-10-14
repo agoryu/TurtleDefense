@@ -7,13 +7,13 @@ var point_lerp : Array = []
 var _sway : float = 10
 var sway_divider : float = 1
 
-func initialize(start : Vector2, target : Vector2) -> void:
+func initialize(start : Vector2, target : Vector2, size : int) -> void:
+	width = size
 	add_point(start)
 	add_point(target)
 	var from_to = target - start
 	segmentize(from_to, start)
 	sway(Vector2(from_to.y, -from_to.x).normalized())
-
 
 func segmentize(from_to : Vector2, start_pos: Vector2) -> void:
 	point_lerp.clear()
