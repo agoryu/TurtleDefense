@@ -1,0 +1,125 @@
+[gd_scene load_steps=13 format=3 uid="uid://bc046gds1aws5"]
+
+[ext_resource type="Script" path="res://Weapons/Turtle/UrsinCanon/UrsinCanons.gd" id="1_nsusf"]
+[ext_resource type="Texture2D" uid="uid://dlipfrkbaqbde" path="res://Weapons/Turtle/UrsinCanon/UrsinCanon.png" id="2_504sn"]
+[ext_resource type="Script" path="res://Weapons/Turtle/UrsinCanon/UrsinCanon.gd" id="3_3xl5s"]
+[ext_resource type="Script" path="res://Weapons/Turtle/UrsinCanon/UrsinOrigin.gd" id="4_xabub"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bephr"]
+atlas = ExtResource("2_504sn")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_va4qh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bephr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi4og"]
+atlas = ExtResource("2_504sn")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3uk6l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gi4og")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5col0"]
+atlas = ExtResource("2_504sn")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vgfqs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5col0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dc7j"]
+atlas = ExtResource("2_504sn")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k17nh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dc7j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="UrsinCanons" type="Node2D"]
+script = ExtResource("1_nsusf")
+
+[node name="UrsinCanon_NE" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(42, 51)
+rotation = 1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_va4qh")
+script = ExtResource("3_3xl5s")
+
+[node name="Ursin_Origin" type="Marker2D" parent="UrsinCanon_NE"]
+position = Vector2(-1, 3.61999e-06)
+script = ExtResource("4_xabub")
+direction = Vector2(1, 1)
+
+[node name="UrsinCanon_NW" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(42, -51)
+rotation = 1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_3uk6l")
+script = ExtResource("3_3xl5s")
+
+[node name="Ursin_Origin" type="Marker2D" parent="UrsinCanon_NW"]
+position = Vector2(-1, 3.61999e-06)
+script = ExtResource("4_xabub")
+direction = Vector2(1, -1)
+
+[node name="UrsinCanon_SE" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-99, 39)
+rotation = 1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_vgfqs")
+script = ExtResource("3_3xl5s")
+
+[node name="Ursin_Origin" type="Marker2D" parent="UrsinCanon_SE"]
+position = Vector2(-1, 3.61999e-06)
+script = ExtResource("4_xabub")
+direction = Vector2(-1, 1)
+
+[node name="UrsinCanon_SW" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-99, -42)
+rotation = 1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_k17nh")
+script = ExtResource("3_3xl5s")
+
+[node name="Ursin_Origin" type="Marker2D" parent="UrsinCanon_SW"]
+position = Vector2(-1, 3.61999e-06)
+script = ExtResource("4_xabub")
+direction = Vector2(-1, -1)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

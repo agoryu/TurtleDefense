@@ -1,12 +1,11 @@
-[gd_scene load_steps=34 format=3 uid="uid://13o6gi6ilbss"]
+[gd_scene load_steps=25 format=3 uid="uid://13o6gi6ilbss"]
 
 [ext_resource type="Script" path="res://Characters/Turtle/Turtle.gd" id="1_ow1ky"]
 [ext_resource type="Texture2D" uid="uid://b2pcunr07xyv5" path="res://Characters/Turtle/turtle-Sheet.png" id="2_dypx1"]
 [ext_resource type="PackedScene" uid="uid://cpembt8wk8d3j" path="res://Game/Health/Health.tscn" id="3_mkcoc"]
 [ext_resource type="PackedScene" uid="uid://bruykml7gpfws" path="res://UI/HealthBar/HealthBar.tscn" id="4_4bxws"]
 [ext_resource type="Script" path="res://Characters/Turtle/Weapons.gd" id="5_3v3jc"]
-[ext_resource type="Texture2D" uid="uid://dlipfrkbaqbde" path="res://Weapons/Turtle/UrsinCanon/UrsinCanon.png" id="8_eia2m"]
-[ext_resource type="Script" path="res://Weapons/Turtle/UrsinCanon/UrsinCanon.gd" id="9_r1dgk"]
+[ext_resource type="PackedScene" uid="uid://bc046gds1aws5" path="res://Weapons/Turtle/UrsinCanon/UrsinCanons.tscn" id="6_wwcuu"]
 [ext_resource type="Texture2D" uid="uid://csn41th6sd54q" path="res://Weapons/Turtle/Armor/Armor.png" id="10_6jcbv"]
 [ext_resource type="PackedScene" uid="uid://clwagy3q4nst4" path="res://Weapons/Turtle/Multishot/MultiShot.tscn" id="10_tf861"]
 [ext_resource type="Script" path="res://Weapons/Turtle/Armor/Armor.gd" id="11_nemju"]
@@ -87,66 +86,6 @@ _data = {
 "take_damage": SubResource("Animation_m5gsy")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bephr"]
-atlas = ExtResource("8_eia2m")
-region = Rect2(0, 16, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_va4qh"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bephr")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gi4og"]
-atlas = ExtResource("8_eia2m")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_3uk6l"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gi4og")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5col0"]
-atlas = ExtResource("8_eia2m")
-region = Rect2(0, 48, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_vgfqs"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5col0")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5dc7j"]
-atlas = ExtResource("8_eia2m")
-region = Rect2(0, 32, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_k17nh"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5dc7j")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ik1c"]
 atlas = ExtResource("10_6jcbv")
 region = Rect2(0, 0, 32, 32)
@@ -206,36 +145,7 @@ libraries = {
 [node name="Weapons" type="Node2D" parent="."]
 script = ExtResource("5_3v3jc")
 
-[node name="UrsinCanon" type="Node2D" parent="Weapons"]
-script = ExtResource("9_r1dgk")
-
-[node name="NE" type="AnimatedSprite2D" parent="Weapons/UrsinCanon"]
-texture_filter = 1
-position = Vector2(42, 51)
-rotation = 1.5708
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_va4qh")
-
-[node name="NW" type="AnimatedSprite2D" parent="Weapons/UrsinCanon"]
-texture_filter = 1
-position = Vector2(42, -51)
-rotation = 1.5708
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_3uk6l")
-
-[node name="SE" type="AnimatedSprite2D" parent="Weapons/UrsinCanon"]
-texture_filter = 1
-position = Vector2(-99, 39)
-rotation = 1.5708
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_vgfqs")
-
-[node name="SW" type="AnimatedSprite2D" parent="Weapons/UrsinCanon"]
-texture_filter = 1
-position = Vector2(-99, -42)
-rotation = 1.5708
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_k17nh")
+[node name="UrsinCanon" parent="Weapons" instance=ExtResource("6_wwcuu")]
 
 [node name="Armor" type="AnimatedSprite2D" parent="Weapons"]
 texture_filter = 1

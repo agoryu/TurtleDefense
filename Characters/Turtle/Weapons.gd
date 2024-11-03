@@ -11,7 +11,7 @@ func _input(event):
 	if event.is_action_pressed("add_turtle_weapon_1"):
 		beam.add_weapon()
 	if event.is_action_pressed("add_turtle_weapon_2"):
-		ursinCanon.Upgrade()
+		ursinCanon.add_weapon()
 	if event.is_action_pressed("add_turtle_weapon_3"):
 		armor.Upgrade()
 	if event.is_action_pressed("add_turtle_weapon_4"):

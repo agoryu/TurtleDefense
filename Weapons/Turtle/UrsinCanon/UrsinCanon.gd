@@ -1,35 +1,15 @@
-extends Node2D
+extends AnimatedSprite2D
 
-var level : int = 0;
-@export var maxLevel : int = 4;
-@onready var canonNE : AnimatedSprite2D = $NE
-@onready var canonNW : AnimatedSprite2D = $NW
-@onready var canonSE : AnimatedSprite2D = $SE
-@onready var canonSW : AnimatedSprite2D = $SW
+@onready var _ursinCanonBall = preload("res://Weapons/Turtle/UrsinCanon/Ursin/Ursin.tscn")
+@onready var _ursin_origin = $Ursin_Origin
+var is_active := false
 
-func _ready():
-	canonNE.visible = false
-	canonNW.visible = false
-	canonSE.visible = false
-	canonSW.visible = false
+func start():
+	is_active = true
+	visible = true
 
-func Upgrade():
-	if level < maxLevel:
-		_upgrade_level()
-	else:
-		return
-
-func GetCurrentLevel() -> int:
-	return level
-
-func _upgrade_level():
-	level += 1
-	match level:
-		1:
-			canonNE.visible = true
-		2:
-			canonNW.visible = true
-		3:
-			canonSE.visible = true
-		4:
-			canonSW.visible = true
+func fire(ursinSpeed):
+	if is_active:
+		var ursinCanonBall = _ursinCanonBall.instantiate()
+		ursinCanonBall.initialize(_ursin_origin, ursinSpeed)
+		get_tree().root.add_child(ursinCanonBall)
