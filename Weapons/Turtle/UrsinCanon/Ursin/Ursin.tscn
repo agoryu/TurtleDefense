@@ -3,15 +3,15 @@
 [ext_resource type="Script" path="res://Weapons/Turtle/UrsinCanon/Ursin/Ursin.gd" id="1_pgkmf"]
 [ext_resource type="Texture2D" uid="uid://ctdv8e4kqbsdr" path="res://Weapons/Turtle/UrsinCanon/Ursin/Ursin.png" id="2_6va65"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jsdfc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyukq"]
 atlas = ExtResource("2_6va65")
-region = Rect2(0, 0, 8, 8)
+region = Rect2(0, 0, 7, 7)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i8rwc"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jsdfc")
+"texture": SubResource("AtlasTexture_lyukq")
 }],
 "loop": true,
 "name": &"default",
@@ -24,15 +24,16 @@ radius = 11.0
 [node name="Ursin" type="CharacterBody2D"]
 script = ExtResource("1_pgkmf")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Ursin" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_i8rwc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 1)
 shape = SubResource("CircleShape2D_70uu3")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Spike-N" type="AnimatedSprite2D" parent="."]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
