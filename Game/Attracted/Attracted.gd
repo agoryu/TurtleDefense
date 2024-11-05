@@ -15,7 +15,7 @@ func attract(delta: float):
 	else:
 		attractors = [Game.player]
 		max_speed *= 1.1
-		
+
 	if attractors:
 		var desired_velocity: Vector2 = (
 			(attractors[0].global_position - global_position).normalized() * max_speed

@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://b01560ixjc52w"]
+
+[ext_resource type="Script" path="res://Weapons/Turtle/UrsinCanon/Spike/Spike.gd" id="1_088tq"]
+[ext_resource type="Texture2D" uid="uid://l8udbdan3nld" path="res://Weapons/Turtle/UrsinCanon/Spike/Spike.png" id="1_xka61"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fc0c"]
+atlas = ExtResource("1_xka61")
+region = Rect2(0, 0, 7, 7)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_isq1u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fc0c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jw86f"]
+size = Vector2(20, 25)
+
+[node name="Spike" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_088tq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+rotation = 3.14159
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_isq1u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_jw86f")

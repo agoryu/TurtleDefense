@@ -6,7 +6,7 @@ extends Node2D
 func _on_timer_timeout():
 	var shell = shell_constructor.instantiate()
 	shell.global_position = Vector2(
-		randi() % int(Game.screen_size.x), 
+		randi() % int(Game.screen_size.x),
 		randi() % int(Game.screen_size.y))
 	get_parent().add_child(shell)
 	timer.start()
