@@ -134,9 +134,13 @@ offset = Vector2(0.5, -1.5)
 [node name="Marker2D" type="Marker2D" parent="GunArea/Gun"]
 position = Vector2(-3.25739e-05, -9)
 
+[node name="GunAreaTimer" type="Timer" parent="GunArea"]
+wait_time = 0.3
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 
 [node name="Lightning" parent="." instance=ExtResource("4_xl6tr")]
 
+[connection signal="timeout" from="GunArea/GunAreaTimer" to="GunArea" method="_on_gun_area_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
