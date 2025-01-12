@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://13o6gi6ilbss"]
+[gd_scene load_steps=22 format=3 uid="uid://13o6gi6ilbss"]
 
 [ext_resource type="Script" path="res://Characters/Turtle/Turtle.gd" id="1_ow1ky"]
 [ext_resource type="Texture2D" uid="uid://b2pcunr07xyv5" path="res://Characters/Turtle/turtle-Sheet.png" id="2_dypx1"]
@@ -6,11 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://bruykml7gpfws" path="res://UI/HealthBar/HealthBar.tscn" id="4_4bxws"]
 [ext_resource type="Script" path="res://Characters/Turtle/Weapons.gd" id="5_3v3jc"]
 [ext_resource type="PackedScene" uid="uid://bc046gds1aws5" path="res://Weapons/Turtle/UrsinCanon/UrsinCanons.tscn" id="6_wwcuu"]
-[ext_resource type="Texture2D" uid="uid://csn41th6sd54q" path="res://Weapons/Turtle/Armor/Armor.png" id="10_6jcbv"]
 [ext_resource type="PackedScene" uid="uid://clwagy3q4nst4" path="res://Weapons/Turtle/Multishot/MultiShot.tscn" id="10_tf861"]
-[ext_resource type="Script" path="res://Weapons/Turtle/Armor/Armor.gd" id="11_nemju"]
 [ext_resource type="PackedScene" uid="uid://rym6k4owtt8r" path="res://Weapons/Turtle/Laser/Laser.tscn" id="12_142aw"]
 [ext_resource type="PackedScene" uid="uid://sx1ymsingmvu" path="res://Weapons/Turtle/PiratCanon/PiratCanons.tscn" id="12_hbf2p"]
+[ext_resource type="PackedScene" uid="uid://bgih4ld6to0gv" path="res://Weapons/Turtle/Shield/Shield.tscn" id="13_4cysj"]
 [ext_resource type="PackedScene" uid="uid://ckuhayprkbicm" path="res://Weapons/Turtle/BeamWeapon/BeamWeapon.tscn" id="16_jv588"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s0gp0"]
@@ -86,21 +85,6 @@ _data = {
 "take_damage": SubResource("Animation_m5gsy")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6ik1c"]
-atlas = ExtResource("10_6jcbv")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_dbfqv"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6ik1c")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [node name="Turtle" type="CharacterBody2D"]
 collision_layer = 8
 collision_mask = 0
@@ -147,22 +131,15 @@ script = ExtResource("5_3v3jc")
 
 [node name="UrsinCanon" parent="Weapons" instance=ExtResource("6_wwcuu")]
 
-[node name="Armor" type="AnimatedSprite2D" parent="Weapons"]
-texture_filter = 1
-position = Vector2(-30, 0)
-rotation = 1.5708
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_dbfqv")
-script = ExtResource("11_nemju")
-
 [node name="MultiShot" parent="Weapons" instance=ExtResource("10_tf861")]
 
 [node name="PiratCanon" parent="Weapons" instance=ExtResource("12_hbf2p")]
 
+[node name="Shield" parent="Weapons" instance=ExtResource("13_4cysj")]
+
 [node name="Laser" parent="Weapons" instance=ExtResource("12_142aw")]
 
 [node name="BeamWeapon" parent="Weapons" instance=ExtResource("16_jv588")]
-visible = false
 position = Vector2(24, 0)
 cost_weapon = 5
 
