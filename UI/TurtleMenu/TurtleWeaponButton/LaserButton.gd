@@ -1,5 +1,5 @@
 extends TurtleWeaponButton
 
 func _ready() -> void:
-	weapon = Game.turtle.beam_weapon
+	weapon = Game.turtle.laser_weapon
 	$Weapon/Details.cost_label.text = "%d" % weapon.cost_weapon

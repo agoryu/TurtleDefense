@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bruykml7gpfws" path="res://UI/HealthBar/HealthBar.tscn" id="4_4bxws"]
 [ext_resource type="Script" path="res://Characters/Turtle/Weapons.gd" id="5_3v3jc"]
 [ext_resource type="PackedScene" uid="uid://bc046gds1aws5" path="res://Weapons/Turtle/UrsinCanon/UrsinCanons.tscn" id="6_wwcuu"]
-[ext_resource type="Texture2D" uid="uid://csn41th6sd54q" path="res://Weapons/Turtle/Armor/Armor.png" id="10_6jcbv"]
+[ext_resource type="Texture2D" uid="uid://dmhnis14v615b" path="res://Weapons/Turtle/Armor/Armor.png" id="10_6jcbv"]
 [ext_resource type="PackedScene" uid="uid://clwagy3q4nst4" path="res://Weapons/Turtle/Multishot/MultiShot.tscn" id="10_tf861"]
 [ext_resource type="Script" path="res://Weapons/Turtle/Armor/Armor.gd" id="11_nemju"]
 [ext_resource type="PackedScene" uid="uid://rym6k4owtt8r" path="res://Weapons/Turtle/Laser/Laser.tscn" id="12_142aw"]

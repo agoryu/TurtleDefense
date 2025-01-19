@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ha6vswse4ybs"]
+[gd_scene load_steps=21 format=3 uid="uid://ha6vswse4ybs"]
 
 [ext_resource type="Script" path="res://UI/TurtleMenu/TurtleMenu.gd" id="1_dy272"]
 [ext_resource type="FontFile" uid="uid://blj6vqobuxig2" path="res://UI/Pixellari.ttf" id="1_fig86"]
@@ -7,6 +7,12 @@
 [ext_resource type="AudioStream" uid="uid://ubnfxhy7rj0s" path="res://UI/TurtleMenu/openning.wav" id="4_3odd6"]
 [ext_resource type="Script" path="res://UI/TurtleMenu/TurtleWeaponButton/LaserBeamButton.gd" id="5_24wrk"]
 [ext_resource type="Texture2D" uid="uid://ds3matnvig60o" path="res://Weapons/Turtle/BeamWeapon/Beam.png" id="6_gsvde"]
+[ext_resource type="Script" path="res://UI/TurtleMenu/TurtleWeaponButton/LaserButton.gd" id="7_beap7"]
+[ext_resource type="Script" path="res://UI/TurtleMenu/TurtleWeaponButton/MultishotButton.gd" id="8_6k6jw"]
+[ext_resource type="Texture2D" uid="uid://dl2u8idqd8djg" path="res://Weapons/Turtle/Multishot/Multishot.png" id="8_oxyfb"]
+[ext_resource type="Script" path="res://UI/TurtleMenu/TurtleWeaponButton/PiratCanonButton.gd" id="10_v34pf"]
+[ext_resource type="Script" path="res://UI/TurtleMenu/TurtleWeaponButton/UrsinCanonButton.gd" id="11_h5hw7"]
+[ext_resource type="Texture2D" uid="uid://cs33f3mamp46d" path="res://Weapons/Turtle/UrsinCanon/Ursin/Ursin.png" id="12_odt18"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_173b7"]
 bg_color = Color(0.243137, 0.454902, 0.866667, 1)
@@ -134,22 +140,63 @@ text = "turtle.menu.beam.boost1"
 [node name="Title" parent="VBoxContainer/ScrollContainer/Weapons/LaserBeamButton/Boost2/Details" index="0"]
 text = "turtle.menu.beam.boost2"
 
-[node name="TurtleWeaponButton2" parent="VBoxContainer/ScrollContainer/Weapons" instance=ExtResource("1_g1rto")]
-visible = false
+[node name="LaserButton" parent="VBoxContainer/ScrollContainer/Weapons" instance=ExtResource("1_g1rto")]
 layout_mode = 2
+script = ExtResource("7_beap7")
 
-[node name="TurtleWeaponButton3" parent="VBoxContainer/ScrollContainer/Weapons" instance=ExtResource("1_g1rto")]
-visible = false
-layout_mode = 2
+[node name="Title" parent="VBoxContainer/ScrollContainer/Weapons/LaserButton/Weapon/Details" index="0"]
+text = "turtle.menu.laser"
 
-[node name="TurtleWeaponButton4" parent="VBoxContainer/ScrollContainer/Weapons" instance=ExtResource("1_g1rto")]
-visible = false
-layout_mode = 2
-is_focus = true
+[node name="Title" parent="VBoxContainer/ScrollContainer/Weapons/LaserButton/Boost1/Details" index="0"]
+text = "turtle.menu.laser.boost1"
 
-[node name="TurtleWeaponButton5" parent="VBoxContainer/ScrollContainer/Weapons" instance=ExtResource("1_g1rto")]
-visible = false
+[node name="Title" parent="VBoxContainer/ScrollContainer/Weapons/LaserButton/Boost2/Details" index="0"]
+text = "turtle.menu.laser.boost2"
+
+[node name="MultishotButton" parent="VBoxContainer/ScrollContainer/Weapons" instance=ExtResource("1_g1rto")]
 layout_mode = 2
+script = ExtResource("8_6k6jw")
+
+[node name="Weapon" parent="VBoxContainer/ScrollContainer/Weapons/MultishotButton" index="0"]
+icon = ExtResource("8_oxyfb")
+
+[node name="Title" parent="VBoxContainer/ScrollContainer/Weapons/MultishotButton/Weapon/Details" index="0"]
+text = "turtle.menu.multishot"
+
+[node name="Title" parent="VBoxContainer/ScrollContainer/Weapons/MultishotButton/Boost1/Details" index="0"]
+text = "turtle.menu.multishot.boost1"
+
+[node name="Title" parent="VBoxContainer/ScrollContainer/Weapons/MultishotButton/Boost2/Details" index="0"]
+text = "turtle.menu.multishot.boost2"
+
+[node name="PiratCanonButton" parent="VBoxContainer/ScrollContainer/Weapons" instance=ExtResource("1_g1rto")]
+layout_mode = 2
+script = ExtResource("10_v34pf")
+
+[node name="Title" parent="VBoxContainer/ScrollContainer/Weapons/PiratCanonButton/Weapon/Details" index="0"]
+text = "turtle.menu.piratcanon"
+
+[node name="Title" parent="VBoxContainer/ScrollContainer/Weapons/PiratCanonButton/Boost1/Details" index="0"]
+text = "turtle.menu.piratcanon.boost1"
+
+[node name="Title" parent="VBoxContainer/ScrollContainer/Weapons/PiratCanonButton/Boost2/Details" index="0"]
+text = "turtle.menu.piratcanon.boost2"
+
+[node name="UrsinCanonButton" parent="VBoxContainer/ScrollContainer/Weapons" instance=ExtResource("1_g1rto")]
+layout_mode = 2
+script = ExtResource("11_h5hw7")
+
+[node name="Weapon" parent="VBoxContainer/ScrollContainer/Weapons/UrsinCanonButton" index="0"]
+icon = ExtResource("12_odt18")
+
+[node name="Title" parent="VBoxContainer/ScrollContainer/Weapons/UrsinCanonButton/Weapon/Details" index="0"]
+text = "turtle.menu.ursincanon"
+
+[node name="Title" parent="VBoxContainer/ScrollContainer/Weapons/UrsinCanonButton/Boost1/Details" index="0"]
+text = "turtle.menu.ursincanon.boost1"
+
+[node name="Title" parent="VBoxContainer/ScrollContainer/Weapons/UrsinCanonButton/Boost2/Details" index="0"]
+text = "turtle.menu.ursincanon.boost2"
 
 [node name="TurtleWeaponButton6" parent="VBoxContainer/ScrollContainer/Weapons" instance=ExtResource("1_g1rto")]
 visible = false
@@ -165,3 +212,19 @@ stream = ExtResource("4_3odd6")
 [editable path="VBoxContainer/ScrollContainer/Weapons/LaserBeamButton/Weapon/Details"]
 [editable path="VBoxContainer/ScrollContainer/Weapons/LaserBeamButton/Boost1/Details"]
 [editable path="VBoxContainer/ScrollContainer/Weapons/LaserBeamButton/Boost2/Details"]
+[editable path="VBoxContainer/ScrollContainer/Weapons/LaserButton"]
+[editable path="VBoxContainer/ScrollContainer/Weapons/LaserButton/Weapon/Details"]
+[editable path="VBoxContainer/ScrollContainer/Weapons/LaserButton/Boost1/Details"]
+[editable path="VBoxContainer/ScrollContainer/Weapons/LaserButton/Boost2/Details"]
+[editable path="VBoxContainer/ScrollContainer/Weapons/MultishotButton"]
+[editable path="VBoxContainer/ScrollContainer/Weapons/MultishotButton/Weapon/Details"]
+[editable path="VBoxContainer/ScrollContainer/Weapons/MultishotButton/Boost1/Details"]
+[editable path="VBoxContainer/ScrollContainer/Weapons/MultishotButton/Boost2/Details"]
+[editable path="VBoxContainer/ScrollContainer/Weapons/PiratCanonButton"]
+[editable path="VBoxContainer/ScrollContainer/Weapons/PiratCanonButton/Weapon/Details"]
+[editable path="VBoxContainer/ScrollContainer/Weapons/PiratCanonButton/Boost1/Details"]
+[editable path="VBoxContainer/ScrollContainer/Weapons/PiratCanonButton/Boost2/Details"]
+[editable path="VBoxContainer/ScrollContainer/Weapons/UrsinCanonButton"]
+[editable path="VBoxContainer/ScrollContainer/Weapons/UrsinCanonButton/Weapon/Details"]
+[editable path="VBoxContainer/ScrollContainer/Weapons/UrsinCanonButton/Boost1/Details"]
+[editable path="VBoxContainer/ScrollContainer/Weapons/UrsinCanonButton/Boost2/Details"]

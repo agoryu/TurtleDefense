@@ -6,6 +6,12 @@ extends CharacterBody2D
 @onready var health: Health = $Health
 @onready var beam_weapon : Weapon = $Weapons/BeamWeapon
 
+@onready var ursin_canon_weapon = $Weapons/UrsinCanon
+@onready var armor_weapon = $Weapons/Armor
+@onready var multishot_weapon = $Weapons/MultiShot
+@onready var pirat_canon_weapon = $Weapons/PiratCanon
+@onready var laser_weapon = $Weapons/Laser
+
 @export var speed = 30.0
 @export var drag := 5.0
 

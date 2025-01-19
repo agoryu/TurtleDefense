@@ -27,9 +27,11 @@ func add_weapon():
 
 func boost1():
 	Game.nb_shell -= weapon.cost_boost1
+	weapon.upgrade_primary_stat()
 
 func boost2():
 	Game.nb_shell -= weapon.cost_boost2
+	weapon.upgrade_secondary_stat()
 
 func _on_weapon_button_up() -> void:
 	weapon_button.disabled = true
