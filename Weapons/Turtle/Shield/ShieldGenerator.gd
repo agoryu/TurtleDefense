@@ -1,4 +1,4 @@
-extends AnimatedSprite2D
+extends Weapon
 
 var level : int = 0;
 @export var maxLevel : int = 1;
@@ -6,10 +6,7 @@ var level : int = 0;
 func _ready():
 	visible = false
 
-func Upgrade():
+func add_weapon():
 	if level < maxLevel:
 		level += 1
 		visible = true
-
-func GetCurrentLevel() -> int:
-	return level

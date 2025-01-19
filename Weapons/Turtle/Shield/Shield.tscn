@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgih4ld6to0gv"]
+
+[ext_resource type="Shader" path="res://Weapons/Turtle/Shield/Shield.gdshader" id="1_0utld"]
+[ext_resource type="Script" path="res://Weapons/Turtle/Shield/Shield.gd" id="1_npb7q"]
+[ext_resource type="Texture2D" uid="uid://bs5ra18l62ir8" path="res://Weapons/Turtle/Shield/sparkle.png" id="2_lk0m7"]
+[ext_resource type="Texture2D" uid="uid://csn41th6sd54q" path="res://Weapons/Turtle/Shield/ShieldGenerator.png" id="4_p7ivg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eddlv"]
+shader = ExtResource("1_0utld")
+shader_parameter/color = Color(1, 1, 1, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6w1lm"]
+radius = 56.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ljv37"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_p7ivg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Shield" type="Node2D"]
+position = Vector2(-30, 0)
+script = ExtResource("1_npb7q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_eddlv")
+texture = ExtResource("2_lk0m7")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_6w1lm")
+
+[node name="ShieldGenerator" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+rotation = 1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_ljv37")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

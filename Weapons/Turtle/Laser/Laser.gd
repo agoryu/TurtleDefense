@@ -1,6 +1,5 @@
 extends Weapon
 
-var isShooting : bool = false
 var primaryLevel : int = 0
 var secondaryLevel : int = 0
 var lightningSize : int = 8
@@ -40,9 +39,8 @@ func upgrade_secondary_stat():
 				lightningSize = 18
 
 func _on_timer_timeout() -> void:
-	if isShooting:
-		return
 	var nearestEnemy = gunArea.get_nearest_enemy()
+	gunArea.shoot()
 	if nearestEnemy == null:
 		return
 	var lightning = lightningScene.instantiate()
