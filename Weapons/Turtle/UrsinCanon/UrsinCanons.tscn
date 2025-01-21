@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://bc046gds1aws5"]
 
 [ext_resource type="Script" path="res://Weapons/Turtle/UrsinCanon/UrsinCanons.gd" id="1_nsusf"]
-[ext_resource type="Texture2D" uid="uid://cdbbbjvw1ddcj" path="res://Weapons/Turtle/UrsinCanon/UrsinCanon.png" id="2_504sn"]
+[ext_resource type="Texture2D" uid="uid://dlipfrkbaqbde" path="res://Weapons/Turtle/UrsinCanon/UrsinCanon.png" id="2_504sn"]
 [ext_resource type="Script" path="res://Weapons/Turtle/UrsinCanon/UrsinCanon.gd" id="3_3xl5s"]
 [ext_resource type="Script" path="res://Weapons/Turtle/UrsinCanon/UrsinOrigin.gd" id="4_xabub"]
 

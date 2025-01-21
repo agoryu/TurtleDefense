@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://sx1ymsingmvu"]
 
 [ext_resource type="Script" path="res://Weapons/Turtle/PiratCanon/PiratCanons.gd" id="1_teahw"]
-[ext_resource type="Texture2D" uid="uid://d3shk27r0pmgc" path="res://Weapons/Turtle/PiratCanon/PiratCanons.png" id="2_3382q"]
+[ext_resource type="Texture2D" uid="uid://uoowiph88ic4" path="res://Weapons/Turtle/PiratCanon/PiratCanons.png" id="2_3382q"]
 [ext_resource type="Script" path="res://Weapons/Turtle/PiratCanon/Canon.gd" id="3_ocbfn"]
 [ext_resource type="Script" path="res://Weapons/Turtle/PiratCanon/FireOrigin.gd" id="4_jkln7"]
 

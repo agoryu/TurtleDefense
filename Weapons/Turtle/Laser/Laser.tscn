@@ -142,5 +142,7 @@ wait_time = 3.0
 
 [node name="Lightning" parent="." instance=ExtResource("4_xl6tr")]
 
+[connection signal="body_entered" from="GunArea" to="GunArea" method="_on_body_entered"]
+[connection signal="body_exited" from="GunArea" to="GunArea" method="_on_body_exited"]
 [connection signal="timeout" from="GunArea/GunAreaTimer" to="GunArea" method="_on_gun_area_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

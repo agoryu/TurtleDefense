@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bmo1tdiyu7ie0"]
 
-[ext_resource type="Texture2D" uid="uid://bvrdew3owuo0x" path="res://Weapons/Turtle/PiratCanon/CanonBall/CanonBall.png" id="1_pu55y"]
+[ext_resource type="Texture2D" uid="uid://q4y2g4803w8o" path="res://Weapons/Turtle/PiratCanon/CanonBall/CanonBall.png" id="1_pu55y"]
 [ext_resource type="Script" path="res://Weapons/Turtle/PiratCanon/CanonBall/CanonBall.gd" id="1_rr2kf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5nnh3"]

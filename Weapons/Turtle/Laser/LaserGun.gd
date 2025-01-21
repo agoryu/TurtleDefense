@@ -1,6 +1,7 @@
 extends Area2D
 
 var _isShooting = false
+var enemies_in_range = []
 @onready var _gunAreaTimer = $GunAreaTimer
 
 func shoot():
@@ -16,7 +17,6 @@ func get_nearest_enemy():
 	if _isShooting:
 		return
 
-	var enemies_in_range = get_overlapping_bodies()
 	if enemies_in_range.size() == 0:
 		return null
 	if (enemies_in_range.size() == 1):
@@ -30,6 +30,11 @@ func get_nearest_enemy():
 			closestEnemy = enemy
 	return closestEnemy
 
-
 func _on_gun_area_timer_timeout() -> void:
 	_isShooting = false
+
+func _on_body_entered(body: CharacterBody2D) -> void:
+	enemies_in_range.append(body);
+
+func _on_body_exited(body: Node2D) -> void:
+	enemies_in_range.erase(body)
