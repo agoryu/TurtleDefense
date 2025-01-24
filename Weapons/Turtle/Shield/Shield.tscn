@@ -1,16 +1,32 @@
-[gd_scene load_steps=8 format=3 uid="uid://bgih4ld6to0gv"]
+[gd_scene load_steps=15 format=3 uid="uid://bgih4ld6to0gv"]
 
 [ext_resource type="Shader" path="res://Weapons/Turtle/Shield/Shield.gdshader" id="1_0utld"]
 [ext_resource type="Script" path="res://Weapons/Turtle/Shield/Shield.gd" id="1_npb7q"]
-[ext_resource type="Texture2D" uid="uid://bs5ra18l62ir8" path="res://Weapons/Turtle/Shield/sparkle.png" id="2_lk0m7"]
-[ext_resource type="Texture2D" uid="uid://csn41th6sd54q" path="res://Weapons/Turtle/Shield/ShieldGenerator.png" id="4_p7ivg"]
+[ext_resource type="Texture2D" uid="uid://bqhmnlexi6ojo" path="res://Weapons/Turtle/Shield/sparkle.png" id="2_lk0m7"]
+[ext_resource type="Texture2D" uid="uid://bblkp6wd6vvl0" path="res://Weapons/Turtle/Shield/ShieldGenerator.png" id="4_p7ivg"]
+[ext_resource type="Animation" uid="uid://d2gdgwx1tehit" path="res://Weapons/Turtle/Shield/impact.anim" id="5_fk815"]
+[ext_resource type="AudioStream" uid="uid://c1kk461a1j3tj" path="res://Weapons/Turtle/Shield/impact.wav" id="6_odm0f"]
+[ext_resource type="AudioStream" uid="uid://x6kc5ibvxwns" path="res://Weapons/Turtle/Shield/open.mp3" id="7_at312"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_eddlv"]
 shader = ExtResource("1_0utld")
-shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/active = true
+shader_parameter/zoom_out = 1.2
+shader_parameter/border_decay = 0.7
+shader_parameter/shield_tint = Color(0.313726, 0.552941, 0.878431, 0.568627)
+shader_parameter/shield_saturation = Color(0.901961, 0.901961, 0.901961, 0.784314)
+shader_parameter/attack_angle = 0.0
+shader_parameter/attack_penetration = 0.15
+shader_parameter/attack_radius = 0.6
+shader_parameter/attack_amplitude = 0.1
+shader_parameter/wave_speed = 12.0
+shader_parameter/wave_num = 17.0
+shader_parameter/noise_speed = 1.0
+shader_parameter/noise_amplitude = 1.0
+shader_parameter/noise_deformation = 5.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6w1lm"]
-radius = 56.0
+radius = 142.225
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ljv37"]
 animations = [{
@@ -23,12 +39,214 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_im6le"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:shape:radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [142.225]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayerOpen:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayerImpact:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_fayqt"]
+resource_name = "close"
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.8, 2.8), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_2vimx"]
+resource_name = "open"
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2.8, 2.8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.0049),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Area2D/CollisionShape2D:shape:radius")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [62.0, 166.0]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"clear_attack_impact"
+}]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayerOpen:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7vuu4"]
+_data = {
+"RESET": SubResource("Animation_im6le"),
+"close": SubResource("Animation_fayqt"),
+"impact": ExtResource("5_fk815"),
+"open": SubResource("Animation_2vimx")
+}
+
 [node name="Shield" type="Node2D"]
 position = Vector2(-30, 0)
 script = ExtResource("1_npb7q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_eddlv")
+scale = Vector2(3, 3)
 texture = ExtResource("2_lk0m7")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -37,6 +255,7 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_6w1lm")
+debug_color = Color(0.811765, 0, 0.862745, 0.72549)
 
 [node name="ShieldGenerator" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -44,4 +263,20 @@ rotation = 1.5708
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_ljv37")
 
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7vuu4")
+}
+
+[node name="AudioStreamPlayerImpact" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_odm0f")
+
+[node name="AudioStreamPlayerOpen" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_at312")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_timer_timeout"]

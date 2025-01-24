@@ -25,9 +25,7 @@ func _ready():
 	_shots = [_shot_1, _shot_2, _shot_3, _shot_4, _shot_5, _shot_6, _shot_7, _shot_8]
 
 func add_weapon():
-	if visible:
-		return
-	visible = true
+	super()
 	_primary_stat += 1
 	_shotShift.start()
 

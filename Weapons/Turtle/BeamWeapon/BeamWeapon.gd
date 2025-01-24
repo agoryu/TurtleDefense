@@ -23,3 +23,7 @@ func upgrade_secondary_stat():
 func _on_end_shoot_timer_timeout() -> void:
 	_laser_beam.set_is_casting(false)
 	_shoot_timer.start()
+	
+func add_weapon():
+	super()
+	shoot_timer.start()

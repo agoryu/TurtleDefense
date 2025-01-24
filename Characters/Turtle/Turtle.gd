@@ -7,7 +7,7 @@ extends CharacterBody2D
 @onready var beam_weapon : Weapon = $Weapons/BeamWeapon
 
 @onready var ursin_canon_weapon = $Weapons/UrsinCanon
-@onready var armor_weapon = $Weapons/Armor
+@onready var armor_weapon = $Weapons/Shield
 @onready var multishot_weapon = $Weapons/MultiShot
 @onready var pirat_canon_weapon = $Weapons/PiratCanon
 @onready var laser_weapon = $Weapons/Laser

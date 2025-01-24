@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ha6vswse4ybs"]
+[gd_scene load_steps=22 format=3 uid="uid://ha6vswse4ybs"]
 
 [ext_resource type="Script" path="res://UI/TurtleMenu/TurtleMenu.gd" id="1_dy272"]
 [ext_resource type="FontFile" uid="uid://blj6vqobuxig2" path="res://UI/Pixellari.ttf" id="1_fig86"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://UI/TurtleMenu/TurtleWeaponButton/PiratCanonButton.gd" id="10_v34pf"]
 [ext_resource type="Script" path="res://UI/TurtleMenu/TurtleWeaponButton/UrsinCanonButton.gd" id="11_h5hw7"]
 [ext_resource type="Texture2D" uid="uid://cs33f3mamp46d" path="res://Weapons/Turtle/UrsinCanon/Ursin/Ursin.png" id="12_odt18"]
+[ext_resource type="Script" path="res://UI/TurtleMenu/TurtleWeaponButton/ShieldButton.gd" id="13_avrjy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_173b7"]
 bg_color = Color(0.243137, 0.454902, 0.866667, 1)
@@ -198,9 +199,18 @@ text = "turtle.menu.ursincanon.boost1"
 [node name="Title" parent="VBoxContainer/ScrollContainer/Weapons/UrsinCanonButton/Boost2/Details" index="0"]
 text = "turtle.menu.ursincanon.boost2"
 
-[node name="TurtleWeaponButton6" parent="VBoxContainer/ScrollContainer/Weapons" instance=ExtResource("1_g1rto")]
-visible = false
+[node name="ShieldButton" parent="VBoxContainer/ScrollContainer/Weapons" instance=ExtResource("1_g1rto")]
 layout_mode = 2
+script = ExtResource("13_avrjy")
+
+[node name="Title" parent="VBoxContainer/ScrollContainer/Weapons/ShieldButton/Weapon/Details" index="0"]
+text = "turtle.menu.shield"
+
+[node name="Title" parent="VBoxContainer/ScrollContainer/Weapons/ShieldButton/Boost1/Details" index="0"]
+text = "turtle.menu.shield.boost1"
+
+[node name="Title" parent="VBoxContainer/ScrollContainer/Weapons/ShieldButton/Boost2/Details" index="0"]
+text = "turtle.menu.shield.boost2"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_3odd6")
@@ -228,3 +238,7 @@ stream = ExtResource("4_3odd6")
 [editable path="VBoxContainer/ScrollContainer/Weapons/UrsinCanonButton/Weapon/Details"]
 [editable path="VBoxContainer/ScrollContainer/Weapons/UrsinCanonButton/Boost1/Details"]
 [editable path="VBoxContainer/ScrollContainer/Weapons/UrsinCanonButton/Boost2/Details"]
+[editable path="VBoxContainer/ScrollContainer/Weapons/ShieldButton"]
+[editable path="VBoxContainer/ScrollContainer/Weapons/ShieldButton/Weapon/Details"]
+[editable path="VBoxContainer/ScrollContainer/Weapons/ShieldButton/Boost1/Details"]
+[editable path="VBoxContainer/ScrollContainer/Weapons/ShieldButton/Boost2/Details"]

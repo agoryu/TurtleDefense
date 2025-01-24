@@ -15,12 +15,12 @@ func _ready():
 	visible = false
 
 func add_weapon():
+	super()
 	if primaryLevel == 0 and secondaryLevel == 0:
 		timer.start()
 		gun.play("default")
 		primaryLevel += 1
 		secondaryLevel += 1
-		visible = true
 
 func upgrade_primary_stat():
 	if primaryLevel < maxPrimaryLevel:

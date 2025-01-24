@@ -20,3 +20,6 @@ turtle.menu.piratcanon.boost2,Vitesse de tir,Speed fire
 turtle.menu.ursincanon,Canon à oursin,Ursin canon
 turtle.menu.ursincanon.boost1,Ajout canon,Add canon
 turtle.menu.ursincanon.boost2,Vitesse de tir,Speed fire
+turtle.menu.shield,Bouclier,Shield
+turtle.menu.shield.boost1,Vitesse récupération,Speed reload
+turtle.menu.shield.boost2,Puissance,Power

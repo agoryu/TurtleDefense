@@ -18,6 +18,7 @@ func _ready():
 		ursinCanon.visible = false
 
 func add_weapon():
+	super()
 	_timer.start()
 	upgrade_primary_stat()
 
