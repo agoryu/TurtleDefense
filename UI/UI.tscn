@@ -29,11 +29,11 @@ grow_vertical = 2
 color = Color(0.172549, 0.443137, 0.886275, 0.392157)
 
 [node name="TurtleMenu" parent="." instance=ExtResource("3_cobd8")]
-visible = false
-offset_left = -208.0
-offset_top = -194.0
-offset_right = 208.0
-offset_bottom = 194.0
+offset_left = -320.0
+offset_top = -185.0
+offset_right = 320.0
+offset_bottom = 212.0
+size_flags_horizontal = 4
 
 [node name="Pause" parent="." instance=ExtResource("4_kni4o")]
 visible = false

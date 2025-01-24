@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://uuqlj466fycr"]
+[gd_scene load_steps=7 format=3 uid="uid://uuqlj466fycr"]
 
 [ext_resource type="Script" path="res://Weapons/Turtle/UrsinCanon/Ursin/Ursin.gd" id="1_pgkmf"]
-[ext_resource type="Texture2D" uid="uid://ctdv8e4kqbsdr" path="res://Weapons/Turtle/UrsinCanon/Ursin/Ursin.png" id="2_6va65"]
+[ext_resource type="Texture2D" uid="uid://cs33f3mamp46d" path="res://Weapons/Turtle/UrsinCanon/Ursin/Ursin.png" id="2_6va65"]
+[ext_resource type="AudioStream" uid="uid://7fpra5w6vrd" path="res://Weapons/Turtle/UrsinCanon/Ursin/slingshot.mp3" id="3_fxdyh"]
+[ext_resource type="AudioStream" uid="uid://cqcy52ti2urrl" path="res://Weapons/Turtle/UrsinCanon/Ursin/spike.mp3" id="4_ndhb6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lyukq"]
 atlas = ExtResource("2_6va65")
@@ -32,6 +34,12 @@ sprite_frames = SubResource("SpriteFrames_i8rwc")
 wait_time = 3.0
 
 [node name="SpikesTimer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayerShoot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_fxdyh")
+
+[node name="AudioStreamPlayerSpike" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ndhb6")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="SpikesTimer" to="." method="_on_spikes_timer_timeout"]

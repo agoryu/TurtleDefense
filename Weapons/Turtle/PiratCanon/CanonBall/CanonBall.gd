@@ -13,6 +13,7 @@ func initialize(origin, speed):
 
 func _ready():
 	_timer.start()
+	$AudioStreamPlayer2D.play()
 
 func _physics_process(delta):
 	move_and_collide(_direction * _speed * delta)

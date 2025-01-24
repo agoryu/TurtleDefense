@@ -17,6 +17,7 @@ func initialize(origin, speed, bullet):
 
 func _ready():
 	_timer.start()
+	$AudioStreamPlayerShoot.play()
 
 func _physics_process(delta):
 	position += _direction * _speed * delta
@@ -26,6 +27,7 @@ func _on_timer_timeout() -> void:
 	for spike in _spikes:
 		if spike != null:
 			spike.fire()
+			$AudioStreamPlayerSpike.play()
 	_spikesTimer.start()
 
 func instance_around_circle(circle_center : Vector2, circle_radius : float, object : PackedScene, count : int, base_rotation : float):

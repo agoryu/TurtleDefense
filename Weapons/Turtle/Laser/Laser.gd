@@ -16,6 +16,7 @@ func _ready():
 
 func add_weapon():
 	super()
+	$AudioStreamPlayer2D.play()
 	if primaryLevel == 0 and secondaryLevel == 0:
 		timer.start()
 		gun.play("default")
