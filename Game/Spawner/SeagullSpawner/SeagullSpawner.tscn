@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3mck3pij8qii"]
+
+[ext_resource type="Script" path="res://Game/Spawner/SeagullSpawner/SeagullSpawner.gd" id="1_babun"]
+
+[sub_resource type="Curve2D" id="Curve2D_hqaw7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 192, -64, 0, 0, 0, 0, 1792, -64)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_2dxtl"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 192, 1152, 0, 0, 0, 0, 1792, 1152)
+}
+point_count = 2
+
+[node name="SeagullSpawner" type="Node2D"]
+script = ExtResource("1_babun")
+
+[node name="Path2DTop" type="Path2D" parent="."]
+use_parent_material = true
+curve = SubResource("Curve2D_hqaw7")
+
+[node name="PathFollow2DTop" type="PathFollow2D" parent="Path2DTop"]
+position = Vector2(192, -64)
+
+[node name="Path2DBottom" type="Path2D" parent="."]
+top_level = true
+curve = SubResource("Curve2D_2dxtl")
+
+[node name="PathFollow2DBottom" type="PathFollow2D" parent="Path2DBottom"]
+position = Vector2(192, 1152)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

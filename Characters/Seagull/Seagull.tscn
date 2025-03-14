@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfp1r4qhtemr3"]
+
+[ext_resource type="Texture2D" uid="uid://cdq00icsecmk5" path="res://Characters/Seagull/Seagull-Sheet.png" id="1_b4cc5"]
+[ext_resource type="Script" path="res://Characters/Seagull/Seagull.gd" id="1_rs3iu"]
+[ext_resource type="PackedScene" uid="uid://cpembt8wk8d3j" path="res://Game/Health/Health.tscn" id="2_sn07m"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1javh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_b4cc5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5jvi2"]
+radius = 28.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4b0m7"]
+radius = 24.0
+height = 106.0
+
+[node name="Seagull" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_rs3iu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, 0)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_1javh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5jvi2")
+
+[node name="Health" parent="." instance=ExtResource("2_sn07m")]
+max_value = 1
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_4b0m7")
+
+[connection signal="dead" from="Health" to="." method="_on_health_dead"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
