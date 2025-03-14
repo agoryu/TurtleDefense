@@ -2,11 +2,11 @@
 
 [ext_resource type="Shader" path="res://Weapons/Turtle/Shield/Shield.gdshader" id="1_0utld"]
 [ext_resource type="Script" path="res://Weapons/Turtle/Shield/Shield.gd" id="1_npb7q"]
-[ext_resource type="Texture2D" uid="uid://bqhmnlexi6ojo" path="res://Weapons/Turtle/Shield/sparkle.png" id="2_lk0m7"]
-[ext_resource type="Texture2D" uid="uid://bblkp6wd6vvl0" path="res://Weapons/Turtle/Shield/ShieldGenerator.png" id="4_p7ivg"]
+[ext_resource type="Texture2D" uid="uid://bs5ra18l62ir8" path="res://Weapons/Turtle/Shield/sparkle.png" id="2_lk0m7"]
+[ext_resource type="Texture2D" uid="uid://csn41th6sd54q" path="res://Weapons/Turtle/Shield/ShieldGenerator.png" id="4_p7ivg"]
 [ext_resource type="Animation" uid="uid://d2gdgwx1tehit" path="res://Weapons/Turtle/Shield/impact.anim" id="5_fk815"]
-[ext_resource type="AudioStream" uid="uid://c1kk461a1j3tj" path="res://Weapons/Turtle/Shield/impact.wav" id="6_odm0f"]
-[ext_resource type="AudioStream" uid="uid://x6kc5ibvxwns" path="res://Weapons/Turtle/Shield/open.mp3" id="7_at312"]
+[ext_resource type="AudioStream" uid="uid://cjjhhlvitx82h" path="res://Weapons/Turtle/Shield/impact.wav" id="6_odm0f"]
+[ext_resource type="AudioStream" uid="uid://cotd5j3rqy83x" path="res://Weapons/Turtle/Shield/open.mp3" id="7_at312"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_eddlv"]
 shader = ExtResource("1_0utld")

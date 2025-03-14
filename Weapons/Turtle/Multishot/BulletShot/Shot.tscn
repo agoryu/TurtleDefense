@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://ct1l35wunuavc"]
 
 [ext_resource type="Script" path="res://Weapons/Turtle/Multishot/BulletShot/Shot.gd" id="1_f4u5s"]
-[ext_resource type="Texture2D" uid="uid://c7bsaxc8qebwh" path="res://Weapons/Turtle/Multishot/BulletShot/BulletShot.png" id="2_jrygk"]
-[ext_resource type="AudioStream" uid="uid://chhvo1rfv5d60" path="res://Weapons/Turtle/Multishot/BulletShot/gun.wav" id="3_fgy1q"]
+[ext_resource type="Texture2D" uid="uid://cfenh3kg5xbkr" path="res://Weapons/Turtle/Multishot/BulletShot/BulletShot.png" id="2_jrygk"]
+[ext_resource type="AudioStream" uid="uid://d1o0i5j65w5kf" path="res://Weapons/Turtle/Multishot/BulletShot/gun.wav" id="3_fgy1q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_duu41"]
 atlas = ExtResource("2_jrygk")

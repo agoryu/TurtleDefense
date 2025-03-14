@@ -42,7 +42,7 @@ func shoot():
 	shot.initialize(_shots[_shotIndex], _shot_speed)
 	_shotIndex += 1
 	get_tree().root.add_child(shot)
-
+''
 func _on_shot_shift_timeout() -> void:
 	shoot()
 	if (_shotIndex < _shots.size()):

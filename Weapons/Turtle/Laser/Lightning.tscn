@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cuqhkr3wbc5ge"]
 
 [ext_resource type="Script" path="res://Weapons/Turtle/Laser/Lightning.gd" id="1_y0iji"]
-[ext_resource type="AudioStream" uid="uid://ddwmio5aaq1x7" path="res://Weapons/Turtle/Laser/electric_spark.wav" id="2_mvnlf"]
+[ext_resource type="AudioStream" uid="uid://cscg5ja7bk2qf" path="res://Weapons/Turtle/Laser/electric_spark.wav" id="2_mvnlf"]
 
 [sub_resource type="Curve" id="Curve_ulimu"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.161209, 0.580039), 0.0, 0.0, 0, 0, Vector2(0.327456, 0.931051), 0.0, 0.0, 0, 0, Vector2(0.458438, 0.323047), 0.0, 0.0, 0, 0, Vector2(0.634761, 0.849566), 0.0, 0.0, 0, 0, Vector2(0.775819, 0.373192), 0.0, 0.0, 0, 0, Vector2(0.88665, 0.592575), 0.0, 0.0, 0, 0, Vector2(1, 0.285439), 0.0, 0.0, 0, 0]

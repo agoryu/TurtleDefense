@@ -52,7 +52,7 @@ func _on_area_2d_body_entered(body):
 
 func _on_timer_timeout() -> void:
 	is_activate = true
-	
+
 func clear_attack_impact():
 	sprite.material.set_shader_parameter("attack_angle", 0.0)
 	sprite.material.set_shader_parameter("active", false)
