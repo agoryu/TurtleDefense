@@ -7,7 +7,6 @@ extends CharacterBody2D
 @onready var health: Health = $Health
 
 func _physics_process(delta):
-	print(rotation_degrees)
 	var orientation = Vector2.DOWN if rotation_degrees == -180 else Vector2.UP
 	var desired_velocity = orientation * speed
 	var steering = desired_velocity - velocity
