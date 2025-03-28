@@ -62,14 +62,17 @@ _data = {
 }
 
 [node name="Start" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_6p4ja")
 
 [node name="Map" parent="." instance=ExtResource("3_yebcb")]
+y_sort_enabled = true
 
 [node name="Characters" parent="." instance=ExtResource("2_jphtw")]
 position = Vector2(200, 0)
 
 [node name="SeagullSpawner" parent="." instance=ExtResource("4_bcmc8")]
+z_index = 1
 
 [node name="UI" parent="." instance=ExtResource("1_8ox6p")]
 
