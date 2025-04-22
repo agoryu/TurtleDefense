@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://cu16y5acswhml"]
+[gd_scene load_steps=9 format=4 uid="uid://cu16y5acswhml"]
 
 [ext_resource type="PackedScene" uid="uid://beerfxfv6tp16" path="res://Sounds/MainSound.tscn" id="1_hdchv"]
 [ext_resource type="PackedScene" uid="uid://ddkrkxdqpdqfw" path="res://Game/Spawner/ShellSpawner/ShellSpawner.tscn" id="2_ldmrk"]
 [ext_resource type="PackedScene" uid="uid://chf0i73jsh7of" path="res://Game/Spawner/CrabSpawner/CrabSpawner.tscn" id="3_rkprw"]
+[ext_resource type="PackedScene" uid="uid://be6avwinhp4te" path="res://Characters/Octopus/Octopus.tscn" id="5_erxbm"]
 [ext_resource type="Texture2D" uid="uid://cixj5sfukaisu" path="res://Level/Beach-Sheet.png" id="6_w5otd"]
 [ext_resource type="PackedScene" uid="uid://cdb6ww74fgxll" path="res://Object/Shell/Shell.tscn" id="7_1wvti"]
 
@@ -203,6 +204,9 @@ tile_set = SubResource("TileSet_j0jb0")
 [node name="CrabSpawner" parent="." instance=ExtResource("3_rkprw")]
 y_sort_enabled = true
 position = Vector2(1927.5, 2)
+
+[node name="Octopus" parent="." instance=ExtResource("5_erxbm")]
+position = Vector2(1784, 552)
 
 [node name="Shell" parent="." instance=ExtResource("7_1wvti")]
 position = Vector2(512, 312)
