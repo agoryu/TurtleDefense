@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://xvq0icsomos1"]
 
 [ext_resource type="PackedScene" uid="uid://c12yxxocabpkj" path="res://Characters/Hero/Hero.tscn" id="1_a70ub"]
-[ext_resource type="Script" path="res://Game/Characters/Characters.gd" id="1_t301e"]
+[ext_resource type="Script" uid="uid://cqejmtjkgm7y5" path="res://Game/Characters/Characters.gd" id="1_t301e"]
 [ext_resource type="PackedScene" uid="uid://13o6gi6ilbss" path="res://Characters/Turtle/Turtle.tscn" id="2_sxwtj"]
 
 [sub_resource type="Animation" id="Animation_qsdo7"]
@@ -61,8 +61,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5xvdj"]
 _data = {
-"RESET": SubResource("Animation_qsdo7"),
-"set_level": SubResource("Animation_8igmv")
+&"RESET": SubResource("Animation_qsdo7"),
+&"set_level": SubResource("Animation_8igmv")
 }
 
 [node name="Characters" type="Node2D"]

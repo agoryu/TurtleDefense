@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cdb6ww74fgxll"]
 
 [ext_resource type="Texture2D" uid="uid://cl2yoh2t47fa6" path="res://Object/Shell/Shell.png" id="1_kyu16"]
-[ext_resource type="Script" path="res://Object/Shell/Shell.gd" id="1_xjuj5"]
+[ext_resource type="Script" uid="uid://dhleydrntm8mu" path="res://Object/Shell/Shell.gd" id="1_xjuj5"]
 [ext_resource type="AudioStream" uid="uid://d4hhucq6kuo0a" path="res://Object/Shell/takeShell.wav" id="3_q50g1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtnf1"]
@@ -105,9 +105,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_augkm"]
 _data = {
-"RESET": SubResource("Animation_hladr"),
-"consume": SubResource("Animation_3cu6c"),
-"create": SubResource("Animation_avq5v")
+&"RESET": SubResource("Animation_hladr"),
+&"consume": SubResource("Animation_3cu6c"),
+&"create": SubResource("Animation_avq5v")
 }
 
 [node name="Shell" type="Area2D" groups=["object"]]

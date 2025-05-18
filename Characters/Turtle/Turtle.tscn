@@ -1,10 +1,10 @@
 [gd_scene load_steps=22 format=3 uid="uid://13o6gi6ilbss"]
 
-[ext_resource type="Script" path="res://Characters/Turtle/Turtle.gd" id="1_ow1ky"]
+[ext_resource type="Script" uid="uid://c0s824fshe7kp" path="res://Characters/Turtle/Turtle.gd" id="1_ow1ky"]
 [ext_resource type="Texture2D" uid="uid://b2pcunr07xyv5" path="res://Characters/Turtle/turtle-Sheet.png" id="2_dypx1"]
 [ext_resource type="PackedScene" uid="uid://cpembt8wk8d3j" path="res://Game/Health/Health.tscn" id="3_mkcoc"]
 [ext_resource type="PackedScene" uid="uid://bruykml7gpfws" path="res://UI/HealthBar/HealthBar.tscn" id="4_4bxws"]
-[ext_resource type="Script" path="res://Characters/Turtle/Weapons.gd" id="5_3v3jc"]
+[ext_resource type="Script" uid="uid://bwlavj3fb52qa" path="res://Characters/Turtle/Weapons.gd" id="5_3v3jc"]
 [ext_resource type="PackedScene" uid="uid://bc046gds1aws5" path="res://Weapons/Turtle/UrsinCanon/UrsinCanons.tscn" id="6_wwcuu"]
 [ext_resource type="PackedScene" uid="uid://clwagy3q4nst4" path="res://Weapons/Turtle/Multishot/MultiShot.tscn" id="10_tf861"]
 [ext_resource type="PackedScene" uid="uid://rym6k4owtt8r" path="res://Weapons/Turtle/Laser/Laser.tscn" id="12_142aw"]
@@ -81,8 +81,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u4swa"]
 _data = {
-"RESET": SubResource("Animation_0kav8"),
-"take_damage": SubResource("Animation_m5gsy")
+&"RESET": SubResource("Animation_0kav8"),
+&"take_damage": SubResource("Animation_m5gsy")
 }
 
 [node name="Turtle" type="CharacterBody2D"]

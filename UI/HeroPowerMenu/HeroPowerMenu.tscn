@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://b263wklxujrt1"]
 
 [ext_resource type="Theme" uid="uid://jt8c1jhs81r4" path="res://UI/HeroPowerMenu/hero_menu_theme.tres" id="1_e3k4c"]
-[ext_resource type="Script" path="res://UI/PowerProgress/ShellCounter.gd" id="1_erxoh"]
-[ext_resource type="Script" path="res://UI/HeroPowerMenu/HeroPowerMenu.gd" id="2_rgvgs"]
+[ext_resource type="Script" uid="uid://c7eixkb24qp1f" path="res://UI/PowerProgress/ShellCounter.gd" id="1_erxoh"]
+[ext_resource type="Script" uid="uid://devvwk18i2qct" path="res://UI/HeroPowerMenu/HeroPowerMenu.gd" id="2_rgvgs"]
 [ext_resource type="PackedScene" uid="uid://6nh1o7mnqqwx" path="res://UI/PowerProgress/PowerProgress.tscn" id="3_hub8w"]
 
 [node name="HeroPowerMenu" type="PanelContainer"]

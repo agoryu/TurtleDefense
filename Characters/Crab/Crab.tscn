@@ -1,6 +1,6 @@
 [gd_scene load_steps=43 format=3 uid="uid://dbxmis503t6av"]
 
-[ext_resource type="Script" path="res://Characters/Crab/Crab.gd" id="1_xxv67"]
+[ext_resource type="Script" uid="uid://qgv8y2j0wulb" path="res://Characters/Crab/Crab.gd" id="1_xxv67"]
 [ext_resource type="PackedScene" uid="uid://cpembt8wk8d3j" path="res://Game/Health/Health.tscn" id="3_djucn"]
 [ext_resource type="Texture2D" uid="uid://ct2mbej17nc11" path="res://Characters/Crab/Crab-Sheet.png" id="4_isci8"]
 

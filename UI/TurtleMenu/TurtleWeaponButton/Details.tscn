@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bnlhrjhl8pgxm"]
 
 [ext_resource type="Texture2D" uid="uid://cl2yoh2t47fa6" path="res://Object/Shell/Shell.png" id="1_63rsb"]
-[ext_resource type="Script" path="res://UI/TurtleMenu/TurtleWeaponButton/Details.gd" id="1_p1msy"]
+[ext_resource type="Script" uid="uid://c8ljfy35jbbv7" path="res://UI/TurtleMenu/TurtleWeaponButton/Details.gd" id="1_p1msy"]
 
 [node name="Details" type="VBoxContainer"]
 offset_right = 128.0

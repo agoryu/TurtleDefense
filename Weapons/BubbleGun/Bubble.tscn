@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://tp1kh4jcbw7c"]
 
-[ext_resource type="Script" path="res://Weapons/BubbleGun/Bubble.gd" id="1_4nofo"]
+[ext_resource type="Script" uid="uid://pg4famg18111" path="res://Weapons/BubbleGun/Bubble.gd" id="1_4nofo"]
 [ext_resource type="Texture2D" uid="uid://ch5yk84hhbq0w" path="res://Weapons/BubbleGun/BubbleShoot.png" id="2_p3l8h"]
 [ext_resource type="AudioStream" uid="uid://dj1er4k8sjxv1" path="res://Weapons/BubbleGun/bubbleGun.wav" id="3_bg60i"]
 

@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://sx1ymsingmvu"]
 
-[ext_resource type="Script" path="res://Weapons/Turtle/PiratCanon/PiratCanons.gd" id="1_teahw"]
-[ext_resource type="Texture2D" uid="uid://uoowiph88ic4" path="res://Weapons/Turtle/PiratCanon/PiratCanons.png" id="2_3382q"]
-[ext_resource type="Script" path="res://Weapons/Turtle/PiratCanon/Canon.gd" id="3_ocbfn"]
-[ext_resource type="Script" path="res://Weapons/Turtle/PiratCanon/FireOrigin.gd" id="4_jkln7"]
+[ext_resource type="Script" uid="uid://dxx5ho8d4erp0" path="res://Weapons/Turtle/PiratCanon/PiratCanons.gd" id="1_teahw"]
+[ext_resource type="Texture2D" uid="uid://ctgln8niqi81i" path="res://Weapons/Turtle/PiratCanon/PiratCanons.png" id="2_3382q"]
+[ext_resource type="Script" uid="uid://bgtlxawie5b3h" path="res://Weapons/Turtle/PiratCanon/Canon.gd" id="3_ocbfn"]
+[ext_resource type="Script" uid="uid://bc5vgg8fkrlgg" path="res://Weapons/Turtle/PiratCanon/FireOrigin.gd" id="4_jkln7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vhlk0"]
 atlas = ExtResource("2_3382q")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://be6avwinhp4te"]
 
-[ext_resource type="Texture2D" uid="uid://bero5koqgfbqu" path="res://Characters/Octopus/Octopus.png" id="1_iklgr"]
+[ext_resource type="Texture2D" uid="uid://c3obf6yitftek" path="res://Characters/Octopus/Octopus.png" id="1_iklgr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mrhv1"]
 size = Vector2(276, 314)

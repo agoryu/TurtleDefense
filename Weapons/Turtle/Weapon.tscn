@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c0yihg7xfs2w"]
 
-[ext_resource type="Script" path="res://Weapons/Turtle/Weapon.gd" id="1_3080h"]
+[ext_resource type="Script" uid="uid://bre55e7fprsor" path="res://Weapons/Turtle/Weapon.gd" id="1_3080h"]
 
 [node name="Weapon" type="AnimatedSprite2D"]
 script = ExtResource("1_3080h")

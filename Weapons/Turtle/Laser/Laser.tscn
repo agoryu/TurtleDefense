@@ -1,10 +1,10 @@
 [gd_scene load_steps=20 format=3 uid="uid://rym6k4owtt8r"]
 
-[ext_resource type="Script" path="res://Weapons/Turtle/Laser/Laser.gd" id="1_5v78m"]
-[ext_resource type="Texture2D" uid="uid://dpksljqtgdfe" path="res://Weapons/Turtle/Laser/Laser.png" id="2_dxnh7"]
-[ext_resource type="Script" path="res://Weapons/Turtle/Laser/LaserGun.gd" id="3_oj32q"]
+[ext_resource type="Script" uid="uid://ds6qkm11g84yw" path="res://Weapons/Turtle/Laser/Laser.gd" id="1_5v78m"]
+[ext_resource type="Texture2D" uid="uid://dqdteyqw01p2c" path="res://Weapons/Turtle/Laser/Laser.png" id="2_dxnh7"]
+[ext_resource type="Script" uid="uid://304gq2hpgl1" path="res://Weapons/Turtle/Laser/LaserGun.gd" id="3_oj32q"]
 [ext_resource type="PackedScene" uid="uid://cuqhkr3wbc5ge" path="res://Weapons/Turtle/Laser/Lightning.tscn" id="4_xl6tr"]
-[ext_resource type="AudioStream" uid="uid://barnag8ydld10" path="res://Weapons/Turtle/Laser/electricity.wav" id="5_xb6mf"]
+[ext_resource type="AudioStream" uid="uid://c8cv2bewk0tp6" path="res://Weapons/Turtle/Laser/electricity.wav" id="5_xb6mf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6im04"]
 atlas = ExtResource("2_dxnh7")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b01560ixjc52w"]
 
-[ext_resource type="Script" path="res://Weapons/Turtle/UrsinCanon/Spike/Spike.gd" id="1_088tq"]
-[ext_resource type="Texture2D" uid="uid://l8udbdan3nld" path="res://Weapons/Turtle/UrsinCanon/Spike/Spike.png" id="1_xka61"]
+[ext_resource type="Script" uid="uid://bbtq7fxojs6cp" path="res://Weapons/Turtle/UrsinCanon/Spike/Spike.gd" id="1_088tq"]
+[ext_resource type="Texture2D" uid="uid://b06225pkyn3dn" path="res://Weapons/Turtle/UrsinCanon/Spike/Spike.png" id="1_xka61"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1fc0c"]
 atlas = ExtResource("1_xka61")

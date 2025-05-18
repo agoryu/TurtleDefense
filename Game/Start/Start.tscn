@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://clc1daanw1cli"]
 
-[ext_resource type="Script" path="res://Game/Start/Start.gd" id="1_6p4ja"]
+[ext_resource type="Script" uid="uid://bwkf8aofusg7" path="res://Game/Start/Start.gd" id="1_6p4ja"]
 [ext_resource type="PackedScene" uid="uid://cys8wx57y0lb1" path="res://UI/UI.tscn" id="1_8ox6p"]
 [ext_resource type="PackedScene" uid="uid://xvq0icsomos1" path="res://Game/Characters/Characters.tscn" id="2_jphtw"]
 [ext_resource type="PackedScene" uid="uid://cu16y5acswhml" path="res://Level/Map.tscn" id="3_yebcb"]
@@ -57,8 +57,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pb3sq"]
 _data = {
-"RESET": SubResource("Animation_4uja2"),
-"set_level": SubResource("Animation_awnk4")
+&"RESET": SubResource("Animation_4uja2"),
+&"set_level": SubResource("Animation_awnk4")
 }
 
 [node name="Start" type="Node2D"]

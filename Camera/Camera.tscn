@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bxqf7v4kw8qnq"]
 
-[ext_resource type="Script" path="res://Camera/Camera.gd" id="1_12dnx"]
+[ext_resource type="Script" uid="uid://eq5w1fko47s1" path="res://Camera/Camera.gd" id="1_12dnx"]
 
 [node name="Camera" type="Camera2D"]
 position_smoothing_enabled = true

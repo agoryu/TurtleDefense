@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bruykml7gpfws"]
 
-[ext_resource type="Script" path="res://UI/HealthBar/HealthBar.gd" id="1_cgjkx"]
+[ext_resource type="Script" uid="uid://bpob1ct1qbdu6" path="res://UI/HealthBar/HealthBar.gd" id="1_cgjkx"]
 [ext_resource type="Theme" uid="uid://ci1oa2l1a4hac" path="res://UI/HealthBar/health_bar_theme.tres" id="1_hpalf"]
 
 [sub_resource type="FontFile" id="FontFile_pwi32"]

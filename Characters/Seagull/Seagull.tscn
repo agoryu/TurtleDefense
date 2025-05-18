@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dfp1r4qhtemr3"]
 
-[ext_resource type="Texture2D" uid="uid://cdq00icsecmk5" path="res://Characters/Seagull/Seagull-Sheet.png" id="1_b4cc5"]
-[ext_resource type="Script" path="res://Characters/Seagull/Seagull.gd" id="1_rs3iu"]
+[ext_resource type="Texture2D" uid="uid://bfneu4fdv8t33" path="res://Characters/Seagull/Seagull-Sheet.png" id="1_b4cc5"]
+[ext_resource type="Script" uid="uid://dxw426b4mcn4s" path="res://Characters/Seagull/Seagull.gd" id="1_rs3iu"]
 [ext_resource type="PackedScene" uid="uid://cpembt8wk8d3j" path="res://Game/Health/Health.tscn" id="2_sn07m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1javh"]

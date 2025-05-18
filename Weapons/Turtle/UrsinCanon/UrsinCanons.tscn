@@ -1,9 +1,9 @@
 [gd_scene load_steps=13 format=3 uid="uid://bc046gds1aws5"]
 
-[ext_resource type="Script" path="res://Weapons/Turtle/UrsinCanon/UrsinCanons.gd" id="1_nsusf"]
-[ext_resource type="Texture2D" uid="uid://dlipfrkbaqbde" path="res://Weapons/Turtle/UrsinCanon/UrsinCanon.png" id="2_504sn"]
-[ext_resource type="Script" path="res://Weapons/Turtle/UrsinCanon/UrsinCanon.gd" id="3_3xl5s"]
-[ext_resource type="Script" path="res://Weapons/Turtle/UrsinCanon/UrsinOrigin.gd" id="4_xabub"]
+[ext_resource type="Script" uid="uid://w7kuru78037a" path="res://Weapons/Turtle/UrsinCanon/UrsinCanons.gd" id="1_nsusf"]
+[ext_resource type="Texture2D" uid="uid://cycfa817pn1rv" path="res://Weapons/Turtle/UrsinCanon/UrsinCanon.png" id="2_504sn"]
+[ext_resource type="Script" uid="uid://cx4figia5vjda" path="res://Weapons/Turtle/UrsinCanon/UrsinCanon.gd" id="3_3xl5s"]
+[ext_resource type="Script" uid="uid://c7ce0fnb61xh5" path="res://Weapons/Turtle/UrsinCanon/UrsinOrigin.gd" id="4_xabub"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bephr"]
 atlas = ExtResource("2_504sn")

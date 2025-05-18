@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://clwagy3q4nst4"]
 
-[ext_resource type="Texture2D" uid="uid://wuj2f3n4g65e" path="res://Weapons/Turtle/Multishot/Multishot.png" id="1_rm5e4"]
-[ext_resource type="Script" path="res://Weapons/Turtle/Multishot/MultiShot.gd" id="2_en5c6"]
+[ext_resource type="Texture2D" uid="uid://c6r4vn1xqs8ml" path="res://Weapons/Turtle/Multishot/Multishot.png" id="1_rm5e4"]
+[ext_resource type="Script" uid="uid://dklovwevt5ha1" path="res://Weapons/Turtle/Multishot/MultiShot.gd" id="2_en5c6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h0clw"]
 atlas = ExtResource("1_rm5e4")

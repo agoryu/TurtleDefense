@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://csrwngn1gxmm3"]
 
-[ext_resource type="Script" path="res://Weapons/BubbleGun/BubbleGun.gd" id="1_nyrti"]
+[ext_resource type="Script" uid="uid://baisp6j1x7l1h" path="res://Weapons/BubbleGun/BubbleGun.gd" id="1_nyrti"]
 [ext_resource type="Texture2D" uid="uid://be3novh2g3363" path="res://Weapons/BubbleGun/CuttlefishGun-Sheet.png" id="2_00158"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_abuf5"]

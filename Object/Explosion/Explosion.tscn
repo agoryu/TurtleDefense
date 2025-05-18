@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://b2xgmikvdpcm"]
 
 [ext_resource type="Texture2D" uid="uid://c0od1ng1lw01n" path="res://Object/Explosion/Explosion-Sheet.png" id="1_8y85e"]
-[ext_resource type="Script" path="res://Object/Explosion/Explosion.gd" id="1_sde5x"]
+[ext_resource type="Script" uid="uid://db3ne5htg6uej" path="res://Object/Explosion/Explosion.gd" id="1_sde5x"]
 [ext_resource type="AudioStream" uid="uid://bsdulkr8c5tmo" path="res://Object/Explosion/explosion.wav" id="3_kdu2l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7m7a4"]

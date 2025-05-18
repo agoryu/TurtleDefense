@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://r3xbtyienuyb"]
 
-[ext_resource type="Script" path="res://UI/TurtleMenu/TurtleWeaponButton/TurtleWeaponButton.gd" id="1_ybbys"]
+[ext_resource type="Script" uid="uid://cdvyk3050xdua" path="res://UI/TurtleMenu/TurtleWeaponButton/TurtleWeaponButton.gd" id="1_ybbys"]
 [ext_resource type="PackedScene" uid="uid://bnlhrjhl8pgxm" path="res://UI/TurtleMenu/TurtleWeaponButton/Details.tscn" id="2_kgynp"]
 
 [node name="TurtleWeaponButton" type="HBoxContainer"]

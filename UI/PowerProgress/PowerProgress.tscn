@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://6nh1o7mnqqwx"]
 
-[ext_resource type="Script" path="res://UI/PowerProgress/PowerProgress.gd" id="1_1lh3s"]
+[ext_resource type="Script" uid="uid://tqoqkc174qkt" path="res://UI/PowerProgress/PowerProgress.gd" id="1_1lh3s"]
 [ext_resource type="Theme" uid="uid://b83luj8rhxqjb" path="res://UI/PowerProgress/power_progress_theme.tres" id="1_5k3c4"]
-[ext_resource type="Script" path="res://UI/PowerProgress/Speed.gd" id="2_a5f8m"]
-[ext_resource type="Script" path="res://UI/PowerProgress/Life.gd" id="3_tkal4"]
-[ext_resource type="Script" path="res://UI/PowerProgress/Attraction.gd" id="4_cb05y"]
-[ext_resource type="Script" path="res://UI/PowerProgress/SpeedFire.gd" id="5_p3xen"]
-[ext_resource type="Script" path="res://UI/PowerProgress/AddBubble.gd" id="6_ivvnt"]
+[ext_resource type="Script" uid="uid://blwxnyslfdxrr" path="res://UI/PowerProgress/Speed.gd" id="2_a5f8m"]
+[ext_resource type="Script" uid="uid://bk6ifplhl0ogk" path="res://UI/PowerProgress/Life.gd" id="3_tkal4"]
+[ext_resource type="Script" uid="uid://d34bp28haexol" path="res://UI/PowerProgress/Attraction.gd" id="4_cb05y"]
+[ext_resource type="Script" uid="uid://c4wadhsutsm4y" path="res://UI/PowerProgress/SpeedFire.gd" id="5_p3xen"]
+[ext_resource type="Script" uid="uid://dneea214xtl3w" path="res://UI/PowerProgress/AddBubble.gd" id="6_ivvnt"]
 [ext_resource type="AudioStream" uid="uid://bctoh8uicqtpc" path="res://UI/PowerProgress/consumePowerup.wav" id="7_8hot5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wga3y"]
