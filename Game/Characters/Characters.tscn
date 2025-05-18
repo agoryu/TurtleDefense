@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://xvq0icsomos1"]
+[gd_scene load_steps=9 format=3 uid="uid://xvq0icsomos1"]
 
 [ext_resource type="PackedScene" uid="uid://c12yxxocabpkj" path="res://Characters/Hero/Hero.tscn" id="1_a70ub"]
 [ext_resource type="Script" uid="uid://cqejmtjkgm7y5" path="res://Game/Characters/Characters.gd" id="1_t301e"]
 [ext_resource type="PackedScene" uid="uid://13o6gi6ilbss" path="res://Characters/Turtle/Turtle.tscn" id="2_sxwtj"]
+[ext_resource type="PackedScene" uid="uid://be6avwinhp4te" path="res://Characters/Octopus/Octopus.tscn" id="4_3e20w"]
 
 [sub_resource type="Animation" id="Animation_qsdo7"]
 length = 0.001
@@ -29,6 +30,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(8, 576)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Octopus:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2152, 632)]
 }
 
 [sub_resource type="Animation" id="Animation_8igmv"]
@@ -59,9 +72,40 @@ tracks/1/keys = {
 "values": [Vector2(1788, 576), Vector2(8, 576)]
 }
 
+[sub_resource type="Animation" id="Animation_3e20w"]
+resource_name = "boss_arrived"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Octopus:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1904, 639), Vector2(1592, 624)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Turtle")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"howl"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5xvdj"]
 _data = {
 &"RESET": SubResource("Animation_qsdo7"),
+&"boss_arrived": SubResource("Animation_3e20w"),
 &"set_level": SubResource("Animation_8igmv")
 }
 
@@ -78,7 +122,17 @@ y_sort_enabled = true
 position = Vector2(8, 576)
 collision_layer = 8
 
+[node name="Octopus" parent="." instance=ExtResource("4_3e20w")]
+position = Vector2(2152, 632)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_5xvdj")
+&"": SubResource("AnimationLibrary_5xvdj")
 }
+
+[node name="BossTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="BossTimer" to="." method="_on_boss_timer_timeout"]

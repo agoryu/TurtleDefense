@@ -67,6 +67,7 @@ texture = ExtResource("4_igw5k")
 
 [node name="EngineStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_kqag3")
+pitch_scale = 1.5
 autoplay = true
 
 [connection signal="dead" from="Health" to="." method="_on_health_dead"]

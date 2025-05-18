@@ -11,6 +11,7 @@ extends CharacterBody2D
 @onready var multishot_weapon = $Weapons/MultiShot
 @onready var pirat_canon_weapon = $Weapons/PiratCanon
 @onready var laser_weapon = $Weapons/Laser
+@onready var howl_scene : Howl = $Howl
 
 @export var speed = 30.0
 @export var drag := 5.0
@@ -40,3 +41,6 @@ func get_desired_velocity():
 		return Vector2.RIGHT * speed
 	else:
 		return Vector2.ZERO
+
+func howl():
+	howl_scene.activate()

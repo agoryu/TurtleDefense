@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://13o6gi6ilbss"]
+[gd_scene load_steps=23 format=3 uid="uid://13o6gi6ilbss"]
 
 [ext_resource type="Script" uid="uid://c0s824fshe7kp" path="res://Characters/Turtle/Turtle.gd" id="1_ow1ky"]
 [ext_resource type="Texture2D" uid="uid://b2pcunr07xyv5" path="res://Characters/Turtle/turtle-Sheet.png" id="2_dypx1"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://clwagy3q4nst4" path="res://Weapons/Turtle/Multishot/MultiShot.tscn" id="10_tf861"]
 [ext_resource type="PackedScene" uid="uid://rym6k4owtt8r" path="res://Weapons/Turtle/Laser/Laser.tscn" id="12_142aw"]
 [ext_resource type="PackedScene" uid="uid://sx1ymsingmvu" path="res://Weapons/Turtle/PiratCanon/PiratCanons.tscn" id="12_hbf2p"]
+[ext_resource type="PackedScene" uid="uid://bqofdeihn44px" path="res://Characters/Turtle/Howl/Howl.tscn" id="12_is3fb"]
 [ext_resource type="PackedScene" uid="uid://bgih4ld6to0gv" path="res://Weapons/Turtle/Shield/Shield.tscn" id="13_4cysj"]
 [ext_resource type="PackedScene" uid="uid://ckuhayprkbicm" path="res://Weapons/Turtle/BeamWeapon/BeamWeapon.tscn" id="16_jv588"]
 
@@ -123,7 +124,7 @@ autostart = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_u4swa")
+&"": SubResource("AnimationLibrary_u4swa")
 }
 
 [node name="Weapons" type="Node2D" parent="."]
@@ -144,6 +145,9 @@ visible = false
 visible = false
 position = Vector2(24, 0)
 cost_weapon = 5
+
+[node name="Howl" parent="." instance=ExtResource("12_is3fb")]
+position = Vector2(139, -1)
 
 [connection signal="body_entered" from="DamageArea" to="." method="_on_area_2d_body_entered"]
 [connection signal="dead" from="Health" to="." method="_on_health_dead"]

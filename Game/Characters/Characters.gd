@@ -8,3 +8,6 @@ func _ready():
 
 func set_level_animation():
 	animation_player.play("set_level")
+
+func _on_boss_timer_timeout() -> void:
+	animation_player.play("boss_arrived")
