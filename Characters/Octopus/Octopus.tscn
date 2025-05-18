@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://be6avwinhp4te"]
+[gd_scene load_steps=15 format=3 uid="uid://be6avwinhp4te"]
 
+[ext_resource type="Script" uid="uid://bxl811wmawp5k" path="res://Characters/Octopus/Octopus.gd" id="1_gfv5y"]
 [ext_resource type="Texture2D" uid="uid://c3obf6yitftek" path="res://Characters/Octopus/Octopus.png" id="1_iklgr"]
+[ext_resource type="PackedScene" uid="uid://bqofdeihn44px" path="res://Characters/Howl/Howl.tscn" id="2_2q72q"]
+[ext_resource type="AudioStream" uid="uid://dwsvkwjs2w5ho" path="res://Characters/Octopus/octopus_howl.wav" id="3_gfv5y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mrhv1"]
 size = Vector2(276, 314)
@@ -20,7 +23,41 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_gfv5y"]
+offsets = PackedFloat32Array(0.00330033, 1)
+colors = PackedColorArray(0, 0, 1, 1, 1, 1, 1, 0.196078)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bnow6"]
+gradient = SubResource("Gradient_gfv5y")
+
+[sub_resource type="Curve" id="Curve_dw2cs"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_oog0w"]
+curve = SubResource("Curve_dw2cs")
+
+[sub_resource type="Curve" id="Curve_tnl0r"]
+_data = [Vector2(0.00303952, 0.000605345), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_dw2cs"]
+curve = SubResource("Curve_tnl0r")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_silan"]
+lifetime_randomness = 0.6
+particle_flag_disable_z = true
+angle_min = 90.0
+angle_max = 90.0
+gravity = Vector3(-120, 0, 0)
+scale_curve = SubResource("CurveTexture_dw2cs")
+color_ramp = SubResource("GradientTexture1D_bnow6")
+hue_variation_curve = SubResource("CurveTexture_oog0w")
+
 [node name="Octopus" type="CharacterBody2D"]
+z_index = 10
+script = ExtResource("1_gfv5y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(16, 7)
@@ -30,3 +67,17 @@ shape = SubResource("RectangleShape2D_mrhv1")
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_mogiv")
+
+[node name="Howl" parent="." instance=ExtResource("2_2q72q")]
+position = Vector2(-100, 70)
+
+[node name="GPUParticles2D" parent="Howl" index="0"]
+process_material = SubResource("ParticleProcessMaterial_silan")
+
+[node name="AudioStreamPlayer2D" parent="Howl" index="1"]
+stream = ExtResource("3_gfv5y")
+
+[node name="Timer" parent="Howl" index="2"]
+wait_time = 2.0
+
+[editable path="Howl"]

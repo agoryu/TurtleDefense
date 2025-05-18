@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dfp1r4qhtemr3"]
+[gd_scene load_steps=10 format=3 uid="uid://dfp1r4qhtemr3"]
 
 [ext_resource type="Texture2D" uid="uid://bfneu4fdv8t33" path="res://Characters/Seagull/Seagull-Sheet.png" id="1_b4cc5"]
 [ext_resource type="Script" uid="uid://dxw426b4mcn4s" path="res://Characters/Seagull/Seagull.gd" id="1_rs3iu"]
 [ext_resource type="PackedScene" uid="uid://cpembt8wk8d3j" path="res://Game/Health/Health.tscn" id="2_sn07m"]
 [ext_resource type="Texture2D" uid="uid://bso8cqvb2giyk" path="res://Characters/Seagull/fire.png" id="4_igw5k"]
 [ext_resource type="AudioStream" uid="uid://hiys7j3ywv6l" path="res://Characters/Seagull/engine.wav" id="5_kqag3"]
+[ext_resource type="AudioStream" uid="uid://b1t07x03g2xjp" path="res://Characters/Seagull/seagull.wav" id="6_7fjfe"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1javh"]
 animations = [{
@@ -67,7 +68,11 @@ texture = ExtResource("4_igw5k")
 
 [node name="EngineStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_kqag3")
-pitch_scale = 1.5
+volume_db = -10.0
+autoplay = true
+
+[node name="ScreamAudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_7fjfe")
 autoplay = true
 
 [connection signal="dead" from="Health" to="." method="_on_health_dead"]

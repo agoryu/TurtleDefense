@@ -199,6 +199,7 @@ tile_set = SubResource("TileSet_j0jb0")
 [node name="ShellSpawner" parent="." instance=ExtResource("2_ldmrk")]
 
 [node name="MainSound" parent="." instance=ExtResource("1_hdchv")]
+autoplay = false
 
 [node name="CrabSpawner" parent="." instance=ExtResource("3_rkprw")]
 y_sort_enabled = true

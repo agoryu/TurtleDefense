@@ -41,7 +41,62 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(2152, 632)]
+"values": [Vector2(2176, 568)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Octopus")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_3e20w"]
+resource_name = "boss_arrived"
+length = 9.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Octopus:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1904, 576), Vector2(1600, 575)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Turtle")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"howl"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Octopus")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(6.46667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"howl"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_8igmv"]
@@ -72,36 +127,6 @@ tracks/1/keys = {
 "values": [Vector2(1788, 576), Vector2(8, 576)]
 }
 
-[sub_resource type="Animation" id="Animation_3e20w"]
-resource_name = "boss_arrived"
-length = 6.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Octopus:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1904, 639), Vector2(1592, 624)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Turtle")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(2),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"howl"
-}]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5xvdj"]
 _data = {
 &"RESET": SubResource("Animation_qsdo7"),
@@ -123,7 +148,7 @@ position = Vector2(8, 576)
 collision_layer = 8
 
 [node name="Octopus" parent="." instance=ExtResource("4_3e20w")]
-position = Vector2(2152, 632)
+position = Vector2(2176, 568)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

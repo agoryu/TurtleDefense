@@ -1,7 +1,8 @@
-[gd_scene load_steps=43 format=3 uid="uid://dbxmis503t6av"]
+[gd_scene load_steps=44 format=3 uid="uid://dbxmis503t6av"]
 
 [ext_resource type="Script" uid="uid://qgv8y2j0wulb" path="res://Characters/Crab/Crab.gd" id="1_xxv67"]
 [ext_resource type="PackedScene" uid="uid://cpembt8wk8d3j" path="res://Game/Health/Health.tscn" id="3_djucn"]
+[ext_resource type="AudioStream" uid="uid://dly4k2tt6jaaa" path="res://Characters/Crab/walk_sand.wav" id="4_71y12"]
 [ext_resource type="Texture2D" uid="uid://ct2mbej17nc11" path="res://Characters/Crab/Crab-Sheet.png" id="4_isci8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l31b6"]
@@ -315,6 +316,11 @@ texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_rxgu5")
 speed_scale = 2.0
+
+[node name="WalkAudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_71y12")
+volume_db = 5.0
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="dead" from="Health" to="." method="_on_health_dead"]

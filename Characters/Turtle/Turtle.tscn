@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://clwagy3q4nst4" path="res://Weapons/Turtle/Multishot/MultiShot.tscn" id="10_tf861"]
 [ext_resource type="PackedScene" uid="uid://rym6k4owtt8r" path="res://Weapons/Turtle/Laser/Laser.tscn" id="12_142aw"]
 [ext_resource type="PackedScene" uid="uid://sx1ymsingmvu" path="res://Weapons/Turtle/PiratCanon/PiratCanons.tscn" id="12_hbf2p"]
-[ext_resource type="PackedScene" uid="uid://bqofdeihn44px" path="res://Characters/Turtle/Howl/Howl.tscn" id="12_is3fb"]
+[ext_resource type="PackedScene" uid="uid://bqofdeihn44px" path="res://Characters/Howl/Howl.tscn" id="12_is3fb"]
 [ext_resource type="PackedScene" uid="uid://bgih4ld6to0gv" path="res://Weapons/Turtle/Shield/Shield.tscn" id="13_4cysj"]
 [ext_resource type="PackedScene" uid="uid://ckuhayprkbicm" path="res://Weapons/Turtle/BeamWeapon/BeamWeapon.tscn" id="16_jv588"]
 
