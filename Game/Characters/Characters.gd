@@ -1,5 +1,7 @@
 extends Node2D
 
+signal game_over
+
 @onready var animation_player = $AnimationPlayer
 
 func _ready():
@@ -11,3 +13,6 @@ func set_level_animation():
 
 func _on_boss_timer_timeout() -> void:
 	animation_player.play("boss_arrived")
+
+func _game_over() -> void:
+	emit_signal("game_over")

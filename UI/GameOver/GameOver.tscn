@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl7y8ahj3e231"]
+
+[ext_resource type="Script" uid="uid://ixtb6jcvl5y7" path="res://UI/GameOver/GameOver.gd" id="1_l8mub"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 1, 0.286275)
+
+[node name="Grid" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -68.5
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l8mub")
+
+[node name="Label" type="Label" parent="Grid"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 60
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Grid"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+text = "Retry"
+
+[connection signal="visibility_changed" from="Grid" to="Grid" method="_on_visibility_changed"]
+[connection signal="button_up" from="Grid/Button" to="Grid" method="_on_button_button_up"]

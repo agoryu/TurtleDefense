@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal game_over
+
 @onready var timer: Timer = $Timer
 @onready var animationPlayer: AnimationPlayer = $AnimationPlayer
 @onready var animatedSprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -34,7 +36,7 @@ func _on_area_2d_body_entered(body):
 	Game.player.camera.take_damage()
 
 func _on_health_dead():
-	print("game over")
+	emit_signal("game_over")
 
 func get_desired_velocity():
 	if animatedSprite.frame >= 1 and animatedSprite.frame <= 2:

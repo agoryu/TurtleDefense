@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal game_over
+
 @export var speed = 300.0 :
 	set(value):
 		speed = value
@@ -54,7 +56,7 @@ func _on_area_2d_body_entered(body):
 	animationPlayer.play("take_damage")
 
 func _on_health_dead():
-	print("game over")
+	emit_signal("game_over")
 
 func nb_shoot_up():
 	bubble_gun.nb_shoot_up()

@@ -96,5 +96,6 @@ position = Vector2(2512, 536)
 scale = Vector2(3.09431, 3.0301)
 texture = ExtResource("5_bitly")
 
+[connection signal="game_over" from="Characters" to="UI" method="_on_game_over"]
 [connection signal="body_entered" from="NextLevelZone" to="." method="_on_next_level_zone_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

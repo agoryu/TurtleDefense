@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://be6avwinhp4te"]
+[gd_scene load_steps=20 format=3 uid="uid://be6avwinhp4te"]
 
 [ext_resource type="Script" uid="uid://bxl811wmawp5k" path="res://Characters/Octopus/Octopus.gd" id="1_gfv5y"]
 [ext_resource type="Texture2D" uid="uid://c3obf6yitftek" path="res://Characters/Octopus/Octopus.png" id="1_iklgr"]
 [ext_resource type="PackedScene" uid="uid://bqofdeihn44px" path="res://Characters/Howl/Howl.tscn" id="2_2q72q"]
 [ext_resource type="AudioStream" uid="uid://dwsvkwjs2w5ho" path="res://Characters/Octopus/octopus_howl.wav" id="3_gfv5y"]
+[ext_resource type="AudioStream" uid="uid://cf5vnvs5nk7fj" path="res://Characters/Octopus/damage.wav" id="5_silan"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mrhv1"]
 size = Vector2(276, 314)
@@ -55,6 +56,70 @@ scale_curve = SubResource("CurveTexture_dw2cs")
 color_ramp = SubResource("GradientTexture1D_bnow6")
 hue_variation_curve = SubResource("CurveTexture_oog0w")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfv5y"]
+size = Vector2(264, 312)
+
+[sub_resource type="Animation" id="Animation_silan"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DamageAudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_gfv5y"]
+resource_name = "take_damage"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(2, 2, 2, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DamageAudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0998202),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sjoqa"]
+_data = {
+&"RESET": SubResource("Animation_silan"),
+&"take_damage": SubResource("Animation_gfv5y")
+}
+
 [node name="Octopus" type="CharacterBody2D"]
 z_index = 10
 script = ExtResource("1_gfv5y")
@@ -79,5 +144,24 @@ stream = ExtResource("3_gfv5y")
 
 [node name="Timer" parent="Howl" index="2"]
 wait_time = 2.0
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(20, 4)
+shape = SubResource("RectangleShape2D_gfv5y")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_sjoqa")
+}
+
+[node name="DamageAudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_silan")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 
 [editable path="Howl"]
