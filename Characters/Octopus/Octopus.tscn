@@ -146,7 +146,7 @@ stream = ExtResource("3_gfv5y")
 wait_time = 2.0
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 4
+collision_layer = 0
 collision_mask = 2
 monitoring = false
 
@@ -162,6 +162,14 @@ libraries = {
 [node name="DamageAudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_silan")
 
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[node name="AttackPosition" type="Marker2D" parent="."]
+position = Vector2(-100, 88)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 
 [editable path="Howl"]
