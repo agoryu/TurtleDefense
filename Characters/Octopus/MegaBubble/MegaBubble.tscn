@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b4u47tptmgg28" path="res://Characters/Octopus/MegaBubble/MegaBubble.gd" id="1_flfnf"]
 [ext_resource type="Texture2D" uid="uid://dtlk3lbqyw66" path="res://Characters/Octopus/MegaBubble/megaBubble.png" id="1_kkh0f"]
-[ext_resource type="PackedScene" uid="uid://cpembt8wk8d3j" path="res://Game/Health/Health.tscn" id="2_iqcd0"]
+[ext_resource type="PackedScene" uid="uid://cpembt8wk8d3j" path="res://Characters/Health/Health.tscn" id="2_iqcd0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kkh0f"]
 size = Vector2(208, 232)

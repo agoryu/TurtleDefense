@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var level_list = [preload("res://Game/Level/LevelBeach.tscn")]
+@onready var level_list = [preload("res://Level/LevelBeach.tscn")]
 
 func _ready() -> void:
 	load_level(0)

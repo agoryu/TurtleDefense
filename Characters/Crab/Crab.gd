@@ -9,7 +9,7 @@ class_name Crab
 @export var drop_chance := 3 ## Inverse of ( 1/X )
 
 @onready var health: Health = $Health
-@onready var shell_constructor = preload("res://Object/Shell/Shell.tscn")
+@onready var shell_constructor = preload("res://Statics/Shell/Shell.tscn")
 @onready var animation = $SpriteSheet
 
 func _ready() -> void:

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bxl811wmawp5k" path="res://Characters/Octopus/Octopus.gd" id="1_gfv5y"]
 [ext_resource type="Texture2D" uid="uid://c3obf6yitftek" path="res://Characters/Octopus/Octopus.png" id="1_iklgr"]
-[ext_resource type="PackedScene" uid="uid://bqofdeihn44px" path="res://Characters/Howl/Howl.tscn" id="2_2q72q"]
+[ext_resource type="PackedScene" uid="uid://bqofdeihn44px" path="res://FX/Howl/Howl.tscn" id="2_2q72q"]
 [ext_resource type="AudioStream" uid="uid://dwsvkwjs2w5ho" path="res://Characters/Octopus/octopus_howl.wav" id="3_gfv5y"]
 [ext_resource type="AudioStream" uid="uid://cf5vnvs5nk7fj" path="res://Characters/Octopus/damage.wav" id="5_silan"]
 

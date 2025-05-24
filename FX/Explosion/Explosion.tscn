@@ -1,0 +1,77 @@
+[gd_scene load_steps=12 format=3 uid="uid://b2xgmikvdpcm"]
+
+[ext_resource type="Texture2D" uid="uid://c0od1ng1lw01n" path="res://FX/Explosion/Explosion-Sheet.png" id="1_8y85e"]
+[ext_resource type="Script" uid="uid://db3ne5htg6uej" path="res://FX/Explosion/Explosion.gd" id="1_sde5x"]
+[ext_resource type="AudioStream" uid="uid://bsdulkr8c5tmo" path="res://FX/Explosion/explosion.wav" id="3_kdu2l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7m7a4"]
+atlas = ExtResource("1_8y85e")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ltbg"]
+atlas = ExtResource("1_8y85e")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33683"]
+atlas = ExtResource("1_8y85e")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yibr"]
+atlas = ExtResource("1_8y85e")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xu2y"]
+atlas = ExtResource("1_8y85e")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pr871"]
+atlas = ExtResource("1_8y85e")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fftri"]
+atlas = ExtResource("1_8y85e")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7s6uf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7m7a4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ltbg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33683")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yibr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xu2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pr871")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fftri")
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="Explosion" type="Node2D"]
+script = ExtResource("1_sde5x")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_7s6uf")
+frame = 6
+frame_progress = 1.0
+
+[node name="AudioExplosion" type="AudioStreamPlayer2D" parent="." groups=["sound_effect"]]
+stream = ExtResource("3_kdu2l")
+
+[connection signal="finished" from="AudioExplosion" to="." method="_on_audio_explosion_finished"]
