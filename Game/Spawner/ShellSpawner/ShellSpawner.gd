@@ -8,5 +8,5 @@ func _on_timer_timeout():
 	shell.global_position = Vector2(
 		randi() % int(Game.screen_size.x),
 		randi() % int(Game.screen_size.y))
-	get_parent().add_child(shell)
+	get_tree().root.add_child(shell)
 	timer.start()

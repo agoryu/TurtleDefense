@@ -3,21 +3,20 @@ extends Camera2D
 @onready var timer: Timer = $Timer
 
 @export var shake_amount : float = 5.0
+@export var character : CharacterBody2D
 
 func _ready():
-	limit_left = 0
-	limit_right = Game.screen_size.x
-	limit_top = 0
-	limit_bottom = Game.screen_size.y
+	reparent(character)
 
 func _process(delta) -> void:
-		if not timer.is_stopped():
-			offset = Vector2(
-				randf_range(-1.0, 1.0) * shake_amount,
-				randf_range(-1.0, 1.0) * shake_amount
-			)
-		else:
-			offset = Vector2.ZERO
+	global_position = character.global_position
+	if not timer.is_stopped():
+		offset = Vector2(
+			randf_range(-1.0, 1.0) * shake_amount,
+			randf_range(-1.0, 1.0) * shake_amount
+		)
+	else:
+		offset = Vector2.ZERO
 
 func take_damage():
 	timer.start()

@@ -1,9 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://c12yxxocabpkj"]
+[gd_scene load_steps=27 format=3 uid="uid://c12yxxocabpkj"]
 
 [ext_resource type="Script" uid="uid://cx1gllwydq5w1" path="res://Characters/Hero/Hero.gd" id="1_53ldx"]
 [ext_resource type="PackedScene" uid="uid://cpembt8wk8d3j" path="res://Game/Health/Health.tscn" id="3_ebth2"]
 [ext_resource type="PackedScene" uid="uid://csrwngn1gxmm3" path="res://Weapons/BubbleGun/BubbleGun.tscn" id="4_5xyd6"]
-[ext_resource type="PackedScene" uid="uid://bxqf7v4kw8qnq" path="res://Camera/Camera.tscn" id="4_7qy8v"]
 [ext_resource type="Texture2D" uid="uid://dnunkhaiukck4" path="res://Characters/Hero/Starfish-Sheet.png" id="4_mm6pl"]
 [ext_resource type="Texture2D" uid="uid://nq8sc62xfvtd" path="res://Characters/Hero/health_upgrade.png" id="4_rd8ta"]
 [ext_resource type="PackedScene" uid="uid://bruykml7gpfws" path="res://UI/HealthBar/HealthBar.tscn" id="5_dwxqe"]
@@ -130,27 +129,13 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_6iufd"]
 resource_name = "take_damage"
-tracks/0/type = "method"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera")
+tracks/0/path = NodePath("SpriteSheet:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0666667),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"take_damage"
-}]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("SpriteSheet:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
@@ -180,21 +165,21 @@ speed_scale = 2.0
 [node name="HealthParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(0, 40)
 emitting = false
-process_material = SubResource("ParticleProcessMaterial_csvct")
 texture = ExtResource("4_rd8ta")
 lifetime = 1.2
 one_shot = true
 local_coords = true
+process_material = SubResource("ParticleProcessMaterial_csvct")
 
 [node name="SpeedParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(0, 40)
 emitting = false
 amount = 4
-process_material = SubResource("ParticleProcessMaterial_mnnoi")
 texture = ExtResource("5_rxhiq")
 lifetime = 1.2
 one_shot = true
 local_coords = true
+process_material = SubResource("ParticleProcessMaterial_mnnoi")
 
 [node name="AttractionParticles2D" type="GPUParticles2D" parent="."]
 emitting = false
@@ -225,11 +210,9 @@ offset_right = 32.0
 offset_bottom = 58.0
 health = NodePath("../Health")
 
-[node name="Camera" parent="." instance=ExtResource("4_7qy8v")]
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_do3oh")
+&"": SubResource("AnimationLibrary_do3oh")
 }
 
 [connection signal="body_entered" from="DamageArea" to="." method="_on_area_2d_body_entered"]

@@ -13,7 +13,6 @@ curve = SubResource("Curve2D_c4ywb")
 script = ExtResource("1_evuxo")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(-1, 0)
 rotation = 1.56986
 
 [node name="TimerRed" type="Timer" parent="."]

@@ -11,9 +11,9 @@ func spawn_seagull(constructor):
 	path.progress_ratio = randf()
 
 	var seagull = constructor.instantiate()
-	seagull.position = path.position
+	seagull.position = path.global_position
 	seagull.rotation_degrees = 180 if (altPath) else 0
-	add_child(seagull)
+	get_tree().get_root().add_child(seagull)
 
 func _on_timer_timeout() -> void:
 	spawn_seagull(seagull_constructor)

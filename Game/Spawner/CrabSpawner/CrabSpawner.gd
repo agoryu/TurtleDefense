@@ -14,8 +14,8 @@ var level: int = 0
 func spawn_crab(constructor):
 	var crab = constructor.instantiate()
 	pathFollow.progress_ratio = randf()
-	crab.position = pathFollow.position
-	add_child(crab)
+	crab.position = pathFollow.global_position
+	get_tree().get_root().add_child(crab)
 
 func _on_timer_red_timeout() -> void:
 	spawn_crab(crab_red_constructor)
