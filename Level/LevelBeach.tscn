@@ -177,15 +177,17 @@ script = ExtResource("1_dv1c0")
 
 [node name="Mobs" type="Node2D" parent="."]
 
-[node name="Hero" parent="Mobs" instance=ExtResource("3_xb633")]
+[node name="Hero" parent="Mobs" node_paths=PackedStringArray("turtle") instance=ExtResource("3_xb633")]
 y_sort_enabled = true
 position = Vector2(520, 584)
+defaultSpeed = 100.0
+turtle = NodePath("../Turtle")
 
 [node name="Turtle" parent="Mobs" instance=ExtResource("4_ygeu0")]
 y_sort_enabled = true
 position = Vector2(8, 576)
 collision_layer = 8
-speed = 800.0
+speed = 30.0
 
 [node name="Octopus" parent="Mobs" node_paths=PackedStringArray("life") instance=ExtResource("5_05wcq")]
 position = Vector2(4000, 568)

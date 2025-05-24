@@ -2,20 +2,21 @@ extends CharacterBody2D
 
 signal game_over
 
-@export var speed = 300.0 :
+@export var defaultSpeed = 300.0 :
 	set(value):
-		speed = value
+		defaultSpeed = value
 		if is_instance_valid(speed_particles):
 			speed_particles.emitting = true
 
 @export var drag := 5.0
+@export var chainLength: int = 500
+@export var turtle: CharacterBody2D
 
 @onready var animationPlayer = $AnimationPlayer
 @onready var health: Health = $Health
 @onready var animation = $SpriteSheet
 @onready var collision_damage = $DamageArea/CollisionShape2D
 @onready var bubble_gun = $BubbleGun
-@onready var camera: Camera2D = $Camera
 @onready var health_particles: GPUParticles2D = $HealthParticles2D
 @onready var speed_particles: GPUParticles2D = $SpeedParticles2D
 @onready var attract_collision_shape: CollisionShape2D = $AttractArea/CollisionShape2D
@@ -23,15 +24,22 @@ signal game_over
 var direction: Vector2
 
 func _physics_process(delta):
-	direction = get_gamepad_direction()
+	var speed = defaultSpeed
+	var dist = position.distance_to(turtle.position)
+	if (dist > chainLength):
+		direction = global_transform.origin.direction_to(turtle.position)
+		speed = turtle.speed
+	else:
+		direction = get_gamepad_direction()
 	var desired_velocity = direction * speed
 	var steering = desired_velocity - velocity
 	velocity += steering / drag
 	velocity = velocity.limit_length(speed)
 	move_and_slide()
 	animate(direction)
-	position.x = clamp(position.x, 0, Game.screen_size.x)
-	position.y = clamp(position.y, 0, Game.screen_size.y)
+		
+	#position.x = clamp(position.x, turtle.position.x - chainLength, turtle.position.x + chainLength)
+	#position.y = clamp(position.y, turtle.position.y - chainLength, turtle.position.y + chainLength)
 	update_shoot_direction()
 
 func update_shoot_direction():
