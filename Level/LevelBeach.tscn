@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://xvq0icsomos1"]
+[gd_scene load_steps=17 format=3 uid="uid://xvq0icsomos1"]
 
 [ext_resource type="Script" uid="uid://cqejmtjkgm7y5" path="res://Level/LevelBeach.gd" id="1_dv1c0"]
 [ext_resource type="PackedScene" uid="uid://cu16y5acswhml" path="res://Maps/Beach/Beach.tscn" id="2_g5dex"]
@@ -169,6 +169,9 @@ bg_color = Color(0.196078, 0.196078, 0.196078, 0.541176)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2s6ej"]
 bg_color = Color(0.988235, 0, 0.109804, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_polbt"]
+size = Vector2(7140, 8)
+
 [node name="LevelBeach" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_dv1c0")
@@ -180,7 +183,6 @@ script = ExtResource("1_dv1c0")
 [node name="Hero" parent="Mobs" node_paths=PackedStringArray("turtle") instance=ExtResource("3_xb633")]
 y_sort_enabled = true
 position = Vector2(520, 584)
-defaultSpeed = 100.0
 turtle = NodePath("../Turtle")
 
 [node name="Turtle" parent="Mobs" instance=ExtResource("4_ygeu0")]
@@ -195,7 +197,7 @@ life = NodePath("../../CanvasLayer/ProgressBar")
 
 [node name="Camera" parent="." node_paths=PackedStringArray("character") instance=ExtResource("6_d3qay")]
 position = Vector2(16, 536)
-character = NodePath("../Mobs/Turtle")
+character = NodePath("../Mobs/Hero")
 
 [node name="Spawners" type="Node2D" parent="Camera"]
 position = Vector2(-16, -536)
@@ -232,6 +234,23 @@ max_value = 500.0
 step = 1.0
 value = 500.0
 show_percentage = false
+
+[node name="Limits" type="Node2D" parent="."]
+
+[node name="LimitNorth" type="StaticBody2D" parent="Limits"]
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/LimitNorth"]
+position = Vector2(2176, 4)
+shape = SubResource("RectangleShape2D_polbt")
+
+[node name="LimitSouth" type="StaticBody2D" parent="Limits"]
+position = Vector2(0, 1080)
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/LimitSouth"]
+position = Vector2(1630, 4)
+shape = SubResource("RectangleShape2D_polbt")
 
 [connection signal="game_over" from="Mobs/Hero" to="." method="_game_over"]
 [connection signal="game_over" from="Mobs/Turtle" to="." method="_game_over"]

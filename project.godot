@@ -122,6 +122,7 @@ locale/translations=PackedStringArray("res://Translation/translation.en.translat
 2d_physics/layer_4="turtle"
 2d_physics/layer_5="resource"
 2d_physics/layer_6="shield"
+2d_physics/layer_7="limit"
 
 [rendering]
 

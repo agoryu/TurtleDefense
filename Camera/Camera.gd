@@ -7,6 +7,7 @@ extends Camera2D
 
 func _ready():
 	reparent(character)
+	limit_bottom = get_viewport_rect().size.y
 
 func _process(delta) -> void:
 	global_position = character.global_position
