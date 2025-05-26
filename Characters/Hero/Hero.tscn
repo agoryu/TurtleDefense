@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bruykml7gpfws" path="res://UI/HealthBar/HealthBar.tscn" id="5_dwxqe"]
 [ext_resource type="Texture2D" uid="uid://d1sm2asmh6twr" path="res://Characters/Hero/speed_arrow.png" id="5_rxhiq"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwi8h"]
+size = Vector2(48, 48)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_08ydf"]
 atlas = ExtResource("4_mm6pl")
 region = Rect2(0, 0, 32, 32)
@@ -103,9 +106,6 @@ scale_curve = SubResource("CurveTexture_xaimt")
 particle_flag_disable_z = true
 gravity = Vector3(0, 98, 0)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwi8h"]
-size = Vector2(48, 48)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i77mt"]
 size = Vector2(64, 64)
 
@@ -150,7 +150,14 @@ _data = {
 
 [node name="Hero" type="CharacterBody2D"]
 collision_mask = 64
+motion_mode = 1
 script = ExtResource("1_53ldx")
+speed = 100.0
+distance_limite = 1200
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cwi8h")
+debug_color = Color(0.966416, 0, 0.480668, 0.42)
 
 [node name="SpriteSheet" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -184,10 +191,6 @@ process_material = SubResource("ParticleProcessMaterial_mnnoi")
 emitting = false
 amount = 3
 process_material = SubResource("ParticleProcessMaterial_hma4m")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_cwi8h")
-debug_color = Color(0.966416, 0, 0.480668, 0.42)
 
 [node name="DamageArea" type="Area2D" parent="."]
 collision_mask = 4

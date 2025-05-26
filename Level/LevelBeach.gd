@@ -2,11 +2,13 @@ extends Node2D
 
 signal game_over
 
+@onready var spawners : Node2D = $Spawners
+@onready var turtle : CharacterBody2D = $Mobs/Turtle
+
 @onready var animation_player = $AnimationPlayer
 
-func _ready():
-	Game.turtle = $Turtle
-	Game.player = $Hero
+func _process(delta: float) -> void:
+	spawners.global_position.x = turtle.global_position.x
 
 func set_level_animation():
 	animation_player.play("set_level")

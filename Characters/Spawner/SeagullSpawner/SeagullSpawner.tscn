@@ -25,7 +25,6 @@ curve = SubResource("Curve2D_hqaw7")
 position = Vector2(192, -64)
 
 [node name="Path2DBottom" type="Path2D" parent="."]
-top_level = true
 curve = SubResource("Curve2D_2dxtl")
 
 [node name="PathFollow2DBottom" type="PathFollow2D" parent="Path2DBottom"]

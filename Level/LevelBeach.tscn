@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://xvq0icsomos1"]
+[gd_scene load_steps=18 format=3 uid="uid://xvq0icsomos1"]
 
 [ext_resource type="Script" uid="uid://cqejmtjkgm7y5" path="res://Level/LevelBeach.gd" id="1_dv1c0"]
 [ext_resource type="PackedScene" uid="uid://cu16y5acswhml" path="res://Maps/Beach/Beach.tscn" id="2_g5dex"]
@@ -9,6 +9,16 @@
 [ext_resource type="PackedScene" uid="uid://chf0i73jsh7of" path="res://Characters/Spawner/CrabSpawner/CrabSpawner.tscn" id="7_g5dex"]
 [ext_resource type="PackedScene" uid="uid://d3mck3pij8qii" path="res://Characters/Spawner/SeagullSpawner/SeagullSpawner.tscn" id="8_ygeu0"]
 [ext_resource type="PackedScene" uid="uid://ddkrkxdqpdqfw" path="res://Characters/Spawner/ShellSpawner/ShellSpawner.tscn" id="9_05wcq"]
+[ext_resource type="PackedScene" uid="uid://cys8wx57y0lb1" path="res://UI/UI.tscn" id="10_ig5f8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_polbt"]
+size = Vector2(7140, 8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3e20w"]
+bg_color = Color(0.196078, 0.196078, 0.196078, 0.541176)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2s6ej"]
+bg_color = Color(0.988235, 0, 0.109804, 1)
 
 [sub_resource type="Animation" id="Animation_qsdo7"]
 length = 0.001
@@ -163,15 +173,6 @@ _data = {
 &"set_level": SubResource("Animation_8igmv")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3e20w"]
-bg_color = Color(0.196078, 0.196078, 0.196078, 0.541176)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2s6ej"]
-bg_color = Color(0.988235, 0, 0.109804, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_polbt"]
-size = Vector2(7140, 8)
-
 [node name="LevelBeach" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_dv1c0")
@@ -188,52 +189,24 @@ turtle = NodePath("../Turtle")
 [node name="Turtle" parent="Mobs" instance=ExtResource("4_ygeu0")]
 y_sort_enabled = true
 position = Vector2(8, 576)
-collision_layer = 8
 speed = 30.0
 
 [node name="Octopus" parent="Mobs" node_paths=PackedStringArray("life") instance=ExtResource("5_05wcq")]
 position = Vector2(4000, 568)
 life = NodePath("../../CanvasLayer/ProgressBar")
 
+[node name="Spawners" type="Node2D" parent="."]
+
+[node name="CrabSpawner" parent="Spawners" instance=ExtResource("7_g5dex")]
+position = Vector2(2500, 0)
+
+[node name="SeagullSpawner" parent="Spawners" instance=ExtResource("8_ygeu0")]
+
+[node name="ShellSpawner" parent="Spawners" instance=ExtResource("9_05wcq")]
+
 [node name="Camera" parent="." node_paths=PackedStringArray("character") instance=ExtResource("6_d3qay")]
 position = Vector2(16, 536)
 character = NodePath("../Mobs/Hero")
-
-[node name="Spawners" type="Node2D" parent="Camera"]
-position = Vector2(-16, -536)
-
-[node name="CrabSpawner" parent="Camera/Spawners" instance=ExtResource("7_g5dex")]
-position = Vector2(2000, 0)
-
-[node name="SeagullSpawner" parent="Camera/Spawners" instance=ExtResource("8_ygeu0")]
-
-[node name="ShellSpawner" parent="Camera/Spawners" instance=ExtResource("9_05wcq")]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_5xvdj")
-}
-
-[node name="BossTimer" type="Timer" parent="."]
-wait_time = 20.0
-one_shot = true
-autostart = true
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-offset = Vector2(0, -50)
-transform = Transform2D(1, 0, 0, 1, 0, -50)
-
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 27.0
-grow_horizontal = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_3e20w")
-theme_override_styles/fill = SubResource("StyleBoxFlat_2s6ej")
-max_value = 500.0
-step = 1.0
-value = 500.0
-show_percentage = false
 
 [node name="Limits" type="Node2D" parent="."]
 
@@ -251,6 +224,34 @@ collision_layer = 64
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/LimitSouth"]
 position = Vector2(1630, 4)
 shape = SubResource("RectangleShape2D_polbt")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+offset = Vector2(0, -50)
+transform = Transform2D(1, 0, 0, 1, 0, -50)
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 27.0
+grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_3e20w")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2s6ej")
+max_value = 500.0
+step = 1.0
+value = 500.0
+show_percentage = false
+
+[node name="UI" parent="." instance=ExtResource("10_ig5f8")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5xvdj")
+}
+
+[node name="BossTimer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+autostart = true
 
 [connection signal="game_over" from="Mobs/Hero" to="." method="_game_over"]
 [connection signal="game_over" from="Mobs/Turtle" to="." method="_game_over"]

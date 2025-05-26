@@ -20,6 +20,7 @@ signal game_over
 
 func _ready() -> void:
 	animatedSprite.play("default")
+	Game.turtle = self
 
 func _physics_process(delta):
 	var desired_velocity = get_desired_velocity()

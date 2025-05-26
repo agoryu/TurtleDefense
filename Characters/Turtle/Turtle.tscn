@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ckuhayprkbicm" path="res://Weapons/Turtle/BeamWeapon/BeamWeapon.tscn" id="16_jv588"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s0gp0"]
-size = Vector2(128, 128)
+size = Vector2(182, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bmhok"]
 atlas = ExtResource("2_dypx1")
@@ -99,12 +99,13 @@ _data = {
 }
 
 [node name="Turtle" type="CharacterBody2D"]
-collision_layer = 9
-collision_mask = 0
+collision_layer = 8
+motion_mode = 1
 script = ExtResource("1_ow1ky")
 speed = 300.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-27, 0)
 shape = SubResource("RectangleShape2D_s0gp0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

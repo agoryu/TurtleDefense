@@ -24,6 +24,9 @@ signal game_over
 
 var direction: Vector2
 
+func _ready() -> void:
+	Game.player = self
+
 func _physics_process(delta):
 	direction = get_gamepad_direction()
 	var desired_velocity = direction * speed
