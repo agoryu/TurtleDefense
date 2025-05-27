@@ -21,7 +21,6 @@ func _process(delta: float) -> void:
 		$Boost2/Details.cost_label.text = "%d" % weapon.cost_boost2
 
 func add_weapon():
-	print("add weapon")
 	weapon.add_weapon()
 	weapon.cost_weapon = 0
 

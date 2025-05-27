@@ -88,12 +88,12 @@ script = ExtResource("1_dy272")
 position = Vector2(224, 212)
 emitting = false
 amount = 60
-process_material = SubResource("ParticleProcessMaterial_m7e11")
 texture = ExtResource("3_yj0sp")
 lifetime = 2.0
 one_shot = true
 speed_scale = 1.5
 explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_m7e11")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -217,6 +217,11 @@ stream = ExtResource("4_3odd6")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="boost_selected" from="VBoxContainer/ScrollContainer/Weapons/LaserBeamButton" to="." method="_on_boost_selected"]
+[connection signal="boost_selected" from="VBoxContainer/ScrollContainer/Weapons/LaserButton" to="." method="_on_boost_selected"]
+[connection signal="boost_selected" from="VBoxContainer/ScrollContainer/Weapons/MultishotButton" to="." method="_on_boost_selected"]
+[connection signal="boost_selected" from="VBoxContainer/ScrollContainer/Weapons/PiratCanonButton" to="." method="_on_boost_selected"]
+[connection signal="boost_selected" from="VBoxContainer/ScrollContainer/Weapons/UrsinCanonButton" to="." method="_on_boost_selected"]
+[connection signal="boost_selected" from="VBoxContainer/ScrollContainer/Weapons/ShieldButton" to="." method="_on_boost_selected"]
 
 [editable path="VBoxContainer/ScrollContainer/Weapons/LaserBeamButton"]
 [editable path="VBoxContainer/ScrollContainer/Weapons/LaserBeamButton/Weapon/Details"]
