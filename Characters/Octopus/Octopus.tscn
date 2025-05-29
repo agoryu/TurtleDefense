@@ -159,7 +159,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_sjoqa")
 }
 
-[node name="DamageAudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="DamageAudioStreamPlayer" type="AudioStreamPlayer2D" parent="." groups=["sound_effect"]]
 stream = ExtResource("5_silan")
 
 [node name="AttackTimer" type="Timer" parent="."]

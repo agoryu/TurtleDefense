@@ -313,7 +313,7 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_rxgu5")
 speed_scale = 2.0
 
-[node name="WalkAudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="WalkAudioStreamPlayer" type="AudioStreamPlayer2D" parent="." groups=["sound_effect"]]
 stream = ExtResource("4_71y12")
 volume_db = 5.0
 autoplay = true

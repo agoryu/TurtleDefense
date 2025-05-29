@@ -46,7 +46,7 @@ lifetime = 2.0
 speed_scale = 0.6
 process_material = SubResource("ParticleProcessMaterial_bnow6")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." groups=["sound_effect"]]
 stream = ExtResource("3_bnow6")
 
 [node name="Timer" type="Timer" parent="."]

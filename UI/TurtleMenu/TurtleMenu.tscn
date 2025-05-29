@@ -212,7 +212,7 @@ text = "turtle.menu.shield.boost1"
 [node name="Title" parent="VBoxContainer/ScrollContainer/Weapons/ShieldButton/Boost2/Details" index="0"]
 text = "turtle.menu.shield.boost2"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." groups=["sound_effect"]]
 stream = ExtResource("4_3odd6")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

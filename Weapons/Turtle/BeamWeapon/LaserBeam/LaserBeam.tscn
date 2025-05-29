@@ -98,26 +98,26 @@ modulate = Color(1.5, 1.5, 1.5, 1)
 position = Vector2(-10, 0)
 emitting = false
 amount = 10
-process_material = SubResource("ParticleProcessMaterial_wopuc")
 texture = ExtResource("2")
 lifetime = 0.3
+process_material = SubResource("ParticleProcessMaterial_wopuc")
 
 [node name="CollisionParticles2D" type="GPUParticles2D" parent="."]
 modulate = Color(1.5, 1.5, 1.5, 1)
 position = Vector2(-10, 0)
 emitting = false
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_aipim")
 texture = ExtResource("2")
 lifetime = 0.2
 local_coords = true
+process_material = SubResource("ParticleProcessMaterial_aipim")
 
 [node name="BeamParticles2D" type="GPUParticles2D" parent="."]
 modulate = Color(1.5, 1.5, 1.5, 1)
 emitting = false
 amount = 50
-process_material = SubResource("ParticleProcessMaterial_6x74n")
 texture = ExtResource("2")
+process_material = SubResource("ParticleProcessMaterial_6x74n")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="." groups=["sound_effect"]]
 stream = ExtResource("3_4cd8f")

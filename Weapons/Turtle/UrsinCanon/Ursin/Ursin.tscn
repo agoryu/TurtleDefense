@@ -35,10 +35,10 @@ wait_time = 3.0
 
 [node name="SpikesTimer" type="Timer" parent="."]
 
-[node name="AudioStreamPlayerShoot" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayerShoot" type="AudioStreamPlayer2D" parent="." groups=["sound_effect"]]
 stream = ExtResource("3_fxdyh")
 
-[node name="AudioStreamPlayerSpike" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayerSpike" type="AudioStreamPlayer2D" parent="." groups=["sound_effect"]]
 stream = ExtResource("4_ndhb6")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

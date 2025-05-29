@@ -269,13 +269,13 @@ one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_7vuu4")
+&"": SubResource("AnimationLibrary_7vuu4")
 }
 
-[node name="AudioStreamPlayerImpact" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayerImpact" type="AudioStreamPlayer2D" parent="." groups=["sound_effect"]]
 stream = ExtResource("6_odm0f")
 
-[node name="AudioStreamPlayerOpen" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayerOpen" type="AudioStreamPlayer2D" parent="." groups=["sound_effect"]]
 stream = ExtResource("7_at312")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

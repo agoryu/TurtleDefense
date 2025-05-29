@@ -63,12 +63,12 @@ position = Vector2(33, 24)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("4_igw5k")
 
-[node name="EngineStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="EngineStreamPlayer" type="AudioStreamPlayer2D" parent="." groups=["sound_effect"]]
 stream = ExtResource("5_kqag3")
 volume_db = -10.0
 autoplay = true
 
-[node name="ScreamAudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="ScreamAudioStreamPlayer" type="AudioStreamPlayer2D" parent="." groups=["sound_effect"]]
 stream = ExtResource("6_7fjfe")
 autoplay = true
 
