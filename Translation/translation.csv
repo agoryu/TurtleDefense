@@ -1,4 +1,12 @@
 id,fr,en
+mainButton.start,Commencer,Start
+mainButton.option,Options,Options
+mainButton.exit,Quitter,Exit
+controls.move,Se déplacer,Move
+controls.turtleMenu,Menu de la tortue,Turtle menu
+controls.pause,Pause,Pause
+controls.validate,Valider,Validate
+controls.shoot,Tirer,Shoot
 player.speed,Vitesse,Speed
 player.life,Vie,Life
 player.attraction,Attraction,Attraction

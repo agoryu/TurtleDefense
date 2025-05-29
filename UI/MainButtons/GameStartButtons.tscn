@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6finvom3ythl"]
+
+[ext_resource type="Script" uid="uid://dagnpe1h1m5pu" path="res://UI/MainButtons/GameStartButtons.gd" id="1_rlffw"]
+
+[node name="GameStartButtons" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "mainButton.start"
+script = ExtResource("1_rlffw")
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

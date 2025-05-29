@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnhsumg71r14l"]
+
+[ext_resource type="Script" uid="uid://bic6icuu7dsyp" path="res://UI/MainButtons/OptionButton.gd" id="1_2pdhu"]
+
+[node name="OptionButton" type="Button"]
+text = "mainButton.option"
+script = ExtResource("1_2pdhu")
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

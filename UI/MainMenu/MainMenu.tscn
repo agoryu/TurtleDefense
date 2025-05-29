@@ -1,0 +1,93 @@
+[gd_scene load_steps=10 format=3 uid="uid://c6cahci6dvvev"]
+
+[ext_resource type="Theme" uid="uid://gnljka0ggss7" path="res://UI/MainMenu/menu_theme.tres" id="1_1dhmk"]
+[ext_resource type="PackedScene" uid="uid://b6finvom3ythl" path="res://UI/MainButtons/GameStartButtons.tscn" id="1_8x0bb"]
+[ext_resource type="Script" uid="uid://glnat70gr3u7" path="res://UI/MainMenu/MainMenu.gd" id="1_nahvw"]
+[ext_resource type="Texture2D" uid="uid://cdnkanhgydhwl" path="res://UI/MainMenu/background.png" id="2_4elqj"]
+[ext_resource type="PackedScene" uid="uid://dnhsumg71r14l" path="res://UI/MainButtons/OptionButton.tscn" id="2_nahvw"]
+[ext_resource type="PackedScene" uid="uid://bqvqpvqt548vb" path="res://UI/MainButtons/ExitButton.tscn" id="3_4elqj"]
+[ext_resource type="Texture2D" uid="uid://cpbo72l5ouv0p" path="res://UI/MainMenu/title.webp" id="4_32jca"]
+[ext_resource type="PackedScene" uid="uid://x8d8g7a0tesp" path="res://UI/Controls/Controls.tscn" id="4_jhcbk"]
+[ext_resource type="PackedScene" uid="uid://beerfxfv6tp16" path="res://Sounds/MainSound.tscn" id="6_ri767"]
+
+[node name="MainMenu" type="Control" groups=["mainMenu"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_1dhmk")
+script = ExtResource("1_nahvw")
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.419608, 0.592157, 0.623529, 1)
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -952.0
+offset_top = -432.0
+offset_right = 952.0
+offset_bottom = 541.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4elqj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -236.0
+offset_right = 236.0
+offset_bottom = 296.0
+grow_horizontal = 2
+texture = ExtResource("4_32jca")
+expand_mode = 1
+
+[node name="Controls" parent="." instance=ExtResource("4_jhcbk")]
+layout_mode = 1
+offset_left = 3.05176e-05
+offset_right = 160.0
+offset_bottom = 199.0
+scale = Vector2(0.2, 0.2)
+
+[node name="MainButtons" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -248.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="GameStartButtons" parent="MainButtons" instance=ExtResource("1_8x0bb")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+
+[node name="OptionButton" parent="MainButtons" instance=ExtResource("2_nahvw")]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="ExitButton" parent="MainButtons" instance=ExtResource("3_4elqj")]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+
+[node name="MainSound" parent="." instance=ExtResource("6_ri767")]
