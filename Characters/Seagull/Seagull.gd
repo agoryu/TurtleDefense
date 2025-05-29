@@ -19,9 +19,6 @@ func _physics_process(delta):
 	move_and_slide()
 	anim_engine()
 
-func _on_timer_timeout():
-	queue_free()
-
 func take_damage(damage):
 	health.loose_health(damage)
 

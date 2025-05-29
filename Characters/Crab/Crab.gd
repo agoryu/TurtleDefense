@@ -25,9 +25,6 @@ func _physics_process(delta):
 func animate():
 	animation.play(anim_name)
 
-func _on_timer_timeout():
-	queue_free()
-
 func _on_area_2d_body_entered(body):
 	health.loose_health(body.damage)
 	body.queue_free()

@@ -1,9 +1,10 @@
-[gd_scene load_steps=44 format=3 uid="uid://dbxmis503t6av"]
+[gd_scene load_steps=45 format=3 uid="uid://dbxmis503t6av"]
 
 [ext_resource type="Script" uid="uid://qgv8y2j0wulb" path="res://Characters/Crab/Crab.gd" id="1_xxv67"]
-[ext_resource type="PackedScene" uid="uid://cpembt8wk8d3j" path="res://Characters/Health/Health.tscn" id="3_djucn"]
+[ext_resource type="PackedScene" uid="uid://cpembt8wk8d3j" path="res://Game/Health/Health.tscn" id="3_djucn"]
 [ext_resource type="AudioStream" uid="uid://dly4k2tt6jaaa" path="res://Characters/Crab/walk_sand.wav" id="4_71y12"]
 [ext_resource type="Texture2D" uid="uid://ct2mbej17nc11" path="res://Characters/Crab/Crab-Sheet.png" id="4_isci8"]
+[ext_resource type="PackedScene" uid="uid://da3bycixbf7lt" path="res://Game/ClearMob/ClearMob.tscn" id="5_xb1a3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l31b6"]
 size = Vector2(64, 40)
@@ -295,11 +296,6 @@ script = ExtResource("1_xxv67")
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_l31b6")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 25.0
-one_shot = true
-autostart = true
-
 [node name="Health" parent="." instance=ExtResource("3_djucn")]
 max_value = 1
 
@@ -322,6 +318,7 @@ stream = ExtResource("4_71y12")
 volume_db = 5.0
 autoplay = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="ClearMob" parent="." instance=ExtResource("5_xb1a3")]
+
 [connection signal="dead" from="Health" to="." method="_on_health_dead"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_area_2d_body_entered"]
