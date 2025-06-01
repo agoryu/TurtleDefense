@@ -30,6 +30,7 @@ func _physics_process(_delta: float) -> void:
 
 	if is_colliding():
 		cast_point = to_local(get_collision_point(0))
+		cast_point.y = 0
 		collision_particules.global_rotation = get_collision_normal(0).angle()
 		collision_particules.position = cast_point
 		collision_particules.emitting = true

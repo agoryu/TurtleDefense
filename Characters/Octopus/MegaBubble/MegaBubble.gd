@@ -15,3 +15,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_health_dead() -> void:
 	queue_free()
+	
+func take_damage(damage_value):
+	health.loose_health(damage_value)
