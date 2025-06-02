@@ -7,6 +7,7 @@ controls.turtleMenu,Menu de la tortue,Turtle menu
 controls.pause,Pause,Pause
 controls.validate,Valider,Validate
 controls.shoot,Tirer,Shoot
+ui.gameOver,Perdu,Game Over
 player.speed,Vitesse,Speed
 player.life,Vie,Life
 player.attraction,Attraction,Attraction
