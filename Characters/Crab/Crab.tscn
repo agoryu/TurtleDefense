@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://qgv8y2j0wulb" path="res://Characters/Crab/Crab.gd" id="1_xxv67"]
 [ext_resource type="PackedScene" uid="uid://cpembt8wk8d3j" path="res://Game/Health/Health.tscn" id="3_djucn"]
-[ext_resource type="AudioStream" uid="uid://dly4k2tt6jaaa" path="res://Characters/Crab/walk_sand.wav" id="4_71y12"]
+[ext_resource type="AudioStream" uid="uid://dwjwavg0ahghk" path="res://Characters/Crab/walk_sand.wav" id="4_71y12"]
 [ext_resource type="Texture2D" uid="uid://ct2mbej17nc11" path="res://Characters/Crab/Crab-Sheet.png" id="4_isci8"]
 [ext_resource type="PackedScene" uid="uid://da3bycixbf7lt" path="res://Game/ClearMob/ClearMob.tscn" id="5_xb1a3"]
 
