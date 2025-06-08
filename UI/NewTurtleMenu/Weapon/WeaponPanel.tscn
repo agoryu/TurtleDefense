@@ -1,0 +1,116 @@
+[gd_scene load_steps=10 format=3 uid="uid://bkqgkgiak8ewb"]
+
+[ext_resource type="Script" uid="uid://cnp7pr0yus4k7" path="res://UI/NewTurtleMenu/Weapon/WeaponPanel.gd" id="1_bge0v"]
+[ext_resource type="FontFile" uid="uid://blj6vqobuxig2" path="res://UI/Pixellari.ttf" id="1_s3ish"]
+[ext_resource type="AudioStream" uid="uid://bhcftbmhfikbc" path="res://UI/NewTurtleMenu/Weapon/sf_button_validation.wav" id="2_85bxr"]
+[ext_resource type="StyleBox" uid="uid://in3glng1680k" path="res://UI/NewTurtleMenu/Weapon/button.tres" id="2_taldx"]
+[ext_resource type="AudioStream" uid="uid://bc7ldldnw5q2k" path="res://UI/NewTurtleMenu/Weapon/sf_button_focus.wav" id="3_al5rn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_taldx"]
+bg_color = Color(0.376471, 0.196078, 0.952941, 0.470588)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.172549, 0.588235, 0.980392, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5fme"]
+bg_color = Color(0.950427, 0.360361, 0.549509, 0.470588)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.94902, 0.360784, 0.54902, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bge0v"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.101961, 0.101961, 0.662745, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 3
+corner_detail = 5
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
+anti_aliasing = false
+
+[sub_resource type="Theme" id="Theme_jaaw3"]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 26
+Button/fonts/font = ExtResource("1_s3ish")
+Button/styles/disabled = SubResource("StyleBoxFlat_taldx")
+Button/styles/focus = SubResource("StyleBoxFlat_x5fme")
+Button/styles/hover = ExtResource("2_taldx")
+Button/styles/normal = ExtResource("2_taldx")
+Button/styles/pressed = ExtResource("2_taldx")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_bge0v")
+
+[node name="WeaponPanel" type="PanelContainer"]
+custom_minimum_size = Vector2(1000, 0)
+theme = SubResource("Theme_jaaw3")
+script = ExtResource("1_bge0v")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Weapon" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Canon Laser"
+
+[node name="Bonus1" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Vitesse de tire"
+
+[node name="Bonus2" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Puissance"
+
+[node name="ButtonAudioPlayerValidation" type="AudioStreamPlayer2D" parent="." groups=["sound_menu"]]
+stream = ExtResource("2_85bxr")
+
+[node name="ButtonAudioPlayerFocus" type="AudioStreamPlayer2D" parent="." groups=["sound_menu"]]
+stream = ExtResource("3_al5rn")
+
+[connection signal="button_up" from="HBoxContainer/Weapon" to="." method="add_weapon"]
+[connection signal="focus_entered" from="HBoxContainer/Weapon" to="." method="_on_weapon_focus_entered"]
+[connection signal="button_up" from="HBoxContainer/Bonus1" to="." method="boost1"]
+[connection signal="focus_entered" from="HBoxContainer/Bonus1" to="." method="_on_bonus_1_focus_entered"]
+[connection signal="button_up" from="HBoxContainer/Bonus2" to="." method="boost2"]
+[connection signal="focus_entered" from="HBoxContainer/Bonus2" to="." method="_on_bonus_2_focus_entered"]

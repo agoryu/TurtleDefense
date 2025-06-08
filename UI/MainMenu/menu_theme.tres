@@ -1,34 +1,8 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://gnljka0ggss7"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://gnljka0ggss7"]
 
 [ext_resource type="StyleBox" uid="uid://bcuqb4okh8h3y" path="res://UI/MainMenu/button_focus_style.tres" id="1_bpxo0"]
 [ext_resource type="FontFile" uid="uid://bbf10b0gctjk1" path="res://UI/MainMenu/Pirates Kids.ttf" id="1_xy5ef"]
 [ext_resource type="StyleBox" uid="uid://bneo3w61ev3lc" path="res://UI/MainMenu/button_style.tres" id="2_xy5ef"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_joym7"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nuksr"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.225, 0.225, 0.225, 0.6)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rnqad"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.6)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
 
 [resource]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
@@ -50,8 +24,8 @@ Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 32
 Button/fonts/font = ExtResource("1_xy5ef")
-Button/styles/disabled = SubResource("StyleBoxTexture_joym7")
+Button/styles/disabled = ExtResource("2_xy5ef")
 Button/styles/focus = ExtResource("1_bpxo0")
-Button/styles/hover = SubResource("StyleBoxFlat_nuksr")
+Button/styles/hover = ExtResource("2_xy5ef")
 Button/styles/normal = ExtResource("2_xy5ef")
-Button/styles/pressed = SubResource("StyleBoxFlat_rnqad")
+Button/styles/pressed = ExtResource("2_xy5ef")
