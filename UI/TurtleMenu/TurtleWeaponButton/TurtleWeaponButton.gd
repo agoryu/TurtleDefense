@@ -21,16 +21,19 @@ func _process(delta: float) -> void:
 		$Boost2/Details.cost_label.text = "%d" % weapon.cost_boost2
 
 func add_weapon():
-	weapon.add_weapon()
-	weapon.cost_weapon = 0
+	if is_instance_valid(weapon):
+		weapon.add_weapon()
+		weapon.cost_weapon = 0
 
 func boost1():
-	Game.nb_shell -= weapon.cost_boost1
-	weapon.upgrade_primary_stat()
+	if is_instance_valid(weapon):
+		Game.nb_shell -= weapon.cost_boost1
+		weapon.upgrade_primary_stat()
 
 func boost2():
-	Game.nb_shell -= weapon.cost_boost2
-	weapon.upgrade_secondary_stat()
+	if is_instance_valid(weapon):
+		Game.nb_shell -= weapon.cost_boost2
+		weapon.upgrade_secondary_stat()
 
 func _on_weapon_button_up() -> void:
 	weapon_button.disabled = true

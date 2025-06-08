@@ -1,0 +1,302 @@
+[gd_scene load_steps=35 format=3 uid="uid://cdggtqwscrg1p"]
+
+[ext_resource type="Texture2D" uid="uid://cf6epy3x61jw6" path="res://UI/NewTurtleMenu/Preview/turtle.png" id="1_14oga"]
+[ext_resource type="Texture2D" uid="uid://df1rbscir0lwx" path="res://Weapons/Turtle/BeamWeapon/Beam-Sheet.png" id="2_14bwf"]
+[ext_resource type="Script" uid="uid://bosjtbnos8ad5" path="res://UI/NewTurtleMenu/Preview/Preview.gd" id="2_cmqoe"]
+[ext_resource type="Texture2D" uid="uid://dqdteyqw01p2c" path="res://Weapons/Turtle/Laser/Laser.png" id="3_14bwf"]
+[ext_resource type="Texture2D" uid="uid://c6r4vn1xqs8ml" path="res://Weapons/Turtle/Multishot/Multishot.png" id="4_6edlc"]
+[ext_resource type="Texture2D" uid="uid://ctgln8niqi81i" path="res://Weapons/Turtle/PiratCanon/PiratCanons.png" id="5_yvcw3"]
+[ext_resource type="Texture2D" uid="uid://8sktakohl4ff" path="res://Weapons/Turtle/Shield/ShieldGenerator.png" id="6_gbn63"]
+[ext_resource type="Texture2D" uid="uid://cycfa817pn1rv" path="res://Weapons/Turtle/UrsinCanon/UrsinCanon.png" id="7_lgl6b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdbw6"]
+atlas = ExtResource("2_14bwf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_my28o"]
+atlas = ExtResource("2_14bwf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhry3"]
+atlas = ExtResource("2_14bwf")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0xh4"]
+atlas = ExtResource("2_14bwf")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_metnh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdbw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_my28o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhry3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0xh4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w35ic"]
+atlas = ExtResource("3_14bwf")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gisc3"]
+atlas = ExtResource("3_14bwf")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sulv"]
+atlas = ExtResource("3_14bwf")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyx3y"]
+atlas = ExtResource("3_14bwf")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsq2t"]
+atlas = ExtResource("3_14bwf")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_14bwf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w35ic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gisc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0sulv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyx3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsq2t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0clw"]
+atlas = ExtResource("4_6edlc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_onbgh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0clw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhlk0"]
+atlas = ExtResource("5_yvcw3")
+region = Rect2(0, 16, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gbn63"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhlk0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lf5vu"]
+atlas = ExtResource("5_yvcw3")
+region = Rect2(0, 32, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lgl6b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lf5vu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cmqoe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_gbn63")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bephr"]
+atlas = ExtResource("7_lgl6b")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xvdsm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bephr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi4og"]
+atlas = ExtResource("7_lgl6b")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sp4xe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gi4og")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5col0"]
+atlas = ExtResource("7_lgl6b")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iuph5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5col0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dc7j"]
+atlas = ExtResource("7_lgl6b")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d5nnf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dc7j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Preview" type="TextureRect"]
+offset_right = 704.0
+offset_bottom = 704.0
+texture = ExtResource("1_14oga")
+script = ExtResource("2_cmqoe")
+
+[node name="BeamWeapon" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(360, 280)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_metnh")
+
+[node name="Laser" type="AnimatedSprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(360, 488)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_14bwf")
+offset = Vector2(0.5, -1.5)
+
+[node name="MultiShot" type="AnimatedSprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(360, 608)
+rotation = 1.5708
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_onbgh")
+
+[node name="PiratCanons" type="Node2D" parent="."]
+visible = false
+position = Vector2(-24, -48)
+scale = Vector2(2.5, 2.5)
+
+[node name="Canon_NE" type="AnimatedSprite2D" parent="PiratCanons"]
+texture_filter = 1
+position = Vector2(208, 156.8)
+rotation = 3.14159
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_gbn63")
+
+[node name="Canon_NW" type="AnimatedSprite2D" parent="PiratCanons"]
+texture_filter = 1
+position = Vector2(80, 152)
+rotation = 3.14159
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_lgl6b")
+
+[node name="Canon_SE" type="AnimatedSprite2D" parent="PiratCanons"]
+texture_filter = 1
+position = Vector2(204.8, 201.6)
+rotation = 3.14159
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_gbn63")
+
+[node name="Canon_SW" type="AnimatedSprite2D" parent="PiratCanons"]
+texture_filter = 1
+position = Vector2(80, 200)
+rotation = 3.14159
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_lgl6b")
+
+[node name="ShieldGenerator" type="AnimatedSprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(352, 392)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_cmqoe")
+
+[node name="UrsinCanon" type="Node2D" parent="."]
+visible = false
+position = Vector2(-24, -48)
+scale = Vector2(2.5, 2.5)
+
+[node name="UrsinCanon_NE" type="AnimatedSprite2D" parent="UrsinCanon"]
+texture_filter = 1
+position = Vector2(201.6, 115.2)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_xvdsm")
+
+[node name="UrsinCanon_NW" type="AnimatedSprite2D" parent="UrsinCanon"]
+texture_filter = 1
+position = Vector2(102.4, 115.2)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_sp4xe")
+
+[node name="UrsinCanon_SE" type="AnimatedSprite2D" parent="UrsinCanon"]
+texture_filter = 1
+position = Vector2(186.8, 240)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_iuph5")
+
+[node name="UrsinCanon_SW" type="AnimatedSprite2D" parent="UrsinCanon"]
+texture_filter = 1
+position = Vector2(115.2, 240)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_d5nnf")
