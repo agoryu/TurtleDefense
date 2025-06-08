@@ -15,8 +15,11 @@ func _input(event):
 		pause_menu.visible = !pause_menu.visible
 		get_tree().paused = !get_tree().paused
 	elif event.is_action_released("ui_turtle_menu") and not pause_menu.visible:
-		turtle_menu.visible = !turtle_menu.visible
 		get_tree().paused = !get_tree().paused
+		if turtle_menu.visible:
+			turtle_menu.close()
+		else:
+			turtle_menu.open()
 		if not turtle_menu.visible:
 			hero_menu.update_power_progress()
 	overlay.visible = get_tree().paused

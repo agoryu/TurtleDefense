@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxl04pv4sddgp"]
+[gd_scene load_steps=7 format=3 uid="uid://dxl04pv4sddgp"]
 
 [ext_resource type="PackedScene" uid="uid://bkqgkgiak8ewb" path="res://UI/NewTurtleMenu/Weapon/WeaponPanel.tscn" id="1_478hx"]
 [ext_resource type="Script" uid="uid://ccaj0lbi6tb3s" path="res://UI/NewTurtleMenu/TurtleMenu.gd" id="1_xx63j"]
+[ext_resource type="FontFile" uid="uid://blj6vqobuxig2" path="res://UI/Pixellari.ttf" id="2_s0wxi"]
 [ext_resource type="Texture2D" uid="uid://cl2yoh2t47fa6" path="res://Statics/Shell/Shell.png" id="3_j8n3q"]
 [ext_resource type="PackedScene" uid="uid://cdggtqwscrg1p" path="res://UI/NewTurtleMenu/Preview/Preview.tscn" id="4_wm7jb"]
+[ext_resource type="AudioStream" uid="uid://byf5oojdj5cj7" path="res://UI/NewTurtleMenu/menu_open.wav" id="5_71lvt"]
 
 [node name="TurtleMenu" type="Control"]
 layout_mode = 3
@@ -12,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(960, 520)
 script = ExtResource("1_xx63j")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -21,15 +24,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.258824, 0.141176, 0.0235294, 0.392157)
+color = Color(0.0980392, 0.121569, 0.403922, 0.666667)
 
 [node name="Level" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 49.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -75.0
+offset_right = 75.0
+offset_bottom = 129.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 45
+theme_override_fonts/font = ExtResource("2_s0wxi")
+theme_override_font_sizes/font_size = 60
 text = "Level 0
 "
 horizontal_alignment = 1
@@ -37,8 +44,9 @@ vertical_alignment = 1
 
 [node name="WeaponButtons" type="Control" parent="."]
 anchors_preset = 0
+offset_top = -24.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 16.0
 
 [node name="LaserBeam" parent="WeaponButtons" instance=ExtResource("1_478hx")]
 layout_mode = 2
@@ -119,7 +127,8 @@ grow_vertical = 0
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_stretch_ratio = 3.0
-theme_override_font_sizes/font_size = 60
+theme_override_fonts/font = ExtResource("2_s0wxi")
+theme_override_font_sizes/font_size = 45
 text = "1/5"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -142,6 +151,9 @@ offset_right = -64.0
 offset_bottom = 356.0
 grow_horizontal = 0
 grow_vertical = 2
+
+[node name="OpenAudioPlayer" type="AudioStreamPlayer2D" parent="." groups=["sound_menu"]]
+stream = ExtResource("5_71lvt")
 
 [connection signal="power_selected" from="WeaponButtons/LaserBeam" to="." method="_on_power_selected"]
 [connection signal="weapon_selected" from="WeaponButtons/LaserBeam" to="Preview" method="_on_weapon_display"]
