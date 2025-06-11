@@ -32,6 +32,9 @@ project/assembly_name="TurtleDefense"
 [global_group]
 
 sound_effect=""
+enemy=""
+projectile=""
+object=""
 
 [input]
 

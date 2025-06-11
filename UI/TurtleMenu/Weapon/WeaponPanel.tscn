@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://bkqgkgiak8ewb"]
 
-[ext_resource type="Script" uid="uid://cnp7pr0yus4k7" path="res://UI/NewTurtleMenu/Weapon/WeaponPanel.gd" id="1_bge0v"]
+[ext_resource type="Script" uid="uid://cnp7pr0yus4k7" path="res://UI/TurtleMenu/Weapon/WeaponPanel.gd" id="1_bge0v"]
 [ext_resource type="FontFile" uid="uid://blj6vqobuxig2" path="res://UI/Pixellari.ttf" id="1_s3ish"]
-[ext_resource type="AudioStream" uid="uid://bhcftbmhfikbc" path="res://UI/NewTurtleMenu/Weapon/sf_button_validation.wav" id="2_85bxr"]
-[ext_resource type="StyleBox" uid="uid://in3glng1680k" path="res://UI/NewTurtleMenu/Weapon/button.tres" id="2_taldx"]
-[ext_resource type="AudioStream" uid="uid://bc7ldldnw5q2k" path="res://UI/NewTurtleMenu/Weapon/sf_button_focus.wav" id="3_al5rn"]
+[ext_resource type="AudioStream" uid="uid://bhcftbmhfikbc" path="res://UI/TurtleMenu/Weapon/sf_button_validation.wav" id="2_85bxr"]
+[ext_resource type="StyleBox" uid="uid://in3glng1680k" path="res://UI/TurtleMenu/Weapon/button.tres" id="2_taldx"]
+[ext_resource type="AudioStream" uid="uid://bc7ldldnw5q2k" path="res://UI/TurtleMenu/Weapon/sf_button_focus.wav" id="3_al5rn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_taldx"]
 bg_color = Color(0.376471, 0.196078, 0.952941, 0.470588)

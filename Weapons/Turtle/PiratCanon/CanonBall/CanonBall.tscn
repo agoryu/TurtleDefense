@@ -22,7 +22,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_kscat"]
 radius = 3.66667
 
-[node name="CanonBall" type="CharacterBody2D"]
+[node name="CanonBall" type="CharacterBody2D" groups=["projectile"]]
 texture_filter = 1
 scale = Vector2(3, 3)
 collision_layer = 2

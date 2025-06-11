@@ -20,7 +20,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Ursin" type="Node2D"]
+[node name="Ursin" type="Node2D" groups=["projectile"]]
 script = ExtResource("1_pgkmf")
 
 [node name="Ursin" type="AnimatedSprite2D" parent="."]

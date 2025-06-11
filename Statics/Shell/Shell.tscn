@@ -124,7 +124,7 @@ texture = ExtResource("1_kyu16")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_augkm")
+&"": SubResource("AnimationLibrary_augkm")
 }
 
 [node name="AudioConsume" type="AudioStreamPlayer2D" parent="."]

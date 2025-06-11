@@ -1,9 +1,9 @@
 [gd_scene load_steps=37 format=3 uid="uid://cdggtqwscrg1p"]
 
-[ext_resource type="Texture2D" uid="uid://cf6epy3x61jw6" path="res://UI/NewTurtleMenu/Preview/turtle.png" id="1_14oga"]
-[ext_resource type="StyleBox" uid="uid://dac4evb15lmcc" path="res://UI/NewTurtleMenu/control.tres" id="1_xvdsm"]
+[ext_resource type="Texture2D" uid="uid://cf6epy3x61jw6" path="res://UI/TurtleMenu/Preview/turtle.png" id="1_14oga"]
+[ext_resource type="StyleBox" uid="uid://dac4evb15lmcc" path="res://UI/TurtleMenu/control.tres" id="1_xvdsm"]
 [ext_resource type="Texture2D" uid="uid://df1rbscir0lwx" path="res://Weapons/Turtle/BeamWeapon/Beam-Sheet.png" id="2_14bwf"]
-[ext_resource type="Script" uid="uid://bosjtbnos8ad5" path="res://UI/NewTurtleMenu/Preview/Preview.gd" id="2_cmqoe"]
+[ext_resource type="Script" uid="uid://bosjtbnos8ad5" path="res://UI/TurtleMenu/Preview/Preview.gd" id="2_cmqoe"]
 [ext_resource type="Texture2D" uid="uid://dqdteyqw01p2c" path="res://Weapons/Turtle/Laser/Laser.png" id="3_14bwf"]
 [ext_resource type="Texture2D" uid="uid://c6r4vn1xqs8ml" path="res://Weapons/Turtle/Multishot/Multishot.png" id="4_6edlc"]
 [ext_resource type="Texture2D" uid="uid://ctgln8niqi81i" path="res://Weapons/Turtle/PiratCanon/PiratCanons.png" id="5_yvcw3"]
