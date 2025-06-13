@@ -1,0 +1,126 @@
+[gd_scene load_steps=3 format=3 uid="uid://byhomysgvt5il"]
+
+[ext_resource type="FontFile" uid="uid://blj6vqobuxig2" path="res://UI/Pixellari.ttf" id="1_0qgxi"]
+[ext_resource type="Script" uid="uid://cl8ynqjs5c0kh" path="res://UI/OptionsMenu/OptionsMenu.gd" id="1_2y1lw"]
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2y1lw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.137255, 0.741176, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 64.0
+offset_right = 205.0
+offset_bottom = 124.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_0qgxi")
+theme_override_font_sizes/font_size = 60
+text = "optionMenu.title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -284.0
+offset_right = 320.0
+offset_bottom = 420.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LanguageLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "optionMenu.language"
+
+[node name="LanguageButton" type="OptionButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "fr"
+popup/item_0/id = 0
+popup/item_1/text = "en"
+popup/item_1/id = 1
+
+[node name="MasterSoundLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "optionMenu.masterSound"
+
+[node name="MasterSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+max_value = 1.0
+step = 0.25
+value = 1.0
+
+[node name="MusicSoundLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "optionMenu.musicSound"
+
+[node name="MusicSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+max_value = 1.0
+step = 0.25
+value = 1.0
+
+[node name="SFXSoundLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "optionMenu.sfxSound"
+
+[node name="SFXSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+max_value = 1.0
+step = 0.25
+value = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Save" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_neighbor_right = NodePath("../Exit")
+focus_neighbor_bottom = NodePath("../Exit")
+text = "optionMenu.save"
+
+[node name="Exit" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_neighbor_left = NodePath("../Save")
+text = "optionMenu.exit"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/Save" to="." method="_on_save_button_up"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/Exit" to="." method="_on_exit_button_up"]

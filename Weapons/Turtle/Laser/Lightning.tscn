@@ -147,5 +147,5 @@ libraries = {
 &"": SubResource("AnimationLibrary_ijx54")
 }
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." groups=["sound_effect"]]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_mvnlf")

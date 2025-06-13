@@ -154,6 +154,7 @@ grow_vertical = 2
 
 [node name="OpenAudioPlayer" type="AudioStreamPlayer2D" parent="." groups=["sound_menu"]]
 stream = ExtResource("5_71lvt")
+bus = &"SFX"
 
 [connection signal="power_selected" from="WeaponButtons/LaserBeam" to="." method="_on_power_selected"]
 [connection signal="weapon_selected" from="WeaponButtons/LaserBeam" to="Preview" method="_on_weapon_display"]

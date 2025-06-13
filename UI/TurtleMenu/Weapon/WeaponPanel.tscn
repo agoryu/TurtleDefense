@@ -104,9 +104,11 @@ text = "Puissance"
 
 [node name="ButtonAudioPlayerValidation" type="AudioStreamPlayer2D" parent="." groups=["sound_menu"]]
 stream = ExtResource("2_85bxr")
+bus = &"SFX"
 
 [node name="ButtonAudioPlayerFocus" type="AudioStreamPlayer2D" parent="." groups=["sound_menu"]]
 stream = ExtResource("3_al5rn")
+bus = &"SFX"
 
 [connection signal="button_up" from="HBoxContainer/Weapon" to="." method="add_weapon"]
 [connection signal="focus_entered" from="HBoxContainer/Weapon" to="." method="_on_weapon_focus_entered"]

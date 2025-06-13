@@ -1,9 +1,10 @@
 extends MainButton
 
-@export var options_menu : Control
+@export var control : Control
 
 func _on_button_up() -> void:
-	options_menu.visible = true
+	control.visible = false
+	get_tree().paused = false
 
 func _on_focus_entered() -> void:
 	focus_animation()

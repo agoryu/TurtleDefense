@@ -1,5 +1,7 @@
 id,fr,en
 mainButton.start,Commencer,Start
+mainButton.continue,Continuer,Continue
+mainButton.retry,Rejouer,Retry
 mainButton.option,Options,Options
 mainButton.exit,Quitter,Exit
 controls.move,Se déplacer,Move
@@ -8,6 +10,14 @@ controls.pause,Pause,Pause
 controls.validate,Valider,Validate
 controls.shoot,Tirer,Shoot
 ui.gameOver,Perdu,Game Over
+ui.paused,Pause,Paused
+optionMenu.title,Options,Options
+optionMenu.language,Langue,Language
+optionMenu.masterSound,Son principal,First sound
+optionMenu.musicSound,Musique,Music
+optionMenu.sfxSound,SFX,SFX
+optionMenu.save,Sauvegarder,Save
+optionMenu.exit,Quitter,Exit
 player.speed,Vitesse,Speed
 player.life,Vie,Life
 player.attraction,Attraction,Attraction

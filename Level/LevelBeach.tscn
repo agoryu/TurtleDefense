@@ -230,6 +230,7 @@ shape = SubResource("RectangleShape2D_polbt")
 stream = ExtResource("10_6mf0s")
 volume_db = -2.0
 autoplay = true
+bus = &"Music"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 offset = Vector2(0, -50)

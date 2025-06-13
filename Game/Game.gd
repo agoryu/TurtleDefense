@@ -19,6 +19,7 @@ func reduce_shell(value: int):
 	emit_signal("set_shell")
 	
 func reset_scene() -> void:
+	get_tree().paused = false
 	for enemy in get_tree().get_nodes_in_group("enemy"):
 		enemy.queue_free()
 	for projectile in get_tree().get_nodes_in_group("projectile"):

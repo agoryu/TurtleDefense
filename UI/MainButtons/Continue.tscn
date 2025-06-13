@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyf780egj2uwd"]
+
+[ext_resource type="AudioStream" uid="uid://dk33eyfm7hh12" path="res://UI/MainButtons/bubble.wav" id="1_b1aea"]
+[ext_resource type="Script" uid="uid://doemq0bakovt3" path="res://UI/MainButtons/Continue.gd" id="1_cgten"]
+
+[node name="Continue" type="Button"]
+custom_minimum_size = Vector2(250, 50)
+pivot_offset = Vector2(125, 25)
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "mainButton.continue"
+script = ExtResource("1_cgten")
+
+[node name="FocusSoundPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_b1aea")
+bus = &"SFX"
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]

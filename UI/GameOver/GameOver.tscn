@@ -1,36 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cl7y8ahj3e231"]
+[gd_scene load_steps=6 format=3 uid="uid://cl7y8ahj3e231"]
 
 [ext_resource type="Script" uid="uid://ixtb6jcvl5y7" path="res://UI/GameOver/GameOver.gd" id="1_l8mub"]
-[ext_resource type="StyleBox" uid="uid://bneo3w61ev3lc" path="res://UI/MainMenu/button_style.tres" id="1_llnap"]
-[ext_resource type="FontFile" uid="uid://bbf10b0gctjk1" path="res://UI/MainMenu/Pirates Kids.ttf" id="1_whavd"]
+[ext_resource type="Theme" uid="uid://bx32oimc1rgrl" path="res://UI/global_menu_theme.tres" id="1_whavd"]
 [ext_resource type="FontFile" uid="uid://blj6vqobuxig2" path="res://UI/Pixellari.ttf" id="2_d8mmn"]
-[ext_resource type="StyleBox" uid="uid://bcuqb4okh8h3y" path="res://UI/MainMenu/button_focus_style.tres" id="2_whavd"]
-
-[sub_resource type="Theme" id="Theme_d8mmn"]
-Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
-Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
-Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
-Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
-Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-Button/colors/font_outline_color = Color(0, 0, 0, 1)
-Button/colors/font_pressed_color = Color(1, 1, 1, 1)
-Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
-Button/colors/icon_focus_color = Color(1, 1, 1, 1)
-Button/colors/icon_hover_color = Color(1, 1, 1, 1)
-Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
-Button/colors/icon_normal_color = Color(1, 1, 1, 1)
-Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
-Button/constants/align_to_largest_stylebox = 0
-Button/constants/h_separation = 4
-Button/constants/icon_max_width = 0
-Button/constants/outline_size = 0
-Button/font_sizes/font_size = 32
-Button/fonts/font = ExtResource("1_whavd")
-Button/styles/disabled = ExtResource("1_llnap")
-Button/styles/focus = ExtResource("2_whavd")
-Button/styles/hover = ExtResource("1_llnap")
-Button/styles/normal = ExtResource("1_llnap")
-Button/styles/pressed = ExtResource("1_llnap")
+[ext_resource type="PackedScene" uid="uid://bqvqpvqt548vb" path="res://UI/MainButtons/ExitButton.tscn" id="6_5d1br"]
+[ext_resource type="PackedScene" uid="uid://ysswyair2uqx" path="res://UI/MainButtons/Retry.tscn" id="6_jr45j"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -39,7 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_d8mmn")
+theme = ExtResource("1_whavd")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -74,20 +48,13 @@ text = "ui.gameOver"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Retry" type="Button" parent="Grid"]
-custom_minimum_size = Vector2(250, 50)
+[node name="Retry" parent="Grid" instance=ExtResource("6_jr45j")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-text = "Retry"
 
-[node name="Exit" type="Button" parent="Grid"]
-custom_minimum_size = Vector2(250, 50)
+[node name="ExitButton" parent="Grid" instance=ExtResource("6_5d1br")]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
-text = "Exit"
 
 [connection signal="visibility_changed" from="Grid" to="Grid" method="_on_visibility_changed"]
-[connection signal="button_up" from="Grid/Retry" to="Grid" method="_on_button_button_up"]
-[connection signal="button_up" from="Grid/Exit" to="Grid" method="_on_exit_button_up"]
+[connection signal="reset" from="Grid/Retry" to="Grid" method="_on_retry_reset"]

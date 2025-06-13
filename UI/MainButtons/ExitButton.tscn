@@ -1,9 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqvqpvqt548vb"]
+[gd_scene load_steps=3 format=3 uid="uid://bqvqpvqt548vb"]
 
 [ext_resource type="Script" uid="uid://kvaq4t6e7dyf" path="res://UI/MainButtons/ExitButton.gd" id="1_43ho5"]
+[ext_resource type="AudioStream" uid="uid://dk33eyfm7hh12" path="res://UI/MainButtons/bubble.wav" id="2_f13r8"]
 
 [node name="ExitButton" type="Button"]
+custom_minimum_size = Vector2(250, 50)
+offset_right = 250.0
+offset_bottom = 50.0
+pivot_offset = Vector2(125, 25)
 text = "mainButton.exit"
 script = ExtResource("1_43ho5")
 
+[node name="FocusSoundPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_f13r8")
+bus = &"SFX"
+
 [connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]

@@ -1,9 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnhsumg71r14l"]
+[gd_scene load_steps=3 format=3 uid="uid://dnhsumg71r14l"]
 
 [ext_resource type="Script" uid="uid://bic6icuu7dsyp" path="res://UI/MainButtons/OptionButton.gd" id="1_2pdhu"]
+[ext_resource type="AudioStream" uid="uid://dk33eyfm7hh12" path="res://UI/MainButtons/bubble.wav" id="2_exinx"]
 
 [node name="OptionButton" type="Button"]
+custom_minimum_size = Vector2(250, 50)
+pivot_offset = Vector2(125, 25)
 text = "mainButton.option"
 script = ExtResource("1_2pdhu")
 
+[node name="FocusSoundPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_exinx")
+bus = &"SFX"
+
 [connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]

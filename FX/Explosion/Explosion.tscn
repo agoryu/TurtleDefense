@@ -69,7 +69,8 @@ texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_7s6uf")
 
-[node name="AudioExplosion" type="AudioStreamPlayer2D" parent="." groups=["sound_effect"]]
+[node name="AudioExplosion" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_tviha")
+bus = &"SFX"
 
 [connection signal="finished" from="AudioExplosion" to="." method="_on_audio_explosion_finished"]

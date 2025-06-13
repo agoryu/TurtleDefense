@@ -1,11 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6finvom3ythl"]
+[gd_scene load_steps=3 format=3 uid="uid://b6finvom3ythl"]
 
 [ext_resource type="Script" uid="uid://dagnpe1h1m5pu" path="res://UI/MainButtons/GameStartButtons.gd" id="1_rlffw"]
+[ext_resource type="AudioStream" uid="uid://dk33eyfm7hh12" path="res://UI/MainButtons/bubble.wav" id="2_8fd2k"]
 
 [node name="GameStartButtons" type="Button"]
 offset_right = 8.0
 offset_bottom = 8.0
+pivot_offset = Vector2(125, 25)
 text = "mainButton.start"
 script = ExtResource("1_rlffw")
 
+[node name="FocusSoundPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_8fd2k")
+bus = &"SFX"
+
 [connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]

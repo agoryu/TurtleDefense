@@ -73,9 +73,10 @@ text = "player.addBubble"
 script = ExtResource("6_ivvnt")
 max_up = 4
 
-[node name="AudioConsumePowerup" type="AudioStreamPlayer2D" parent="." groups=["sound_effect"]]
+[node name="AudioConsumePowerup" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("7_8hot5")
+bus = &"SFX"
 
 [connection signal="button_up" from="PowerMenu/Speed" to="PowerMenu/Speed" method="valid_power"]
 [connection signal="consume_power" from="PowerMenu/Speed" to="." method="_on_consume_power"]

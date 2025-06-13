@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c6cahci6dvvev"]
+[gd_scene load_steps=11 format=3 uid="uid://c6cahci6dvvev"]
 
 [ext_resource type="Theme" uid="uid://gnljka0ggss7" path="res://UI/MainMenu/menu_theme.tres" id="1_1dhmk"]
 [ext_resource type="PackedScene" uid="uid://b6finvom3ythl" path="res://UI/MainButtons/GameStartButtons.tscn" id="1_8x0bb"]
@@ -9,12 +9,15 @@
 [ext_resource type="Texture2D" uid="uid://cpbo72l5ouv0p" path="res://UI/MainMenu/title.webp" id="4_32jca"]
 [ext_resource type="PackedScene" uid="uid://x8d8g7a0tesp" path="res://UI/Controls/Controls.tscn" id="4_jhcbk"]
 [ext_resource type="PackedScene" uid="uid://beerfxfv6tp16" path="res://Sounds/MainSound.tscn" id="6_ri767"]
+[ext_resource type="PackedScene" uid="uid://byhomysgvt5il" path="res://UI/OptionsMenu/OptionsMenu.tscn" id="9_32jca"]
 
 [node name="MainMenu" type="Control" groups=["mainMenu"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_1dhmk")
@@ -76,18 +79,26 @@ grow_vertical = 0
 
 [node name="GameStartButtons" parent="MainButtons" instance=ExtResource("1_8x0bb")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 50)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
 
-[node name="OptionButton" parent="MainButtons" instance=ExtResource("2_nahvw")]
+[node name="OptionButton" parent="MainButtons" node_paths=PackedStringArray("options_menu") instance=ExtResource("2_nahvw")]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
+options_menu = NodePath("../../OptionsMenu")
 
 [node name="ExitButton" parent="MainButtons" instance=ExtResource("3_4elqj")]
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 4
 
+[node name="OptionsMenu" parent="." instance=ExtResource("9_32jca")]
+visible = false
+layout_mode = 1
+
 [node name="MainSound" parent="." instance=ExtResource("6_ri767")]
+
+[connection signal="close_options" from="OptionsMenu" to="." method="_on_options_menu_close_options"]
