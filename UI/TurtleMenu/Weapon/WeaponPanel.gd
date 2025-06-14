@@ -32,6 +32,7 @@ func add_weapon():
 		weapon.cost_weapon = 0
 		audio_player_validation.play()
 		emit_signal("power_selected", weapon.cost_weapon)
+		weapon_button.grab_focus()
 
 func boost1():
 	if is_instance_valid(weapon):
@@ -39,6 +40,7 @@ func boost1():
 		weapon.upgrade_primary_stat()
 		audio_player_validation.play()
 		emit_signal("power_selected", weapon.cost_boost1)
+		bonus1_button.grab_focus()
 
 func boost2():
 	if is_instance_valid(weapon):
@@ -46,6 +48,7 @@ func boost2():
 		weapon.upgrade_secondary_stat()
 		audio_player_validation.play()
 		emit_signal("power_selected", weapon.cost_boost2)
+		bonus2_button.grab_focus()
 
 func _on_weapon_focus_entered() -> void:
 	if is_instance_valid(weapon):

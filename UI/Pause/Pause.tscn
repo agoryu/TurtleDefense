@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ci2s1ts0argmd"]
+[gd_scene load_steps=10 format=3 uid="uid://ci2s1ts0argmd"]
 
 [ext_resource type="Script" uid="uid://ixtb6jcvl5y7" path="res://UI/GameOver/GameOver.gd" id="1_gco0c"]
 [ext_resource type="Theme" uid="uid://bx32oimc1rgrl" path="res://UI/global_menu_theme.tres" id="1_o726c"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dyf780egj2uwd" path="res://UI/MainButtons/Continue.tscn" id="4_vshxp"]
 [ext_resource type="PackedScene" uid="uid://dnhsumg71r14l" path="res://UI/MainButtons/OptionButton.tscn" id="5_fr46d"]
 [ext_resource type="PackedScene" uid="uid://byhomysgvt5il" path="res://UI/OptionsMenu/OptionsMenu.tscn" id="7_175ci"]
+[ext_resource type="PackedScene" uid="uid://x8d8g7a0tesp" path="res://UI/Controls/Controls.tscn" id="9_hx6bi"]
 
 [node name="Pause" type="Control"]
 layout_mode = 3
@@ -70,6 +71,19 @@ size_flags_vertical = 6
 [node name="OptionsMenu" parent="." instance=ExtResource("7_175ci")]
 visible = false
 layout_mode = 1
+
+[node name="Controls" parent="." instance=ExtResource("9_hx6bi")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 8.0
+offset_top = 824.0
+offset_right = 2088.0
+offset_bottom = 2103.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.2, 0.2)
 
 [connection signal="visibility_changed" from="Grid" to="Grid" method="_on_visibility_changed"]
 [connection signal="reset" from="Grid/Retry" to="Grid" method="_on_retry_reset"]
