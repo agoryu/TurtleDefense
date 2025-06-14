@@ -982,7 +982,7 @@ cache/0/60/0/glyphs/79/size = Vector2(10, 47)
 cache/0/60/0/glyphs/79/uv_rect = Rect2(124, 39, 10, 47)
 cache/0/60/0/glyphs/79/texture_idx = 0
 
-[sub_resource type="Image" id="Image_b4ub5"]
+[sub_resource type="Image" id="Image_62ybt"]
 data = {
 "data": PackedByteArray("sbGxALGxsQCxsbEAsbGxALGxsQCxsbEAsbGxALGxsQCxsbEAsbGxALKysgCysrIAsbGxALGxsQCxsbEAsbGxALGxsQCxsbEAsbGxALGxsQCxsbEAsbGxALKysgCysrIAsbGxALGxsQCxsbEAsbGxALGxsQCysrIAsrKyALGxsQCxsbEAsbGxALKysgCysrIAsbGxALGxsZmxsbGmsbGxErKysgCysrIAsrKyALKysgCxsbESsbGxprKyspeysrIAsbGxALGxsaaysrLZsrKysrKyshKysrIAsrKyALKyshKysrKzsrKy2bKysqWysrIAsbGxALGxsRKysrKysrKy2bKysrKysrISsrKyErKysrOysrLZsrKysrKyshGysrIAsbGxALKysgCysrISsrKysrKystmysrLFsrKyxbKystmysrKysrKyEbKysgCysrIAsrKyALKysgCysrIAsrKyErKysrKysrLZsrKy2bKysrKysrIRsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKyshKysrKlsrKypbKyshGysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIA"),
 "format": "RGBA8",
@@ -992,7 +992,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_0muml"]
-image = SubResource("Image_b4ub5")
+image = SubResource("Image_62ybt")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8viwc"]
 content_margin_left = 8.0
