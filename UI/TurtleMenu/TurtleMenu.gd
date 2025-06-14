@@ -4,12 +4,31 @@ extends Control
 @onready var weapon_buttons = weapon_panel.get_children()
 @onready var weapon_cost : Label = $ShellInformation/WeaponCost
 @onready var open_audio_player : AudioStreamPlayer2D = $OpenAudioPlayer
+@onready var level_label : Label = $Level
 
 var initial_position_x : int
 
 func _ready() -> void:
 	init_weapon()
 	initial_position_x = weapon_buttons[0].position.x
+	
+func _process(delta: float) -> void:
+	var lvl = Game.turtle.level
+	level_label.text = "Level " + str(lvl)
+	var color : Color
+	if lvl < 10:
+		color = Color(1, 1, 1) # Blanc (commun)
+	elif lvl < 20:
+		color = Color(0.12, 0.56, 1) # Bleu (magique)
+	elif lvl < 30:
+		color = Color(0.62, 0.2, 0.94) # Violet (rare)
+	elif lvl < 40:
+		color = Color(1, 0.8, 0) # Jaune (légendaire)
+	elif lvl < 70:
+		color = Color(1, 0.5, 0) # Orange (set/ancien)
+	else:
+		color = Color(0.8, 0.2, 0.2) # Rouge (primal)
+	level_label.set("theme_override_colors/font_color", color)
 	
 func open() -> void:
 	open_audio_player.play()

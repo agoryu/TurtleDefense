@@ -23,6 +23,7 @@ signal game_over
 @onready var alert_message : Label = $Alert
 
 var direction: Vector2
+var level : int = 0
 
 func _ready() -> void:
 	Game.player = self

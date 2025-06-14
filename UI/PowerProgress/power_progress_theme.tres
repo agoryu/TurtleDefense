@@ -9,7 +9,7 @@ border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color(0.0313726, 0.184314, 0.376471, 1)
+border_color = Color(0.960784, 0.184314, 0, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -36,7 +36,7 @@ bg_color = Color(0.341176, 0.788235, 0.905882, 1)
 
 [resource]
 Button/colors/font_color = Color(0, 0, 0, 1)
-Button/colors/font_focus_color = Color(0.341176, 0.788235, 0.905882, 1)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
 Button/fonts/font = ExtResource("1_sqd0k")
 Button/styles/disabled = ExtResource("2_nml8p")
 Button/styles/focus = SubResource("StyleBoxFlat_motek")

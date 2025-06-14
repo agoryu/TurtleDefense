@@ -7,7 +7,7 @@ mainButton.exit,Quitter,Exit
 controls.move,Se déplacer,Move
 controls.turtleMenu,Menu de la tortue,Turtle menu
 controls.pause,Pause,Pause
-controls.validate,Valider,Validate
+controls.validate,Valider (étoile/tortue),Validate(star/turtle)
 controls.shoot,Tirer,Shoot
 ui.gameOver,Perdu,Game Over
 ui.paused,Pause,Paused

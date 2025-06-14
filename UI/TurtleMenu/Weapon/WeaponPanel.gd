@@ -6,6 +6,8 @@ signal weapon_selected
 @export var weapon_label : String = ""
 @export var bonus1_label : String = ""
 @export var bonus2_label : String = ""
+@export var value_level_weapon : int = 5
+@export var value_level_bonus : int = 2
 
 @onready var weapon_button : Button = $HBoxContainer/Weapon
 @onready var bonus1_button : Button = $HBoxContainer/Bonus1
@@ -30,6 +32,7 @@ func add_weapon():
 	if is_instance_valid(weapon):
 		weapon.add_weapon()
 		weapon.cost_weapon = 0
+		Game.turtle.level += value_level_weapon
 		audio_player_validation.play()
 		emit_signal("power_selected", weapon.cost_weapon)
 		weapon_button.grab_focus()
@@ -37,6 +40,7 @@ func add_weapon():
 func boost1():
 	if is_instance_valid(weapon):
 		Game.nb_shell -= weapon.cost_boost1
+		Game.turtle.level += value_level_bonus
 		weapon.upgrade_primary_stat()
 		audio_player_validation.play()
 		emit_signal("power_selected", weapon.cost_boost1)
@@ -45,6 +49,7 @@ func boost1():
 func boost2():
 	if is_instance_valid(weapon):
 		Game.nb_shell -= weapon.cost_boost2
+		Game.turtle.level += value_level_bonus
 		weapon.upgrade_secondary_stat()
 		audio_player_validation.play()
 		emit_signal("power_selected", weapon.cost_boost2)

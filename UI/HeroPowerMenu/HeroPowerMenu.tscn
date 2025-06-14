@@ -1,9 +1,40 @@
-[gd_scene load_steps=5 format=3 uid="uid://b263wklxujrt1"]
+[gd_scene load_steps=8 format=3 uid="uid://b263wklxujrt1"]
 
 [ext_resource type="Theme" uid="uid://jt8c1jhs81r4" path="res://UI/HeroPowerMenu/hero_menu_theme.tres" id="1_e3k4c"]
 [ext_resource type="Script" uid="uid://c7eixkb24qp1f" path="res://UI/PowerProgress/ShellCounter.gd" id="1_erxoh"]
 [ext_resource type="Script" uid="uid://devvwk18i2qct" path="res://UI/HeroPowerMenu/HeroPowerMenu.gd" id="2_rgvgs"]
 [ext_resource type="PackedScene" uid="uid://6nh1o7mnqqwx" path="res://UI/PowerProgress/PowerProgress.tscn" id="3_hub8w"]
+[ext_resource type="FontFile" uid="uid://blj6vqobuxig2" path="res://UI/Pixellari.ttf" id="5_mj4xj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w3is0"]
+content_margin_left = 6.0
+content_margin_top = 5.0
+content_margin_right = 6.0
+content_margin_bottom = 3.0
+bg_color = Color(0.623779, 0.760525, 0.979793, 0.960784)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.172549, 0.807843, 0.980392, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id="Theme_ggb45"]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 20
+Label/fonts/font = ExtResource("5_mj4xj")
+Label/styles/normal = SubResource("StyleBoxFlat_w3is0")
 
 [node name="HeroPowerMenu" type="PanelContainer"]
 anchors_preset = 5
@@ -30,6 +61,11 @@ script = ExtResource("1_erxoh")
 [node name="PowerProgress" parent="HBoxContainer" instance=ExtResource("3_hub8w")]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="Level" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ggb45")
+text = "Lvl 0"
 
 [node name="BlockClickOnMenu" type="ColorRect" parent="."]
 layout_mode = 2

@@ -32,6 +32,7 @@ func move_pos_power():
 
 func _on_consume_power():
 	progress_bar.value = 0
+	Game.player.level += min(Game.nb_shell, progress_bar.max_value)
 	progress_bar.max_value = progress_bar.max_value + (ceil(progress_bar.max_value * 20 / 100))
 	audio_consume_powerup.play()
 	Game.reduce_shell(Game.nb_shell)

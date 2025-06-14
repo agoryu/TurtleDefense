@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://ci2s1ts0argmd"]
 
-[ext_resource type="Script" uid="uid://ixtb6jcvl5y7" path="res://UI/GameOver/GameOver.gd" id="1_gco0c"]
 [ext_resource type="Theme" uid="uid://bx32oimc1rgrl" path="res://UI/global_menu_theme.tres" id="1_o726c"]
+[ext_resource type="Script" uid="uid://jnbw4456mw2e" path="res://UI/Pause/Pause.gd" id="2_hx6bi"]
 [ext_resource type="FontFile" uid="uid://blj6vqobuxig2" path="res://UI/Pixellari.ttf" id="2_o726c"]
 [ext_resource type="PackedScene" uid="uid://ysswyair2uqx" path="res://UI/MainButtons/Retry.tscn" id="3_fr46d"]
 [ext_resource type="PackedScene" uid="uid://bqvqpvqt548vb" path="res://UI/MainButtons/ExitButton.tscn" id="4_175ci"]
@@ -38,7 +38,7 @@ offset_top = -8.0
 offset_right = -256.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_gco0c")
+script = ExtResource("2_hx6bi")
 
 [node name="Label" type="Label" parent="Grid"]
 layout_mode = 2

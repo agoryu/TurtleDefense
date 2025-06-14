@@ -17,6 +17,8 @@ signal game_over
 @export var speed = 30.0
 @export var drag := 5.0
 
+var level = 0
+
 func _ready() -> void:
 	animatedSprite.play("default")
 	Game.turtle = self
