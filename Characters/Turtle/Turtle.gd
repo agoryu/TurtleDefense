@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 signal game_over
 
-@onready var timer: Timer = $Timer
 @onready var animationPlayer: AnimationPlayer = $AnimationPlayer
 @onready var animatedSprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var health: Health = $Health

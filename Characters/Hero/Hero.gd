@@ -66,6 +66,9 @@ func _on_health_dead():
 
 func nb_shoot_up():
 	bubble_gun.nb_shoot_up()
+	
+func boost_attraction(value: int):
+	attract_collision_shape.shape.radius += value
 
 func _on_health_add() -> void:
 	health_particles.emitting = true

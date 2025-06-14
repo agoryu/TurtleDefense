@@ -190,7 +190,7 @@ turtle = NodePath("../Turtle")
 [node name="Turtle" parent="Mobs" instance=ExtResource("4_ygeu0")]
 y_sort_enabled = true
 position = Vector2(8, 576)
-speed = 30.0
+speed = 100.0
 
 [node name="Octopus" parent="Mobs" node_paths=PackedStringArray("life") instance=ExtResource("5_05wcq")]
 position = Vector2(4000, 568)
