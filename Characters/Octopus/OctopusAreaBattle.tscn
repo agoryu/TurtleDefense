@@ -1,0 +1,142 @@
+[gd_scene load_steps=10 format=3 uid="uid://j71xc0buvq8s"]
+
+[ext_resource type="PackedScene" uid="uid://be6avwinhp4te" path="res://Characters/Octopus/Octopus.tscn" id="1_r1s8d"]
+[ext_resource type="Script" uid="uid://bfksxmo23l0lj" path="res://Characters/Octopus/OctopusAreaBattle.gd" id="1_ysjfk"]
+
+[sub_resource type="Curve2D" id="Curve2D_ysjfk"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1728, 256, 0, 0, 0, 0, 1728, 512, 0, 0, 0, 0, 1728, 960)
+}
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1s8d"]
+size = Vector2(74, 1090)
+
+[sub_resource type="Animation" id="Animation_kon1s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -50)]
+}
+
+[sub_resource type="Animation" id="Animation_ysjfk"]
+resource_name = "begin"
+length = 4.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BossPath/PathFollow2D/Octopus")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"howl"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.98, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -50), Vector2(0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.96667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"howl_turtle"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jwsil"]
+_data = {
+&"RESET": SubResource("Animation_kon1s"),
+&"begin": SubResource("Animation_ysjfk")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ysjfk"]
+bg_color = Color(0.196078, 0.196078, 0.196078, 0.541176)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kon1s"]
+bg_color = Color(0.988235, 0, 0.109804, 1)
+
+[node name="OctopusAreaBattle" type="Node2D"]
+script = ExtResource("1_ysjfk")
+
+[node name="BossPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_ysjfk")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="BossPath"]
+position = Vector2(1728, 537.705)
+rotation = 1.5708
+progress = 281.6
+loop = false
+
+[node name="Octopus" parent="BossPath/PathFollow2D" node_paths=PackedStringArray("life") instance=ExtResource("1_r1s8d")]
+rotation = -1.5708
+life = NodePath("../../../CanvasLayer/ProgressBar")
+
+[node name="AreaBeginBattle" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBeginBattle"]
+position = Vector2(160, 544)
+shape = SubResource("RectangleShape2D_r1s8d")
+
+[node name="AreaStopTurtle" type="Area2D" parent="."]
+position = Vector2(440, -8)
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaStopTurtle"]
+position = Vector2(160, 544)
+shape = SubResource("RectangleShape2D_r1s8d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_jwsil")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+offset = Vector2(0, -50)
+transform = Transform2D(1, 0, 0, 1, 0, -50)
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 27.0
+grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_ysjfk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_kon1s")
+max_value = 500.0
+step = 1.0
+value = 500.0
+show_percentage = false
+
+[connection signal="body_entered" from="AreaBeginBattle" to="." method="_on_area_begin_battle_body_entered"]
+[connection signal="body_entered" from="AreaStopTurtle" to="." method="_on_area_stop_turtle_body_entered"]

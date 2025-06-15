@@ -164,7 +164,7 @@ stream = ExtResource("5_silan")
 bus = &"SFX"
 
 [node name="AttackTimer" type="Timer" parent="."]
-wait_time = 15.0
+wait_time = 20.0
 autostart = true
 
 [node name="AttackPosition" type="Marker2D" parent="."]

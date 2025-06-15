@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var attack_constructor = preload("res://Characters/Octopus/MegaBubble/MegaBubble.tscn")
 
 @export var life : ProgressBar
+@export var speed : int = 100
 
 func howl():
 	howl_scene.activate()
@@ -21,6 +22,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_attack_timer_timeout() -> void:
 	var mega_bubble = attack_constructor.instantiate() as CharacterBody2D
-	mega_bubble.global_position = attack_position.global_position
+	mega_bubble.position = attack_position.position
 	mega_bubble.global_rotation_degrees = -90
-	get_tree().root.add_child(mega_bubble)
+	add_child(mega_bubble)

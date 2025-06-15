@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c283yhxoe880w"]
+[gd_scene load_steps=14 format=3 uid="uid://c283yhxoe880w"]
 
 [ext_resource type="Script" uid="uid://b4u47tptmgg28" path="res://Characters/Octopus/MegaBubble/MegaBubble.gd" id="1_flfnf"]
 [ext_resource type="Texture2D" uid="uid://dtlk3lbqyw66" path="res://Characters/Octopus/MegaBubble/megaBubble.png" id="1_kkh0f"]
@@ -6,40 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://da3bycixbf7lt" path="res://Game/ClearMob/ClearMob.tscn" id="4_i6gn1"]
 [ext_resource type="AudioStream" uid="uid://cbfyhj0y5h83" path="res://Characters/Octopus/MegaBubble/mega_bubble_impact.wav" id="5_be50n"]
 [ext_resource type="AudioStream" uid="uid://42u4cnlvl26c" path="res://Characters/Octopus/MegaBubble/mega_bubble_explosion.wav" id="6_xapi4"]
+[ext_resource type="AudioStream" uid="uid://b80uwh7ap0qub" path="res://Characters/Octopus/MegaBubble/blowing_bubble.wav" id="7_5bhum"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kkh0f"]
 size = Vector2(208, 232)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_flfnf"]
 size = Vector2(208, 232)
-
-[sub_resource type="Animation" id="Animation_i6gn1"]
-resource_name = "damage"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1.2, 1.2, 1.2, 1), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ImpactStreamPlayer2D:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_be50n"]
 length = 0.001
@@ -115,14 +88,134 @@ tracks/5/keys = {
 "update": 1,
 "values": [4]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite2D:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.2, 0.2)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Area2D:monitoring")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("BlowingStreamPlayer2D:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_i6gn1"]
+resource_name = "damage"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1.2, 1.2, 1.2, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ImpactStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_xapi4"]
+resource_name = "create"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"switch_can_move"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BlowingStreamPlayer2D:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xapi4"]
 _data = {
 &"RESET": SubResource("Animation_be50n"),
+&"create": SubResource("Animation_xapi4"),
 &"damage": SubResource("Animation_i6gn1")
 }
 
 [node name="MegaBubble" type="CharacterBody2D" groups=["projectile"]]
+modulate = Color(1, 1, 1, 0.784314)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_flfnf")
@@ -131,6 +224,7 @@ script = ExtResource("1_flfnf")
 max_value = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_kkh0f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -158,6 +252,10 @@ bus = &"SFX"
 
 [node name="ExplosionStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_xapi4")
+bus = &"SFX"
+
+[node name="BlowingStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_5bhum")
 bus = &"SFX"
 
 [connection signal="dead" from="Health" to="." method="_on_health_dead"]

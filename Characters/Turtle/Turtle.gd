@@ -18,16 +18,26 @@ signal game_over
 @export var drag := 5.0
 
 var level = 0
+var can_move = true : 
+	set(value) :
+		can_move = value
+		if not can_move:
+			animatedSprite.stop()
+		else:
+			animatedSprite.play("default")
 
 func _ready() -> void:
 	animatedSprite.play("default")
 	Game.turtle = self
 
 func _physics_process(delta):
-	var desired_velocity = get_desired_velocity()
-	var steering = desired_velocity - velocity
-	velocity += steering / drag
-	velocity = velocity.limit_length(speed)
+	if can_move:
+		var desired_velocity = get_desired_velocity()
+		var steering = desired_velocity - velocity
+		velocity += steering / drag
+		velocity = velocity.limit_length(speed)
+	else :
+		velocity = Vector2.ZERO
 	move_and_slide()
 
 func _on_area_2d_body_entered(body):
