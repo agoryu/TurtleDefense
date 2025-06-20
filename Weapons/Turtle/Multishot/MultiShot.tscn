@@ -20,11 +20,15 @@ animations = [{
 
 [node name="MultiShot" type="AnimatedSprite2D"]
 texture_filter = 1
-position = Vector2(-141, 0)
 rotation = 1.5708
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_onbgh")
 script = ExtResource("2_en5c6")
+cost_weapon = 12
+cost_boost1 = 4
+cost_boost2 = 4
+maxPrimaryLevel = 3
+maxSecondaryLevel = 3
 
 [node name="Shot1" type="Marker2D" parent="."]
 position = Vector2(-6.33333, 2.28882e-05)
@@ -61,7 +65,7 @@ rotation = -2.35619
 wait_time = 0.1
 
 [node name="ShotDelay" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 8.0
 
 [connection signal="timeout" from="ShotShift" to="." method="_on_shot_shift_timeout"]
 [connection signal="timeout" from="ShotDelay" to="." method="_on_shot_delay_timeout"]

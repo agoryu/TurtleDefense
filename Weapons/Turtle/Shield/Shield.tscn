@@ -241,8 +241,14 @@ _data = {
 }
 
 [node name="Shield" type="Node2D"]
-position = Vector2(-30, 0)
 script = ExtResource("1_npb7q")
+shield_life = 1
+regeneration_value = 0.5
+cost_weapon = 8
+cost_boost1 = 3
+cost_boost2 = 3
+maxPrimaryLevel = 5
+maxSecondaryLevel = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_eddlv")

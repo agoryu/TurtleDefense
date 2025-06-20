@@ -6,7 +6,6 @@ extends Weapon
 @onready var shield_generator: AnimatedSprite2D = $ShieldGenerator
 @export var character_collision_shape: CollisionShape2D
 @export var shield_life: int = 2
-@export var maxLevel : int = 1
 @export var regeneration_value : float = 0.2
 
 var level : int = 0;
@@ -28,17 +27,16 @@ func _ready():
 
 func add_weapon():
 	super()
-	level += 1
 	shield_generator.visible = true
 	is_activate = true
 	visible = true
 
 func upgrade_primary_stat():
-	if level < maxLevel:
-		level += 1
-		shoot_timer.wait_time -= regeneration_value
+	super()
+	shoot_timer.wait_time -= regeneration_value
 
 func upgrade_secondary_stat():
+	super()
 	shield_life += 1
 
 func _on_area_2d_body_entered(body):

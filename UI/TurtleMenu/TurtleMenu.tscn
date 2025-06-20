@@ -1045,23 +1045,45 @@ offset_top = -24.0
 offset_right = 40.0
 offset_bottom = 16.0
 
+[node name="Shield" parent="WeaponButtons" instance=ExtResource("1_478hx")]
+layout_mode = 2
+offset_left = -704.0
+offset_top = 216.0
+offset_right = 344.0
+offset_bottom = 321.0
+size_flags_horizontal = 0
+weapon_label = "turtle.menu.shield"
+bonus1_label = "turtle.menu.shield.boost1"
+bonus2_label = "turtle.menu.shield.boost2"
+
 [node name="LaserBeam" parent="WeaponButtons" instance=ExtResource("1_478hx")]
 layout_mode = 2
-offset_left = -696.0
-offset_top = 192.0
-offset_right = 304.0
-offset_bottom = 297.0
+offset_left = -704.0
+offset_top = 344.0
+offset_right = 344.0
+offset_bottom = 449.0
 size_flags_horizontal = 0
 weapon_label = "turtle.menu.beam"
 bonus1_label = "turtle.menu.beam.boost1"
 bonus2_label = "turtle.menu.beam.boost2"
 
+[node name="PiratCanon" parent="WeaponButtons" instance=ExtResource("1_478hx")]
+layout_mode = 2
+offset_left = -704.0
+offset_top = 472.0
+offset_right = 344.0
+offset_bottom = 577.0
+size_flags_horizontal = 0
+weapon_label = "turtle.menu.piratcanon"
+bonus1_label = "turtle.menu.piratcanon.boost1"
+bonus2_label = "turtle.menu.piratcanon.boost2"
+
 [node name="Laser" parent="WeaponButtons" instance=ExtResource("1_478hx")]
 layout_mode = 2
-offset_left = -696.0
-offset_top = 320.0
-offset_right = 304.0
-offset_bottom = 425.0
+offset_left = -704.0
+offset_top = 600.0
+offset_right = 344.0
+offset_bottom = 705.0
 size_flags_horizontal = 0
 weapon_label = "turtle.menu.laser"
 bonus1_label = "turtle.menu.laser.boost1"
@@ -1069,47 +1091,25 @@ bonus2_label = "turtle.menu.laser.boost2"
 
 [node name="MultiShot" parent="WeaponButtons" instance=ExtResource("1_478hx")]
 layout_mode = 2
-offset_left = -696.0
-offset_top = 448.0
-offset_right = 304.0
-offset_bottom = 553.0
+offset_left = -704.0
+offset_top = 728.0
+offset_right = 344.0
+offset_bottom = 833.0
 size_flags_horizontal = 0
 weapon_label = "turtle.menu.multishot"
 bonus1_label = "turtle.menu.multishot.boost1"
 bonus2_label = "turtle.menu.multishot.boost2"
 
-[node name="PiratCanon" parent="WeaponButtons" instance=ExtResource("1_478hx")]
-layout_mode = 2
-offset_left = -696.0
-offset_top = 576.0
-offset_right = 304.0
-offset_bottom = 681.0
-size_flags_horizontal = 0
-weapon_label = "turtle.menu.piratcanon"
-bonus1_label = "turtle.menu.piratcanon.boost1"
-bonus2_label = "turtle.menu.piratcanon.boost2"
-
 [node name="UrsinCanon" parent="WeaponButtons" instance=ExtResource("1_478hx")]
 layout_mode = 2
-offset_left = -696.0
-offset_top = 704.0
-offset_right = 304.0
-offset_bottom = 809.0
+offset_left = -704.0
+offset_top = 856.0
+offset_right = 344.0
+offset_bottom = 961.0
 size_flags_horizontal = 0
 weapon_label = "turtle.menu.ursincanon"
 bonus1_label = "turtle.menu.ursincanon.boost1"
 bonus2_label = "turtle.menu.ursincanon.boost2"
-
-[node name="Shield" parent="WeaponButtons" instance=ExtResource("1_478hx")]
-layout_mode = 2
-offset_left = -696.0
-offset_top = 832.0
-offset_right = 304.0
-offset_bottom = 937.0
-size_flags_horizontal = 0
-weapon_label = "turtle.menu.shield"
-bonus1_label = "turtle.menu.shield.boost1"
-bonus2_label = "turtle.menu.shield.boost2"
 
 [node name="ShellInformation" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -1153,15 +1153,15 @@ grow_vertical = 2
 stream = ExtResource("5_71lvt")
 bus = &"SFX"
 
+[connection signal="power_selected" from="WeaponButtons/Shield" to="." method="_on_power_selected"]
+[connection signal="weapon_selected" from="WeaponButtons/Shield" to="Preview" method="_on_weapon_display"]
 [connection signal="power_selected" from="WeaponButtons/LaserBeam" to="." method="_on_power_selected"]
 [connection signal="weapon_selected" from="WeaponButtons/LaserBeam" to="Preview" method="_on_weapon_display"]
+[connection signal="power_selected" from="WeaponButtons/PiratCanon" to="." method="_on_power_selected"]
+[connection signal="weapon_selected" from="WeaponButtons/PiratCanon" to="Preview" method="_on_weapon_display"]
 [connection signal="power_selected" from="WeaponButtons/Laser" to="." method="_on_power_selected"]
 [connection signal="weapon_selected" from="WeaponButtons/Laser" to="Preview" method="_on_weapon_display"]
 [connection signal="power_selected" from="WeaponButtons/MultiShot" to="." method="_on_power_selected"]
 [connection signal="weapon_selected" from="WeaponButtons/MultiShot" to="Preview" method="_on_weapon_display"]
-[connection signal="power_selected" from="WeaponButtons/PiratCanon" to="." method="_on_power_selected"]
-[connection signal="weapon_selected" from="WeaponButtons/PiratCanon" to="Preview" method="_on_weapon_display"]
 [connection signal="power_selected" from="WeaponButtons/UrsinCanon" to="." method="_on_power_selected"]
 [connection signal="weapon_selected" from="WeaponButtons/UrsinCanon" to="Preview" method="_on_weapon_display"]
-[connection signal="power_selected" from="WeaponButtons/Shield" to="." method="_on_power_selected"]
-[connection signal="weapon_selected" from="WeaponButtons/Shield" to="Preview" method="_on_weapon_display"]

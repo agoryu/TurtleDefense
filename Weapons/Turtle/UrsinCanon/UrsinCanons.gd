@@ -3,7 +3,6 @@ extends Weapon
 var _ursinCanons = []
 var _level : int = 0;
 
-@export var maxLevel : int = 4;
 @export var ursinSpeed : int = 100;
 
 @onready var _ursinCanons_NE : AnimatedSprite2D = $UrsinCanon_NE
@@ -20,20 +19,17 @@ func _ready():
 func add_weapon():
 	super()
 	_timer.start()
-	upgrade_primary_stat()
+	_ursinCanons[primaryLevel-1].start()
 
 func upgrade_primary_stat():
-	if _level < maxLevel:
-		_upgrade_level()
+	super()
+	_ursinCanons[primaryLevel-1].start()
 
 func upgrade_secondary_stat():
-	_timer.wait_time -= .5
-
-func _upgrade_level():
-	_ursinCanons[_level].start()
-	_level += 1
+	super()
+	_timer.wait_time -= 1.
 
 func _on_timer_timeout() -> void:
 	for ursinCanon in _ursinCanons:
-		ursinCanon.fire(ursinSpeed);
+		ursinCanon.fire(ursinSpeed, damage);
 	_timer.start()

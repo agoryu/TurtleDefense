@@ -46,18 +46,20 @@ background_mode = 3
 glow_enabled = true
 
 [node name="BeamWeapon" instance=ExtResource("1_kuhko")]
-position = Vector2(192, 64)
 rotation = 1.5708
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_metnh")
 script = ExtResource("3_dgbf7")
 damage = 2
+cost_weapon = 10
+cost_boost1 = 4
+cost_boost2 = 4
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 environment = SubResource("Environment_7die8")
 
 [node name="ShootTimer" parent="." index="1"]
-wait_time = 10.0
+wait_time = 8.0
 one_shot = true
 
 [node name="LaserBeam2D" parent="." index="2" instance=ExtResource("4_6hgs4")]

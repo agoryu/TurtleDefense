@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dfp1r4qhtemr3"]
+[gd_scene load_steps=20 format=3 uid="uid://dfp1r4qhtemr3"]
 
 [ext_resource type="Texture2D" uid="uid://bfneu4fdv8t33" path="res://Characters/Seagull/Seagull-Sheet.png" id="1_b4cc5"]
 [ext_resource type="Script" uid="uid://dxw426b4mcn4s" path="res://Characters/Seagull/Seagull.gd" id="1_rs3iu"]
@@ -7,6 +7,9 @@
 [ext_resource type="AudioStream" uid="uid://hiys7j3ywv6l" path="res://Characters/Seagull/engine.wav" id="5_kqag3"]
 [ext_resource type="AudioStream" uid="uid://b1t07x03g2xjp" path="res://Characters/Seagull/seagull.wav" id="6_7fjfe"]
 [ext_resource type="PackedScene" uid="uid://da3bycixbf7lt" path="res://Game/ClearMob/ClearMob.tscn" id="7_tc7wx"]
+[ext_resource type="Texture2D" uid="uid://coryr2im6u27m" path="res://Characters/Seagull/sparkle.png" id="8_n5kgh"]
+[ext_resource type="Texture2D" uid="uid://1dcep7dmiqsc" path="res://Characters/Seagull/Arrow.png" id="9_k6qg7"]
+[ext_resource type="AudioStream" uid="uid://dcv25q7ca1e3u" path="res://Characters/Seagull/alert.wav" id="10_8s4dl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1javh"]
 animations = [{
@@ -26,10 +29,137 @@ radius = 28.0
 radius = 24.0
 height = 106.0
 
+[sub_resource type="Curve" id="Curve_k6qg7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.992593, 0.49923), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_8s4dl"]
+curve = SubResource("Curve_k6qg7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qver0"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(20, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(2, 1, 1)
+gravity = Vector3(0, 98, 0)
+scale_min = 0.1
+scale_max = 0.1
+scale_curve = SubResource("CurveTexture_8s4dl")
+
+[sub_resource type="Animation" id="Animation_k6qg7"]
+resource_name = "gold_spawn"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ArrowSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 15, 15, 15, 15),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 1), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ArrowSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AlertStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HitBox:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_8s4dl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ArrowSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ArrowSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AlertStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HitBox:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qver0"]
+_data = {
+&"RESET": SubResource("Animation_8s4dl"),
+&"gold_spawn": SubResource("Animation_k6qg7")
+}
+
 [node name="Seagull" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_rs3iu")
+drop_chance = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -76,5 +206,28 @@ bus = &"SFX"
 
 [node name="ClearMob" parent="." instance=ExtResource("7_tc7wx")]
 
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+texture = ExtResource("8_n5kgh")
+speed_scale = 0.5
+process_material = SubResource("ParticleProcessMaterial_qver0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_qver0")
+}
+
+[node name="ArrowSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -128)
+rotation = 3.14159
+scale = Vector2(3, 3)
+texture = ExtResource("9_k6qg7")
+
+[node name="AlertStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_8s4dl")
+bus = &"SFX"
+
 [connection signal="dead" from="Health" to="." method="_on_health_dead"]
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

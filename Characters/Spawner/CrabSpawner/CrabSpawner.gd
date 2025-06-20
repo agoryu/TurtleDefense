@@ -11,6 +11,9 @@ extends Path2D
 
 var level: int = 0
 
+func _ready() -> void:
+	spawn_crab(crab_red_constructor)
+
 func spawn_crab(constructor):
 	var crab = constructor.instantiate()
 	pathFollow.progress_ratio = randf()
@@ -31,9 +34,18 @@ func _on_timer_next_level_timeout() -> void:
 	match level:
 		1:
 			timer_red.wait_time = 1.5
-			timer_green.start()
 		2:
+			timer_green.start()
+		3: 
 			timer_green.wait_time = 2
+		4:
 			timer_blue.start()
+		5:
+			timer_blue.wait_time = 4
 		_:
 			timer_next_level.stop()
+			
+func stop_spawn():
+	timer_red.stop()
+	timer_green.stop()
+	timer_blue.stop()

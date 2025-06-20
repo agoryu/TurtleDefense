@@ -4,7 +4,6 @@ var _level : int = 0
 var _canons = []
 var _group = false
 
-@export var maxLevel : int = 4
 @onready var _canon_NE : AnimatedSprite2D = $Canon_NE
 @onready var _canon_NW : AnimatedSprite2D = $Canon_NW
 @onready var _canon_SE : AnimatedSprite2D = $Canon_SE
@@ -19,18 +18,15 @@ func _ready():
 func add_weapon():
 	super()
 	_timer.start()
-	upgrade_primary_stat()
+	_canons[primaryLevel-1].start()
 
 func upgrade_primary_stat():
-	if _level < maxLevel:
-		_upgrade_level()
+	super()
+	_canons[primaryLevel-1].start()
 
 func upgrade_secondary_stat():
+	super()
 	_timer.wait_time -= .5
-
-func _upgrade_level():
-	_canons[_level].start()
-	_level += 1
 
 func _on_timer_timeout() -> void:
 	_group = !_group

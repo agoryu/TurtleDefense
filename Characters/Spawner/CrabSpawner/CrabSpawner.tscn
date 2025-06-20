@@ -17,7 +17,7 @@ position = Vector2(-1, 0)
 rotation = 1.56986
 
 [node name="TimerRed" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 2.5
 autostart = true
 
 [node name="TimerGreen" type="Timer" parent="."]
@@ -27,7 +27,7 @@ wait_time = 3.0
 wait_time = 5.0
 
 [node name="TimerNextLevel" type="Timer" parent="."]
-wait_time = 60.0
+wait_time = 45.0
 autostart = true
 
 [connection signal="timeout" from="TimerRed" to="." method="_on_timer_red_timeout"]

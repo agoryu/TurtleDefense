@@ -31,8 +31,8 @@ turtle.menu.laser,Laser,Laser Beam
 turtle.menu.laser.boost1,Vitesse de tir,Speed fire
 turtle.menu.laser.boost2,Dommage,Damage
 turtle.menu.multishot,Canon multidirectionnel,Multidirectionnal canon
-turtle.menu.multishot.boost1,Vitesse de tir,Speed fire
-turtle.menu.multishot.boost2,Dommage,Damage
+turtle.menu.multishot.boost2,Vitesse de tir,Speed fire
+turtle.menu.multishot.boost1,Dommage,Damage
 turtle.menu.piratcanon,Canon pirate,Pirat canon
 turtle.menu.piratcanon.boost1,Ajout canon,Add canon
 turtle.menu.piratcanon.boost2,Vitesse de tir,Speed fire

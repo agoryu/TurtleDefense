@@ -6,11 +6,12 @@ extends CharacterBody2D
 var _speed
 var _direction
 
-func initialize(origin, speed):
+func initialize(origin, speed, damage_value):
 	global_position = origin.global_position
 	global_rotation = origin.global_rotation
 	_direction = Vector2(sin(global_rotation), -cos(global_rotation))
 	_speed = speed
+	damage = damage_value
 
 func _ready():
 	_timer.start()

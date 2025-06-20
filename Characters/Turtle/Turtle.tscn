@@ -143,13 +143,13 @@ script = ExtResource("5_3v3jc")
 
 [node name="Shield" parent="Weapons" instance=ExtResource("13_4cysj")]
 visible = false
+position = Vector2(-27, -2)
 
 [node name="Laser" parent="Weapons" instance=ExtResource("12_142aw")]
 
 [node name="BeamWeapon" parent="Weapons" instance=ExtResource("16_jv588")]
 visible = false
 position = Vector2(24, 0)
-cost_weapon = 5
 
 [node name="Howl" parent="." instance=ExtResource("12_is3fb")]
 position = Vector2(139, -1)

@@ -6,7 +6,7 @@ class_name Crab
 @export var drag := 5.0
 @export var damage := 1
 @export var anim_name := "walk_red"
-@export var drop_chance := 3 ## Inverse of ( 1/X )
+@export var drop_chance := 3 
 
 @onready var health: Health = $Health
 @onready var shell_constructor = preload("res://Statics/Shell/Shell.tscn")
@@ -36,5 +36,7 @@ func _on_health_dead():
 	if randi() % 10 < drop_chance:
 		var shell = shell_constructor.instantiate()
 		shell.position = position
+		if health.max_value > 1:# and health.max_value <= 3:
+			shell.init_level_2
 		get_parent().add_child(shell)
 	queue_free()

@@ -7,5 +7,5 @@ speed = 150.0
 damage = 2
 anim_name = "walk_green"
 
-[node name="Health" parent="." index="2"]
+[node name="Health" parent="." index="1"]
 max_value = 2

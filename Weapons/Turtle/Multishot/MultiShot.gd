@@ -1,11 +1,7 @@
 extends Weapon
 
-var _primary_stat : int = 0;
-var _secondary_stat : int = 0;
 var _shots = []
 var _shotIndex = 0
-@export var _max_primary_stat : int = 3;
-@export var _max_secondary_stat : int = 3;
 @export var _shot_speed : int = 500;
 
 @onready var _shot = preload("res://Weapons/Turtle/Multishot/BulletShot/Shot.tscn")
@@ -26,20 +22,19 @@ func _ready():
 
 func add_weapon():
 	super()
-	_primary_stat += 1
 	_shotShift.start()
 
 func upgrade_primary_stat():
-	if _primary_stat < _max_primary_stat:
-		_primary_stat += 1
+	super()
+	damage += 1
 
 func upgrade_secondary_stat():
-	if _secondary_stat < _max_secondary_stat:
-		_shotDelay.wait_time -= .4
+	super()
+	_shotDelay.wait_time -= 1.
 
 func shoot():
 	var shot = _shot.instantiate()
-	shot.initialize(_shots[_shotIndex], _shot_speed)
+	shot.initialize(_shots[_shotIndex], _shot_speed, damage)
 	_shotIndex += 1
 	get_tree().root.add_child(shot)
 ''

@@ -3,16 +3,18 @@ extends Node2D
 var _speed
 var _direction
 var _spikes: Array = []
+var _damage: int = 1
 @export var spikeSpeed : int = 200
 @export var sipkesCount : int = 10
 
 @onready var _timer : Timer = $Timer
 @onready var _spikesTimer : Timer = $SpikesTimer
 
-func initialize(origin, speed, bullet):
+func initialize(origin, speed, bullet, damage_value):
 	global_position = origin.global_position
 	_direction = origin.direction
 	_speed = speed
+	_damage = damage_value
 	instance_around_circle(global_position, 15, bullet, sipkesCount, 0)
 
 func _ready():
@@ -36,7 +38,7 @@ func instance_around_circle(circle_center : Vector2, circle_radius : float, obje
 	for step in count:
 		var instance = object.instantiate()
 		var spikePosition = global_position - circle_center + radial_offset
-		instance.initialize(spikePosition, radial_offset.angle(), spikeSpeed)
+		instance.initialize(spikePosition, radial_offset.angle(), spikeSpeed, _damage)
 		add_child(instance)
 		_spikes.append(instance)
 		radial_offset = radial_offset.rotated(radial_increment)

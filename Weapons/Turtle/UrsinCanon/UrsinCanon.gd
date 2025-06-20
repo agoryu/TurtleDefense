@@ -9,8 +9,8 @@ func start():
 	is_active = true
 	visible = true
 
-func fire(ursinSpeed):
+func fire(ursinSpeed, damage_value):
 	if is_active:
 		var ursin = _ursin.instantiate()
-		ursin.initialize(_ursin_origin, ursinSpeed, _spike)
+		ursin.initialize(_ursin_origin, ursinSpeed, _spike, damage_value)
 		get_tree().root.add_child(ursin)
