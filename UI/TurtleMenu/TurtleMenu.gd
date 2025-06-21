@@ -2,7 +2,7 @@ extends Control
 
 @onready var weapon_panel = $WeaponButtons
 @onready var weapon_buttons = weapon_panel.get_children()
-@onready var weapon_cost : Label = $ShellInformation/WeaponCost
+@onready var weapon_cost : Label = %WeaponCost
 @onready var open_audio_player : AudioStreamPlayer2D = $OpenAudioPlayer
 @onready var level_label : Label = $Level
 
